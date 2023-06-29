@@ -2670,6 +2670,7 @@ GameObject:
   - component: {fileID: 4675527984898136662}
   - component: {fileID: 4675527984898136657}
   - component: {fileID: 3717973168085849853}
+  - component: {fileID: 1326217006707283563}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2811,6 +2812,7 @@ MonoBehaviour:
   Rushpoint: {fileID: 4675527984682569370}
   Rushskill: 1
   RushSpeed: 100
+  skillrushtime: 5
 --- !u!114 &6364675808720890077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2849,8 +2851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eb2d8bee6e2044195d501ad5be2024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoeskilltime: 5
-  fastskilltime: 5
+  jf: 1
+  mf: 1
   walkSpeed: 7
   slideSpeed: 15
   slideGroundSpeed: 10
@@ -2914,6 +2916,33 @@ MonoBehaviour:
   gravityGounterForce: 30
   orientation: {fileID: 4675527984702690824}
   cam: {fileID: 4675527985672760646}
+--- !u!114 &1326217006707283563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675527984898136650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74933dd57e9da8b44b7ec8a6b289f140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 4675527984702690824}
+  rb: {fileID: 4675527984898136759}
+  pm: {fileID: 4675527984898136662}
+  climbSpeed: 10
+  maxClimbTime: 1
+  climbJumpUpForce: 15
+  climbJumpBackForce: 12
+  jumpKey: 32
+  climbJumps: 1
+  detectionLength: 0.75
+  sphereCastRadius: 0.25
+  maxWallLookAngle: 30
+  rayHeight: 1.8
+  minWallNormalAngleChange: 5
+  exitingWall: 0
 --- !u!1 &4675527985075708308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3327,7 @@ RectTransform:
   - {fileID: 1195779162316267795}
   - {fileID: 1195779163171823318}
   - {fileID: 1195779163346219651}
+  - {fileID: 5569199495515315276}
   m_Father: {fileID: 4675527984541880917}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3368,6 +3398,86 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6671829116004815002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5569199495515315276}
+  - component: {fileID: 5279069895850694699}
+  - component: {fileID: 4414178742674927669}
+  m_Layer: 5
+  m_Name: Aim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5569199495515315276
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671829116004815002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4675527986078761744}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5279069895850694699
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671829116004815002}
+  m_CullTransparentMesh: 0
+--- !u!114 &4414178742674927669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671829116004815002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: +
 --- !u!1 &6934475617044113624
 GameObject:
   m_ObjectHideFlags: 0
