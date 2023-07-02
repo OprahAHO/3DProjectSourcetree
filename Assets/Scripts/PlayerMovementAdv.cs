@@ -79,6 +79,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public float walkSpeed;
     public float slideSpeed;
     public float slideGroundSpeed;
+    public Transform PlayerCharacterAdv;
     
     public float groundDrag;
     private float desiredMoveSpeed;
@@ -140,6 +141,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(horizontalInput);
         MyInput();
         UpdateSpeedText();
         SpeedControl();
@@ -158,8 +160,13 @@ public class PlayerMovementAdv : MonoBehaviour
             jumpsRemaining = extraJumpNum;
             grounded = true;
         }
-       
+/*
+        if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
+        {
+            PlayerCharacterAdv.SetParent(collision.transform);
+        }*/
     }
+   
 
     private void OnCollisionExit(Collision collision)
     {

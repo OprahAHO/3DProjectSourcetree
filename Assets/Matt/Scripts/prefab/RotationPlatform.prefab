@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 6418794781456496714}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6418794781456496715
 GameObject:
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6418794781456496718}
   - component: {fileID: 6418794781456496719}
   - component: {fileID: 6418794781456496712}
-  - component: {fileID: 6418794781456496716}
+  - component: {fileID: 3465665963352635313}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605b2aee6c7dc504c9ff837991f80424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6418794781456496716
+--- !u!114 &3465665963352635313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
