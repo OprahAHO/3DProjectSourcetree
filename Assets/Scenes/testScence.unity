@@ -916,6 +916,7 @@ GameObject:
   - component: {fileID: 1805582134}
   - component: {fileID: 1805582133}
   - component: {fileID: 1805582137}
+  - component: {fileID: 1805582138}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -1037,6 +1038,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605b2aee6c7dc504c9ff837991f80424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1805582138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805582131}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1885286513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4675527985075708309, guid: bd9092a5ac5ee024796a634f83bc7825, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.76
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 4675527985075708309, guid: bd9092a5ac5ee024796a634f83bc7825, type: 3}
       propertyPath: m_LocalPosition.z
