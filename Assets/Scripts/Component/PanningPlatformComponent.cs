@@ -40,7 +40,7 @@ public class PanningPlatformComponent : MonoBehaviour
         
     }*/
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         other.transform.SetParent(transform);
     }
@@ -48,7 +48,7 @@ public class PanningPlatformComponent : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
         other.transform.SetParent(null);
-    }
+    }*/
 
 
     private IEnumerator MoveToTarget()

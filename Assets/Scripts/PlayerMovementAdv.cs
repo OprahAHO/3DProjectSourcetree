@@ -141,7 +141,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(horizontalInput);
+  
         MyInput();
         UpdateSpeedText();
         SpeedControl();
