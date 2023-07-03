@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    public Transform target;
     public static SkillManager instance;
+    public Transform Player;
+    // public Vector3 point;
+    // public Vector3 direction;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -18,24 +22,17 @@ public class SkillManager : MonoBehaviour
             instance = this;
         }
     }
-    public Transform Rushpoint;
-   // public Vector3 Rushplayer;
+
     public bool Rushskill;
     public float RushSpeed = 1;
-    public float skillrushtime = 5f;
-    
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.GetComponent<PlayerMovment>() != null)
-    //    {
-    //        //AddNewSkill();
-    //        Destroy(gameObject);
-    //        randomskill.instance.lg();
-    //        randomskill.instance.randomSkill();
-    //    }
 
-    //}
-    
+    public void Start()
+    {
+        Vector3 sk = new Vector3();
+    }
+
+
+
     private void Update()
     {
         //if (Rushskill)
@@ -46,37 +43,55 @@ public class SkillManager : MonoBehaviour
         //        InvokeRepeating("Rush", 1f, 0.1f);
         //        Invoke("Rushskillfalse", 5f);
         //    }
-            
+
         //}     Test
-        
+        if (Rushskill)
+        {
+
+            //     Player.position = Vector3.Lerp(Player.position, target.position, 0.3f);
+            GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
+            //    GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed*Time.deltaTime, ForceMode.VelocityChange);
+            //   Player.position = Vector3.Lerp(Player.position, Rushpoint.position, 1f);
+
+            //  GetComponent<Rigidbody>().AddForce(  new Vector3(0,0,RushSpeed),ForceMode.Force);
+        }
+
+
     }
     public void RushSkill0()
     {
+        Rushskill = true;
+        //  InvokeRepeating("Rush", 0.1f, 0.5f);
+        Invoke("Rushskillfalse", 5f);
 
-        InvokeRepeating("Rush", 0.1f, 0.1f);
-        Invoke("Rushskillfalse", 1f);
+        //Invoke("Rush", 5f);
         randomskill.instance.left = false;
     }
     public void RushSkill1()
     {
+        Rushskill = true;
+        //  InvokeRepeating("Rush", 0.1f, 0.1f);
+        Invoke("Rushskillfalse", 5f);
 
-        InvokeRepeating("Rush", 0.1f, 0.1f);
-        Invoke("Rushskillfalse", 1f);
-           randomskill.instance.right = false;
+        //Invoke("Rush", 5f);
+        randomskill.instance.right = false;
     }
     public void Rush()
     {
-        //if (Rushskill)
-        //{
-            GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/Rushpoint.transform.forward *10 * RushSpeed , ForceMode.Force);
-           //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y,10*RushSpeed);
-      //  }
+        if (Rushskill)
+        {
+
+        }
+
+
+
     }
-   
+
     public void Rushskillfalse()
     {
-     //   Rushskill = false;
-        CancelInvoke("Rush");
+        Rushskill = false;
+        //   CancelInvoke("Rush");
+
     }
 
 }

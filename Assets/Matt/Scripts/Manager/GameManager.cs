@@ -31,7 +31,8 @@ cam.SetActive(true);
     }
     public void GameOver()
     {
-cam.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Time.timeScale = 0;
         

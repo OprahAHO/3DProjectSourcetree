@@ -16,104 +16,85 @@ public class FlashMove : MonoBehaviour
             instance = this;
         }
     }
-
+    public bool Useskill;
     public bool Flash;
     public Material enemyMaterial;
     public LayerMask mask;
     public Transform Player;
     public Transform point;
+    public GameObject tttpoint;
     public GameObject Phypoint;
     void Start()
     {
-
+        Useskill = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        //Ray ray = new Ray(transform.position, transform.forward);
-        //RaycastHit hitInfo;
-        //if (Input.GetMouseButton(0))
-        //{
-        //    if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-        //    {
-              
-        //        Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
-        //        point.transform.position = hitInfo.point;
-        //        Phypoint.SetActive(true);
-        //    }
-
-        //    else
-        //    {
-        //        Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
-        //    }
-        //}
-        //if (Input.GetMouseButtonUp(0))
-        //{
-        //    if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-        //    {
-        //        Player.transform.position = hitInfo.point;
-        //        Phypoint.SetActive(false);
-        //    }
-        //}
-
-    }
-    public void flashmove0()
-    {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hitInfo;
-        if (Input.GetMouseButton(0))
+        if (Useskill)
         {
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hitInfo;
+            // if (Input.GetMouseButton(0))
+            //   {
             if (Physics.Raycast(ray, out hitInfo, 10f, mask))
             {
-               
+
                 Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
                 point.transform.position = hitInfo.point;
                 Phypoint.SetActive(true);
-               
-            }
-
-          
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-            {
-                Player.transform.position = hitInfo.point;
-                Phypoint.SetActive(false);
-                randomskill.instance.left = false;
-            }
-        }
-    }
-    public void flashmove1()
-    {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hitInfo;
-        if (Input.GetMouseButton(1))
-        {
-            if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-            {
-             //   hitInfo.collider.gameObject.GetComponent<Renderer>().material = enemyMaterial;
-                Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
-                point.transform.position = hitInfo.point;
-                Phypoint.SetActive(true);
-               
+                tttpoint.SetActive(true);
             }
 
             else
             {
                 Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
             }
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            if (Physics.Raycast(ray, out hitInfo, 10f, mask))
+            //    }
+            if (Input.GetMouseButtonUp(0))
             {
-                Player.transform.position = hitInfo.point;
-                Phypoint.SetActive(false);
-                randomskill.instance.right = false;
+                if (Physics.Raycast(ray, out hitInfo, 10f, mask))
+                {
+                    Player.transform.position = hitInfo.point;
+                    Phypoint.SetActive(false);
+                    tttpoint.SetActive(false);
+                    if (randomskill.instance.left = true && randomskill.instance.leftskill > 2 && randomskill.instance.leftskill < 4)
+                    {
+
+                    }
+                }
             }
         }
+
+    }
+    public void flashmove0()
+    {
+
+        if (Input.GetMouseButton(0))
+        {
+            Useskill = true;
+            randomskill.instance.left = false;
+
+        }
+        //if (Input.GetMouseButtonUp(0))
+        //{
+        //   Useskill= false;
+        //    randomskill.instance.left = false;
+        //}
+    }
+    public void flashmove1()
+    {
+
+        if (Input.GetMouseButton(1))
+        {
+            Useskill = true;
+        }
+        //if (Input.GetMouseButtonUp(1))
+        //{
+        //    Useskill= false;
+        //    randomskill.instance.right = false;
+        //}
     }
 }
 

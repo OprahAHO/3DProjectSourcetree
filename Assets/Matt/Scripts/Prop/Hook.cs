@@ -41,12 +41,9 @@ public class Hook : MonoBehaviour
             cordd.SetActive(false);
             icon.SetActive(false);
         }
+       
         cord.forward = hookpoint.position - cord.position;
         cord.localScale = new Vector3(cord.localScale.x, cord.localScale.y, Vector3.Distance(cord.position, hookpoint.position));
     }
-    public void Grap()
-    {
-        ;
-
-    }
+   
 }
