@@ -34,6 +34,7 @@ public class Resurrection : MonoBehaviour
             {
                 currentCheckpointIndex = checkPointComponent.checknumber;
                 UpdateResurrectPoint();
+                // = randomskill.instance.leftskill;
             }
         }
     }
@@ -49,4 +50,5 @@ public class Resurrection : MonoBehaviour
             Debug.LogError("Invalid checkpoint index: " + currentCheckpointIndex);
         }
     }
+
 }

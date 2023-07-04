@@ -28,7 +28,7 @@ public class SkillManager : MonoBehaviour
 
     public void Start()
     {
-        Vector3 sk = new Vector3();
+       
     }
 
 
