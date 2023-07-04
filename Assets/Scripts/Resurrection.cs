@@ -6,24 +6,47 @@ using UnityEngine.UIElements;
 
 public class Resurrection : MonoBehaviour
 {
+    public Transform[] checkpoint;
+
     public Transform resurrectPoint;
     public Transform Player;
+    public int currentCheckpointIndex;
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R))
         {
             Player.position = resurrectPoint.position;
-        }    
+        }
+    }
+    private void Start()
+    {
+        resurrectPoint.position = transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<CheckPointComponent>() != null)
         {
-            resurrectPoint.position = other.transform.position;
-            Debug.Log(resurrectPoint.position);
-        }
+            CheckPointComponent checkPointComponent = other.GetComponent<CheckPointComponent>();
 
+            if (checkPointComponent.checknumber > currentCheckpointIndex)
+            {
+                currentCheckpointIndex = checkPointComponent.checknumber;
+                UpdateResurrectPoint();
+            }
+        }
+    }
+    
+    private void UpdateResurrectPoint()
+    {
+        if (currentCheckpointIndex < checkpoint.Length)
+        {
+            resurrectPoint.position = checkpoint[currentCheckpointIndex].position;
+        }
+        else
+        {
+            Debug.LogError("Invalid checkpoint index: " + currentCheckpointIndex);
+        }
     }
 }
