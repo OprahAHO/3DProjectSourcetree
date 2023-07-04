@@ -88,24 +88,24 @@ public class WallRunningAdv : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if ((wallLeft || wallRight)  && AboveGround() && !exitingWall)
+        if ((wallLeft || wallRight)  && AboveGround())
         {
             if (!pm.wallrunning)
                 StartWallRun();
 
-            if (wallRunTimer > 0)
+/*            if (wallRunTimer > 0)
                 wallRunTimer -= Time.deltaTime;
 
             if (wallRunTimer <= 0 && pm.wallrunning)
             {
                 exitingWall = true;
                 exitWallTimer = exitWallTime;
-            }
+            }*/
 
             if (Input.GetKeyDown(jumpKey)) WallJump();
         }
 
-        else if (exitingWall)
+        /*else if (exitingWall)
         {
             if (pm.wallrunning)
                 StopWallRun();
@@ -116,7 +116,7 @@ public class WallRunningAdv : MonoBehaviour
             if (exitWallTimer <= 0)
                 exitingWall = false;
 
-        }
+        }*/
 
         else
         {
@@ -144,10 +144,10 @@ public class WallRunningAdv : MonoBehaviour
         rb.useGravity = useGravity;
 
         Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
-        Debug.Log(wallForward);
+        //Debug.Log(wallForward);
         if ((orientation.forward - wallForward).magnitude > (orientation.forward + wallForward).magnitude)
             wallForward = -wallForward;
-        Debug.Log(wallForward);
+        //Debug.Log(wallForward);
 
         rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
 
@@ -170,14 +170,13 @@ public class WallRunningAdv : MonoBehaviour
 
     private void WallJump()
     {
-        exitingWall = true;
+        //exitingWall = true;
         exitWallTimer = exitWallTime;
 
         Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+        Debug.Log(forceToApply);
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);
-        //Debug.Log(forceToApply);
+       
     }
-
-
 }
