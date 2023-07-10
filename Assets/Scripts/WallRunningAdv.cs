@@ -26,6 +26,7 @@ public class WallRunningAdv : MonoBehaviour
     private RaycastHit rightWallHit;
     private bool wallLeft;
     private bool wallRight;
+    public bool isWallRun;
 
     [Header("Exiting")]
     private bool exitingWall;
@@ -93,31 +94,8 @@ public class WallRunningAdv : MonoBehaviour
             if (!pm.wallrunning)
                 StartWallRun();
 
-/*            if (wallRunTimer > 0)
-                wallRunTimer -= Time.deltaTime;
-
-            if (wallRunTimer <= 0 && pm.wallrunning)
-            {
-                exitingWall = true;
-                exitWallTimer = exitWallTime;
-            }*/
-
             if (Input.GetKeyDown(jumpKey)) WallJump();
         }
-
-        /*else if (exitingWall)
-        {
-            if (pm.wallrunning)
-                StopWallRun();
-
-            if (exitWallTime > 0)
-                exitWallTimer -= Time.deltaTime;
-
-            if (exitWallTimer <= 0)
-                exitingWall = false;
-
-        }*/
-
         else
         {
             if (pm.wallrunning)
@@ -137,6 +115,7 @@ public class WallRunningAdv : MonoBehaviour
         cam.DoFov(90f);
         if (wallLeft) cam.DoTilt(-15f);
         if (wallRight) cam.DoTilt(15f);
+        isWallRun = true;
     }
 
     private void WallRunningMovement()
@@ -166,6 +145,7 @@ public class WallRunningAdv : MonoBehaviour
 
         cam.DoFov(80f);
         cam.DoTilt(0f);
+        isWallRun = false;
     }
 
     private void WallJump()
@@ -174,7 +154,7 @@ public class WallRunningAdv : MonoBehaviour
         exitWallTimer = exitWallTime;
 
         Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
-        Debug.Log(forceToApply);
+        //Debug.Log(forceToApply);
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);
        

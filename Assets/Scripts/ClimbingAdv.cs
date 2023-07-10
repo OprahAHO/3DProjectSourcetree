@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Climbing : MonoBehaviour
+public class ClimbingAdv : MonoBehaviour
 {
-   
+
     [Header("References")]
     public Transform orientation;
     public Rigidbody rb;
     public PlayerMovementAdv pm;
-
+    public WallRunningAdv isWallRun;
 
     [Header("Climbing")]
     public float climbSpeed;
@@ -32,13 +32,13 @@ public class Climbing : MonoBehaviour
     public float sphereCastRadius;
     public float capsuleCastRadius;
 
-    public float maxWallLookAngle;
-    private float wallLookAngle;
+    //public float maxWallLookAngle;
+    //private float wallLookAngle;
 
     private RaycastHit frontWallHit;
-    private RaycastHit frontWallReaHit;
+    private RaycastHit haveWallDown;
     private RaycastHit shortWallHit;
-    private bool wallFront;
+    private bool wallDown;
     private bool wallFrontRealUse;
     public float rayHeight;
 
@@ -56,8 +56,8 @@ public class Climbing : MonoBehaviour
         WallCheck();
         StateMachine();
         if (climbing && !exitingWall) ClimbingMovement();
-     
-        Debug.DrawRay(orientation.position + -orientation.up * 1, orientation.forward * 1, Color.red, 1);
+
+        Debug.DrawRay(orientation.position, -orientation.up * 2, Color.red, 2f);
         // if(climbing) Debug.Log(climbing);
         //Debug.Log(wallLookAngle < maxWallLookAngle && !exitingWall);
     }
@@ -65,24 +65,24 @@ public class Climbing : MonoBehaviour
     private void StateMachine()
     {
         // State 1 - Climbing
-         if (wallFrontRealUse && Input.GetKey(KeyCode.W) && wallLookAngle < maxWallLookAngle && !exitingWall)
-         {
-            if (!climbing && climbTimer > 0 && shortWall) StartClimbing();
+        if (wallFrontRealUse && Input.GetKey(KeyCode.W) && !exitingWall && !wallDown)
+        {
+            if (shortWall) StartClimbing();
             //Debug.Log(wallFront);
 
             // timer
-            if (climbTimer > 0) climbTimer -= Time.deltaTime;
-            if (climbTimer < 0) StopClimbing();
-         }
+           /* if (climbTimer > 0) climbTimer -= Time.deltaTime;
+            if (climbTimer < 0) StopClimbing();*/
+        }
 
         // State 2 - Exiting
-        else if (exitingWall)
+       /* else if (exitingWall)
         {
             if (climbing) StopClimbing();
 
             if (exitWallTimer > 0) exitWallTimer -= Time.deltaTime;
             if (exitWallTimer < 0) exitingWall = false;
-        }
+        }*/
 
         // State 3 - None
         else
@@ -96,29 +96,33 @@ public class Climbing : MonoBehaviour
         //wallFront = (Physics.CapsuleCast(transform.position, transform.forward*2, capsuleCastRadius, orientation.forward, out frontWallHit, detectionLength) && frontWallHit.collider.GetComponent<WallComponent>() != null);
         //Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength);
         //wallFront = (Physics.Raycast(orientation.position + -orientation.up * 1, orientation.forward*1) && frontWallHit.collider.GetComponent<WallComponent>() != null);
-        wallFront = (Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength) && frontWallHit.collider.GetComponent<WallComponent>() != null);
-        wallFrontRealUse = (Physics.Raycast(orientation.position + -orientation.up * 1, orientation.forward * 1 ,out frontWallReaHit,1) && frontWallReaHit.collider.GetComponent<WallComponent>() != null);
+        //wallFront = (Physics.SphereCast(transform.position, sphereCastRadius, orientation.forward, out frontWallHit, detectionLength) && frontWallHit.collider.GetComponent<WallComponent>() != null);
 
-        wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
+        //wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
 
-        shortWall = !Physics.Raycast(orientation.position+orientation.up*rayHeight, orientation.forward, out shortWallHit,2f);
- 
 
-        bool newWall = frontWallHit.transform != lastWall || Mathf.Abs(Vector3.Angle(lastWallNormal, frontWallHit.normal)) > minWallNormalAngleChange;
+        wallDown = (Physics.Raycast(orientation.position, -orientation.up*2, out haveWallDown, 2f)  && haveWallDown.collider.GetComponent<WallComponent>() != null);
+        //wallFrontRealUse = frontWallReaHit.collider.GetComponent<WallComponent>() != null;
+        shortWall = !Physics.Raycast(orientation.position + orientation.up * rayHeight, orientation.forward, out shortWallHit, 2f);
+    }
 
-        if ((wallFront && newWall && shortWall) || pm.grounded)
-        {
-            climbTimer = maxClimbTime;
-            climbJumpsLeft = climbJumps;
-        }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<WallComponent>() != null)
+            wallFrontRealUse = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<WallComponent>() != null)
+            wallFrontRealUse = false;
     }
 
     private void StartClimbing()
     {
         climbing = true;
-      
-        lastWall = frontWallHit.transform;
-        lastWallNormal = frontWallHit.normal;
+
+        /*lastWall = frontWallHit.transform;
+        lastWallNormal = frontWallHit.normal;*/
 
         /// idea - camera fov change
     }

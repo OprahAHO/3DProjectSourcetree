@@ -37,17 +37,6 @@ public class PanningPlatformComponent : MonoBehaviour
     }
     /*private void PanningStop()
     {
-        
-    }*/
-
-    /*private void OnCollisionEnter(Collision other)
-    {
-        other.transform.SetParent(transform);
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        other.transform.SetParent(null);
     }*/
 
 
@@ -66,7 +55,7 @@ public class PanningPlatformComponent : MonoBehaviour
         }
 
         // 确保最终位置准确
-        platform.position = targetPosition;
+       // platform.position = targetPosition;
         alreadyMoved = true;
 
 
@@ -87,7 +76,7 @@ public class PanningPlatformComponent : MonoBehaviour
         }
 
         // 确保最终位置准确
-        platform.position = targetPosition;
+        //platform.position = targetPosition;
         moved = true;
         //PanningStop();
     }

@@ -159,12 +159,15 @@ public class PlayerMovementAdv : MonoBehaviour
         {
             jumpsRemaining = extraJumpNum;
             grounded = true;
+           
         }
-/*
+
         if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
         {
+           
             PlayerCharacterAdv.SetParent(collision.transform);
-        }*/
+            Debug.Log(grounded);
+        }
     }
    
 
@@ -174,6 +177,10 @@ public class PlayerMovementAdv : MonoBehaviour
         {
             grounded = false;
         }
+        if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
+        {
+            PlayerCharacterAdv.SetParent(null);
+        }
     }
     private void FixedUpdate()
     {
@@ -182,6 +189,7 @@ public class PlayerMovementAdv : MonoBehaviour
     bool keepMomentum;
     private void StateHandler()
     {
+        
         if(wallrunning)
         {
             state = MovementState.wallrunning;
@@ -226,6 +234,9 @@ public class PlayerMovementAdv : MonoBehaviour
 
         lastDesiredMoveSpeed = desiredMoveSpeed;
         if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
+
+
+        
     }
 
     private IEnumerator SmoothlyLerpMoveSpeed()
@@ -265,6 +276,7 @@ public class PlayerMovementAdv : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        //Debug.Log(moveDirection);
 
         if(OnSlope() && !exitingSlope)
         {
@@ -274,8 +286,12 @@ public class PlayerMovementAdv : MonoBehaviour
                 rb.AddForce(Vector3.down * 80f,ForceMode.Force);
         }
 
-        else if(grounded)
+        else if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+           
+        }
+
         else if(!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
