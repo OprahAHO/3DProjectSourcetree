@@ -47,10 +47,11 @@ public class SkillManager : MonoBehaviour
         //}     Test
         if (Rushskill)
         {
-
+          //  transform.Translate(target.transform.forward * RushSpeed * Time.deltaTime);
             //     Player.position = Vector3.Lerp(Player.position, target.position, 0.3f);
-            GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
-            //    GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed*Time.deltaTime, ForceMode.VelocityChange);
+         //     GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
+       
+               GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed*Time.deltaTime, ForceMode.Acceleration);
             //   Player.position = Vector3.Lerp(Player.position, Rushpoint.position, 1f);
 
             //  GetComponent<Rigidbody>().AddForce(  new Vector3(0,0,RushSpeed),ForceMode.Force);
