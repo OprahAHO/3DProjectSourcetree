@@ -20,7 +20,8 @@ public class Hacke : MonoBehaviour
     }
     private void Update()
     {
-        Hacking();
+        Hacking0();
+        Hacking1();
         PlatformCheck();
     }
 
@@ -35,13 +36,23 @@ public class Hacke : MonoBehaviour
         
         havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<RotationPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
     }
-    private void Hacking()
+    public void Hacking0()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(0))
         {
             HackingMethods();
+            randomskill.instance.left = false;
         }
     }
+    public void Hacking1()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            HackingMethods();
+            randomskill.instance.right = false;
+        }
+    }
+
     void HackingMethods()
     {
         if(hit.collider.GetComponent<RotationPlatformComponent>() != null)
