@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCam: {fileID: 260344119}
-  controlRange: 2000
+  controlRange: 20
 --- !u!114 &519149171
 MonoBehaviour:
   m_ObjectHideFlags: 0
