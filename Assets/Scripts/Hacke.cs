@@ -36,7 +36,6 @@ public class Hacke : MonoBehaviour
 
             havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<RotationPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
 
-        
     }
         public void Hacking0()
     {

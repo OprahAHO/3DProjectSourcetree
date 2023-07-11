@@ -568,7 +568,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1112,7 +1112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3082890833718279589
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1375,7 +1375,7 @@ RectTransform:
   m_Children:
   - {fileID: 3082890834396283017}
   - {fileID: 3082890833535879930}
-  m_Father: {fileID: 3082890834751705584}
+  m_Father: {fileID: 8841179456163881059}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1807,7 +1807,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1924,7 +1924,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3082890834899919674}
-  - {fileID: 3082890834060293829}
   - {fileID: 3082890833749661066}
   m_Father: {fileID: 8841179456163881059}
   m_RootOrder: -1
@@ -2056,7 +2055,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -2325,7 +2324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6384706691886635788, guid: 9ce93e7547cf34545bb95888054beda2, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -3140,7 +3139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8841179454878840529
 Transform:
   m_ObjectHideFlags: 0
@@ -3905,6 +3904,7 @@ RectTransform:
   - {fileID: 3082890834923468015}
   - {fileID: 3082890833634165344}
   - {fileID: 3082890833718279589}
+  - {fileID: 3082890834060293829}
   - {fileID: 3082890834751705584}
   - {fileID: 8581933850530676543}
   m_Father: {fileID: 8841179454479413542}
