@@ -19,14 +19,43 @@ public class BigBoom : MonoBehaviour
     }
     private void Start()
     {
-        canInstantiate = true;
+      //  canInstantiate = true;
     }
     private void Update()
+    {// if (randomskill.instance.left)
+    //    {
+    //        if (Input.GetMouseButtonDown(0))
+    //        {
+    //            HackingMethods0();
+    //            randomskill.instance.left = false;
+    //        }
+    //    }
+    //    //If you have already debugged, please restore the following commented out judgment conditions
+    //    if (Input.GetKeyDown(KeyCode.G) && canInstantiate)
+    //    {
+    //        ShootABoom();
+    //    }
+    }
+    public void boom0()
     {
-        //If you have already debugged, please restore the following commented out judgment conditions
-        if (Input.GetKeyDown(KeyCode.G) && canInstantiate)
+        if (randomskill.instance.left)
         {
-            ShootABoom();
+            if (Input.GetMouseButtonDown(0))
+            {
+                ShootABoom();
+                randomskill.instance.left = false;
+            }
+        }
+    }
+    public void boom1()
+    {
+        if (randomskill.instance.right)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                ShootABoom();
+                randomskill.instance.right = false;
+            }
         }
     }
 
@@ -40,7 +69,7 @@ public class BigBoom : MonoBehaviour
         {
             Boom.AddForce((skillFlash.position - orientation.position) * forceMagnitude, ForceMode.Impulse);
         }
-        canInstantiate = false;
+      //  canInstantiate = false;
 
     }
 }

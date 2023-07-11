@@ -18,6 +18,8 @@ public class randomskill : MonoBehaviour
     public GameObject rightthreeicon;
     public GameObject leftfouricon;
     public GameObject rightfouricon;
+    public GameObject leftfiveicon;
+    public GameObject rightfiveicon;
     private void Awake()
     {
         instance= this;
@@ -56,6 +58,7 @@ public class randomskill : MonoBehaviour
                 case 2:lefttwoicon.SetActive(true); break;
                 case 3:leftthreeicon.SetActive(true); break;
                 case 4:leftfouricon.SetActive(true); break;
+                case 5:leftfiveicon.SetActive(true); break;
             }
          if (Input.GetMouseButton(0))
          {
@@ -72,6 +75,7 @@ public class randomskill : MonoBehaviour
                case 2:righttwoicon.SetActive(true);break;
                case 3:rightthreeicon.SetActive(true);break;
                case 4:rightfouricon.SetActive(true);break;
+                case 5: rightfiveicon.SetActive(true);break;
             }
          if (Input.GetMouseButton(1))
          {
@@ -90,7 +94,8 @@ public class randomskill : MonoBehaviour
                 case 1:leftskill1(); break;
                 case 2:leftskill2(); break;
                 case 3:leftskill3(); break;
-            case 4:leftskill4();break;
+                case 4:leftskill4();break;
+                case 5:leftskill5(); break;
         }
     //    left = false;
     }
@@ -103,6 +108,7 @@ public class randomskill : MonoBehaviour
                 case 2:rightskill2(); break;
                 case 3:rightskill3(); break;
                 case 4:rightskill4(); break;
+                case 5:rightskill5(); break;
         }
   //      right = false;
     }
@@ -129,11 +135,11 @@ public class randomskill : MonoBehaviour
     {
         if(left &&!right)
         {
-         leftskill =Random.Range(0, 5);
+         leftskill =Random.Range(0, 6);
         }
         if(right)
         {
-         rightskill =Random.Range(0, 5);
+         rightskill =Random.Range(0, 6);
         }
        
     }
@@ -222,6 +228,17 @@ public class randomskill : MonoBehaviour
     {
         Hacke.instance.Hacking1();
         rightfouricon.SetActive(false);
+    }
+    public void leftskill5()
+    {
+        BigBoom.Instance.boom0();
+        leftfiveicon.SetActive(false);
+        
+    }
+    public void rightskill5()
+    {
+        BigBoom.Instance.boom1();
+        rightfiveicon.SetActive(false);
     }
     
 }
