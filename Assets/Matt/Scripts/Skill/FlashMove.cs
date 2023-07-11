@@ -32,40 +32,41 @@ public class FlashMove : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Useskill)
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hitInfo;
-            // if (Input.GetMouseButton(0))
-            //   {
-            if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-            {
+       // if (Useskill)
+      //  {
+            //Ray ray = new Ray(transform.position, transform.forward);
+            //RaycastHit hitInfo;
+            //// if (Input.GetMouseButton(0))
+            ////   {
+            //if (Physics.Raycast(ray, out hitInfo, 10f, mask))
+            //{
 
-                Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
-                point.transform.position = hitInfo.point;
-                Phypoint.SetActive(true);
-                tttpoint.SetActive(true);
-            }
+            //    Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
+            //    Player.transform.position = hitInfo.point;
+            //    // point.transform.position = hitInfo.point;
+            //    //  Phypoint.SetActive(true);
+            //    //  tttpoint.SetActive(true);
+            //}
 
-            else
-            {
-                Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
-            }
+            //else
+            //{
+            //    Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
+            //}
             //    }
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (Physics.Raycast(ray, out hitInfo, 10f, mask))
-                {
-                    Player.transform.position = hitInfo.point;
-                    Phypoint.SetActive(false);
-                    tttpoint.SetActive(false);
-                    if (randomskill.instance.left = true && randomskill.instance.leftskill > 2 && randomskill.instance.leftskill < 4)
-                    {
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //    if (Physics.Raycast(ray, out hitInfo, 10f, mask))
+            //    {
+            //        Player.transform.position = hitInfo.point;
+            //        Phypoint.SetActive(false);
+            //        tttpoint.SetActive(false);
+            //        if (randomskill.instance.left = true && randomskill.instance.leftskill > 2 && randomskill.instance.leftskill < 4)
+            //        {
 
-                    }
-                }
-            }
-        }
+            //        }
+            //    }
+            //}
+      //  }
 
     }
     public void flashmove0()
@@ -73,7 +74,8 @@ public class FlashMove : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            Useskill = true;
+            //   Useskill = true;
+            fff();
             randomskill.instance.left = false;
 
         }
@@ -88,14 +90,38 @@ public class FlashMove : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            Useskill = true;
+            // Useskill = true;
+            fff();
+            randomskill.instance.right = false;
         }
         //if (Input.GetMouseButtonUp(1))
         //{
         //    Useskill= false;
-        //    randomskill.instance.right = false;
+           
         //}
+        
     }
+    public void fff()
+        {
+         Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hitInfo;
+            // if (Input.GetMouseButton(0))
+            //   {
+            if (Physics.Raycast(ray, out hitInfo, 10f, mask))
+            {
+
+                Debug.DrawLine(transform.position, hitInfo.point, Color.yellow);
+                Player.transform.position = hitInfo.point;
+                // point.transform.position = hitInfo.point;
+                //  Phypoint.SetActive(true);
+                //  tttpoint.SetActive(true);
+            }
+
+            else
+            {
+                Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
+            }
+        }
 }
 
 

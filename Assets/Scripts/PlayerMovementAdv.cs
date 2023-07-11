@@ -369,7 +369,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void UpdateSpeedText()
     {
-        float horizontalSpeed = new Vector3(rb.velocity.x, 0f, rb.velocity.z).magnitude;
+        float horizontalSpeed = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z).magnitude;
         speedText.text = "Speed: " + horizontalSpeed.ToString("F2");
     }
 

@@ -16,6 +16,10 @@ public class BulletDestroy : MonoBehaviour
         {
             GameManager.instance.GameOver();
         }
+        if (other.GetComponent<Shields>() != null)
+        {
+           Destroy(other.GetComponent<Shields>());
+        }
 
     }
     // Update is called once per frame

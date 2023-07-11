@@ -9,7 +9,7 @@ public class PickupSkill : MonoBehaviour
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
             //AddNewSkill();
-            Destroy(gameObject);
+           gameObject.SetActive(false);
             randomskill.instance.lg();
             randomskill.instance.randomSkill();
         }
