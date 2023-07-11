@@ -45,7 +45,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public void fast0()
     {
         mf = 2;
-        Invoke("speedbnormal", 2f);
+        Invoke("speednormal", 2f);
         randomskill.instance.left = false;
     }
     public void shoe1()
