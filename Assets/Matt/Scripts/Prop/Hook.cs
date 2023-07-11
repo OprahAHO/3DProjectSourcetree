@@ -43,20 +43,27 @@ public class Hook : MonoBehaviour
         HookDistance = (Player.position - transform.position).magnitude;
         if (HookDistance < playerdistance&&HookDistance>1)
         {
-           
+            //if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        HookCheck.instance.havehook = false;
+            //    }
+            //        if (Input.GetKeyUp(KeyCode.E))
+            //    {
+            //        HookCheck.instance.havehook = true;
+            //    }
             
             if (hooked)
             { icon.SetActive(true);
                 if (Input.GetKey(KeyCode.E))
                 {
-                    
+                  //  HookCheck.instance.havehook = false;
                         hook.cordd.SetActive(true);
-                      hook.  hookw = hookpoint.position;
+                        hook.hookw = hookpoint.position;
                         play.AddForce((hookpoint.position - Player.position).normalized * hookspeed, ForceMode.Force);
                         play.AddForce(-play.transform.up * gr, ForceMode.Force);
                     
                 }
-
+               
             }
             //else if (HookDistance > playerdistance)
             //{

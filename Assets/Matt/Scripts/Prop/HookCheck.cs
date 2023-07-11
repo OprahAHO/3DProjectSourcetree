@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,9 +28,17 @@ public class HookCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        HookMethods();
-        
+        if (havehook) {HookMethods(); }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            havehook = false;
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+           havehook = true;
+        }
+
+
     }
     public void HookMethods()
     {
@@ -55,18 +64,21 @@ public class HookCheck : MonoBehaviour
 
         //Hook hook = hitInfo.collider.GetComponent<Hook>();
         if (hitInfo.collider.GetComponent<Hook>() != null)
-            {
+        {
                 Hook hook = hitInfo.collider.GetComponent<Hook>();
                 if (hook != null)
                 {
                     hook.hooked = true;
                 }
                
-            }
-            else
+           }
+        else
         {
-           Hook hook = GetComponent<Hook>();
-           hook. hooked = false;
+            //Hook hook = GetComponentInChildren<Hook>();
+            //if (hook != null)
+            //{
+            //    hook.hooked = false;
+            //}
         }
             
         

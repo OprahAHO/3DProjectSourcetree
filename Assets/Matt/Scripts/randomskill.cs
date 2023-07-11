@@ -71,7 +71,7 @@ public class randomskill : MonoBehaviour
                case 1:rightoneicon.SetActive(true);break;
                case 2:righttwoicon.SetActive(true);break;
                case 3:rightthreeicon.SetActive(true);break;
-                    case 4:rightfouricon.SetActive(true);break;
+               case 4:rightfouricon.SetActive(true);break;
             }
          if (Input.GetMouseButton(1))
          {
@@ -102,7 +102,7 @@ public class randomskill : MonoBehaviour
                 case 1:rightskill1(); break;
                 case 2:rightskill2(); break;
                 case 3:rightskill3(); break;
-                case 4:rightskill4();break;
+                case 4:rightskill4(); break;
         }
   //      right = false;
     }

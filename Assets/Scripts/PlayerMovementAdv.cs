@@ -7,6 +7,13 @@ using UnityEngine.UI;
 public class PlayerMovementAdv : MonoBehaviour
 {
     public static PlayerMovementAdv instance;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Hook>() != null)
+        {
+           Hook.instance. hooked = false;
+        }
+    }
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -168,7 +175,9 @@ public class PlayerMovementAdv : MonoBehaviour
             PlayerCharacterAdv.SetParent(collision.transform);
             Debug.Log(grounded);
         }
+       
     }
+
    
 
     private void OnCollisionExit(Collision collision)

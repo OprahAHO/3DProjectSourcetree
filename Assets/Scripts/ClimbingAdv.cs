@@ -57,7 +57,7 @@ public class ClimbingAdv : MonoBehaviour
         StateMachine();
         if (climbing && !exitingWall) ClimbingMovement();
 
-        Debug.DrawRay(orientation.position, -orientation.up * 2, Color.red, 2f);
+        //Debug.DrawRay(orientation.position, -orientation.up * 2, Color.red, 2f);
         // if(climbing) Debug.Log(climbing);
         //Debug.Log(wallLookAngle < maxWallLookAngle && !exitingWall);
     }
