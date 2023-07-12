@@ -20,6 +20,8 @@ public class randomskill : MonoBehaviour
     public GameObject rightfouricon;
     public GameObject leftfiveicon;
     public GameObject rightfiveicon;
+    public GameObject leftsixicon;
+    public GameObject rightsixicon;
     private void Awake()
     {
         instance= this;
@@ -59,6 +61,7 @@ public class randomskill : MonoBehaviour
                 case 3:leftthreeicon.SetActive(true); break;
                 case 4:leftfouricon.SetActive(true); break;
                 case 5:leftfiveicon.SetActive(true); break;
+                case 6: leftsixicon.SetActive(true); break;
             }
          if (Input.GetMouseButton(0))
          {
@@ -76,6 +79,7 @@ public class randomskill : MonoBehaviour
                case 3:rightthreeicon.SetActive(true);break;
                case 4:rightfouricon.SetActive(true);break;
                 case 5: rightfiveicon.SetActive(true);break;
+                case 6: rightsixicon.SetActive(true); break;
             }
          if (Input.GetMouseButton(1))
          {
@@ -96,6 +100,7 @@ public class randomskill : MonoBehaviour
                 case 3:leftskill3(); break;
                 case 4:leftskill4();break;
                 case 5:leftskill5(); break;
+                case 6:leftskill6(); break;
         }
     //    left = false;
     }
@@ -109,6 +114,7 @@ public class randomskill : MonoBehaviour
                 case 3:rightskill3(); break;
                 case 4:rightskill4(); break;
                 case 5:rightskill5(); break;
+            case 6:rightskill6(); break;
         }
   //      right = false;
     }
@@ -135,11 +141,11 @@ public class randomskill : MonoBehaviour
     {
         if(left &&!right)
         {
-         leftskill =Random.Range(0, 6);
+         leftskill =Random.Range(0, 7);
         }
         if(right)
         {
-         rightskill =Random.Range(0, 6);
+         rightskill =Random.Range(0, 7);
         }
        
     }
@@ -239,6 +245,16 @@ public class randomskill : MonoBehaviour
     {
         BigBoom.Instance.boom1();
         rightfiveicon.SetActive(false);
+    }
+    public void leftskill6()
+    {
+        UseShield.instance.UseShields0();
+        leftsixicon.SetActive(false);
+    }
+    public void rightskill6()
+    {
+        UseShield.instance.UseShields1();
+        rightsixicon.SetActive(false);
     }
     
 }

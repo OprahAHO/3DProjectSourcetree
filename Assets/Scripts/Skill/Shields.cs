@@ -3,43 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shields : MonoBehaviour
-{
-    Rigidbody rb;
-    private float rbSpeed;
+{public static Shields instance;
+   
+    public float blockspeed;
 
+    public void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+      
     }
 
     private void Update()
     {
-        SpeedCheck();
-        WallCheck();
+       
     }
 
 
-    void SpeedCheck()
-    {
-        rbSpeed = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z).magnitude;
-        Debug.Log(rbSpeed);
-    }
-    void WallCheck()
-    {
-
-    }
-
+   
     private void OnCollisionEnter(Collision collision)
     {
         
     }
-
-    void UseShield()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (other.GetComponent<Brokenwall>() != null)
         {
-
+           Destroy(other.gameObject);
         }
     }
+    //}
+
 }
 

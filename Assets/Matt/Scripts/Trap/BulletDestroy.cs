@@ -18,7 +18,7 @@ public class BulletDestroy : MonoBehaviour
         }
         if (other.GetComponent<Shields>() != null)
         {
-           Destroy(other.GetComponent<Shields>());
+           Destroy(gameObject);
         }
 
     }

@@ -77,10 +77,17 @@ public class Resurrection : MonoBehaviour
         randomskill.instance.leftoneicon.SetActive(false);
         randomskill.instance.lefttwoicon.SetActive(false);
         randomskill.instance.leftthreeicon.SetActive(false);
+        randomskill.instance.leftfouricon.SetActive(false);
+        randomskill.instance.leftfiveicon.SetActive(false);
+        randomskill.instance.leftsixicon.SetActive(false);
         randomskill.instance.rightzeroicon.SetActive(false);
         randomskill.instance.rightoneicon.SetActive(false);
         randomskill.instance.righttwoicon.SetActive(false);
         randomskill.instance.rightthreeicon.SetActive(false);
+        randomskill.instance.rightfouricon.SetActive(false);
+        randomskill.instance.rightfiveicon.SetActive(false);
+        randomskill.instance.rightsixicon.SetActive(false);
+        
     }
     public void newnew()
     {
