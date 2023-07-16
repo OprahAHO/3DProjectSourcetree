@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-     public GameObject cam;
+    // public GameObject cam;
     public bool live=false;
     private void Awake()
     {
@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
          Cursor.visible = false;
         Time.timeScale = 1f;
         //Debug.Log("9999");
-cam.SetActive(true);
         UIManager.instance.StartPanel();
 
 

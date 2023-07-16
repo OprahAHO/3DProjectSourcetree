@@ -27,7 +27,7 @@ public class UseShield : MonoBehaviour
     void SpeedCheck()
     {
         rbSpeed = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z).magnitude;
-        Debug.Log(rbSpeed);
+        //Debug.Log(rbSpeed);
     }
     void Used()
     {

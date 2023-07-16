@@ -148,7 +148,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void Update()
     {
-  
+        Debug.Log(jumpsRemaining);
         MyInput();
         UpdateSpeedText();
         SpeedControl();
@@ -166,14 +166,14 @@ public class PlayerMovementAdv : MonoBehaviour
         {
             jumpsRemaining = extraJumpNum;
             grounded = true;
-           
+            
         }
 
         if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
         {
            
             PlayerCharacterAdv.SetParent(collision.transform);
-            Debug.Log(grounded);
+            
         }
        
     }
@@ -279,6 +279,7 @@ public class PlayerMovementAdv : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && CanJump())
         {
             Jump();
+           
         }
     }
 
