@@ -10,13 +10,16 @@ public class Resurrection : MonoBehaviour
 
     public Transform resurrectPoint;
     public Transform Player;
+    public GameObject PauseCanvas;
+    public GameObject die;
     public int currentCheckpointIndex;
 
-    public GameObject checkzero;
-    public GameObject checkone;
-    public GameObject checktwo;
-    public GameObject checkthree;
-    public GameObject checkfour;
+    //public GameObject[] checkprop;
+    //public GameObject checkzero;
+    //public GameObject checkone;
+    //public GameObject checktwo;
+    //public GameObject checkthree;
+    //public GameObject checkfour;
     public int skillleft;
     public int skillright;
     public bool lll;
@@ -27,9 +30,22 @@ public class Resurrection : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.R))
         {
+            PauseCanvas.SetActive(false);
+            die.SetActive(false);
             Player.position = resurrectPoint.position;
             old();
             newnew();
+            Time.timeScale = 1f;
+            skill0();
+            skill1();skill5();
+            skill2();
+            skill3();
+            skill4();
+            
+            skill6();
+            
+               // GameManager.instance.live = true;
+            
         }
     }
     private void Start()
@@ -99,14 +115,52 @@ public class Resurrection : MonoBehaviour
     }
     public void save()
     {
-        switch (currentCheckpointIndex)
-        {
-            case 0:checkzero.SetActive(true); checkone.SetActive(true);  ; break;
-            case 1:checkone.SetActive(true); checktwo.SetActive(true); break;
-            case 2: checktwo.SetActive(true); checkthree.SetActive(true); break;
-            case 3: checkthree.SetActive(true); checkfour.SetActive(true); break;
-            case 4: checkfour.SetActive(true); break;
-           // case 5: checkone.SetActive(false); break;
-        }
+        //switch (currentCheckpointIndex)
+        //{
+        //    case 0:checkzero.SetActive(true); checkone.SetActive(true);  ; break;
+        //    case 1:checkone.SetActive(true); checktwo.SetActive(true); break;
+        //    case 2: checktwo.SetActive(true); checkthree.SetActive(true); break;
+        //    case 3: checkthree.SetActive(true); checkfour.SetActive(true); break;
+        //    case 4: checkfour.SetActive(true); break;
+
+        //   // case 5: checkone.SetActive(false); break;
+        //}
     }
+        public void skill0()
+        {
+        pickupzero.instance.gameObject.SetActive(true);
+        //pickupone.instance.gameObject.SetActive(true);
+        //pickuptwo.instance.gameObject.SetActive(true);
+        //pickupthree.instance.gameObject.SetActive(true);
+        //pickupfour.instance.gameObject.SetActive(true);
+        //pickupfive.instance.gameObject.SetActive(true);
+        //pickupsix.instance.gameObject.SetActive(true);
+    }
+    public void skill1()
+    {
+        pickupone.instance.gameObject.SetActive(true);
+    }
+    public void skill2()
+    {
+        pickuptwo.instance.gameObject.SetActive(true);
+    }
+    public void skill3()
+    {
+        pickupthree.instance.gameObject.SetActive(true) ;
+    }
+    public void skill4()
+    {
+        pickupfour.instance.gameObject.SetActive(true) ;
+    }
+    public void skill5()
+    {
+        pickupfive.instance.gameObject.SetActive(true) ;
+    }
+    public void skill6()
+    {
+
+        pickupsix.instance.gameObject.SetActive(true) ;
+    }
+
+    
 }

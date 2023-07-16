@@ -131,7 +131,6 @@ public class PlayerMovementAdv : MonoBehaviour
         sliding,
         wallrunning,
         air
-        
     }
 
     public bool sliding;
@@ -148,7 +147,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(jumpsRemaining);
+        //Debug.Log(jumpsRemaining);
         MyInput();
         UpdateSpeedText();
         SpeedControl();
@@ -164,17 +163,13 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<groundedComponent>() != null)
         {
+            //Debug.Log("11111");
             jumpsRemaining = extraJumpNum;
             grounded = true;
-            
+           
         }
 
-        if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
-        {
-           
-            PlayerCharacterAdv.SetParent(collision.transform);
-            
-        }
+ 
        
     }
 
@@ -186,10 +181,8 @@ public class PlayerMovementAdv : MonoBehaviour
         {
             grounded = false;
         }
-        if (collision.gameObject.GetComponent<PanningPlatformComponent>() != null)
-        {
-            PlayerCharacterAdv.SetParent(null);
-        }
+     
+        
     }
     private void FixedUpdate()
     {
@@ -279,7 +272,6 @@ public class PlayerMovementAdv : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && CanJump())
         {
             Jump();
-           
         }
     }
 

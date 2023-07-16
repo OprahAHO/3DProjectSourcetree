@@ -29,12 +29,12 @@ Transform:
   m_GameObject: {fileID: 6365725434135522986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.1562395, y: 4.5222216, z: 14.258894}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6365725434962645599}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6365725434135522982
 MeshFilter:
@@ -101,11 +101,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6365725434135522987
 MonoBehaviour:
@@ -123,9 +123,14 @@ MonoBehaviour:
   icon: {fileID: 6365725434962645539}
   Player: {fileID: 0}
   HookDistance: 0
-  hook: {x: 0, y: 0, z: 0}
+  hookw: {x: 0, y: 0, z: 0}
   hookpoint: {fileID: 6365725434135522983}
   cord: {fileID: 0}
+  playerdistance: 0
+  play: {fileID: 0}
+  hookspeed: 30
+  hooked: 0
+  gr: 5
 --- !u!1 &6365725434962645539
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +159,8 @@ Transform:
   m_GameObject: {fileID: 6365725434962645539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6365725434135522983}
   m_RootOrder: -1
@@ -227,7 +232,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

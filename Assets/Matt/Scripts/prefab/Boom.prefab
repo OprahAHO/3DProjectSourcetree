@@ -147,10 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SmallBoomRange: 10
-  MediumBoomRange: 5
-  BigBoomRange: 2
-  small: 800
-  mid: 1000
-  large: 1200
+  MediumBoomRange: 10
+  BigBoomRange: 110
+  small: 3000
+  mid: 3000
+  large: 3000
   time: 1
   upPoint: 0

@@ -21,8 +21,8 @@ public class FlashMove : MonoBehaviour
     public Material enemyMaterial;
     public LayerMask mask;
     public Transform Player;
-    public Transform point;
-    public GameObject tttpoint;
+  //  public Transform point;
+ //   public GameObject tttpoint;
     public GameObject Phypoint;
     void Start()
     {
@@ -74,10 +74,11 @@ public class FlashMove : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            Phypoint.SetActive(true);
             //   Useskill = true;
             fff();
             randomskill.instance.left = false;
-
+            Phypoint.SetActive(false);
         }
         //if (Input.GetMouseButtonUp(0))
         //{
@@ -90,9 +91,11 @@ public class FlashMove : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            Phypoint.SetActive(true);
             // Useskill = true;
             fff();
             randomskill.instance.right = false;
+            Phypoint.SetActive(false);
         }
         //if (Input.GetMouseButtonUp(1))
         //{

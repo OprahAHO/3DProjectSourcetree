@@ -182,6 +182,50 @@ public class randomskill : MonoBehaviour
             rightskill = 2;
         }
     }
+    public void skillthree()
+    {
+        if (left && !right)
+        {
+            leftskill = 3;
+        }
+        if (right)
+        {
+            rightskill = 3;
+        }
+    }
+    public void skillfour()
+    {
+        if (left && !right)
+        {
+            leftskill = 4;
+        }
+        if (right)
+        {
+            rightskill = 4;
+        }
+    }
+    public void skillfive()
+    {
+        if (left && !right)
+        {
+            leftskill = 5;
+        }
+        if (right)
+        {
+            rightskill = 5;
+        }
+    }
+    public void skillsix()
+    {
+        if (left && !right)
+        {
+            leftskill = 6;
+        }
+        if (right)
+        {
+            rightskill = 6;
+        }
+    }
 
 
     public void leftskill0()

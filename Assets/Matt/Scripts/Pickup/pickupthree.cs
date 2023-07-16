@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class pickupthree : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static pickupthree instance;
+    public void Awake()
     {
-        
+        instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.GetComponent<PlayerMovementAdv>() != null)
+        {
+            //AddNewSkill();
+            gameObject.SetActive(false);
+            randomskill.instance.lg();
+            randomskill.instance.skillthree();
+        }
     }
 }
