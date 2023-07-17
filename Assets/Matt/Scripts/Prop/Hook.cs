@@ -17,6 +17,7 @@ public class Hook : MonoBehaviour
     public float hookspeed;
     public bool hooked;
     public float gr;
+    
     public void Awake()
     {
         instance= this;
@@ -29,7 +30,10 @@ public class Hook : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            hooked = false;
+            Hook hook = GetComponent<Hook>();
+           hook. hooked = false;
+             hook .gameObject.SetActive(false);
+            Invoke("appear", 5f);
         }
     }
   
@@ -38,6 +42,7 @@ public class Hook : MonoBehaviour
     {
         Hook hook = GetComponent<Hook>();
         HookDistance = (Player.position - transform.position).magnitude;
+        
         if (HookDistance < playerdistance&&HookDistance>1)
         {
 
@@ -57,12 +62,19 @@ public class Hook : MonoBehaviour
             if (!hooked)
             {
                  hook.cordd.SetActive(false);
-                 hook. icon.SetActive(false);
+                 hook.icon.SetActive(false);
             }
 
             cord.forward = hookpoint.position - cord.position;
             cord.localScale = new Vector3(cord.localScale.x, cord.localScale.y, Vector3.Distance(cord.position, hookpoint.position));
         }
+        
 
+    }
+    public void appear()
+    {
+        Hook hook = GetComponent<Hook>();
+        gameObject.SetActive(true );
+      hook.  hooked = false;
     }
 }

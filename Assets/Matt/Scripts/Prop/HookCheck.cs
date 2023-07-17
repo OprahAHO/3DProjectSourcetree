@@ -8,14 +8,12 @@ public class HookCheck : MonoBehaviour
 {
     public static HookCheck instance;
 
-
-
     public bool havehook;
     public LayerMask mask;
     // public Transform Orientation;
     private RaycastHit hit;
     public float raylength = 20f;
-    bool canHook;
+    public bool seenHook;
     bool inrange;
 
     public void Awake()
@@ -30,7 +28,10 @@ public class HookCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (havehook)
+        {
+            Return();
+        }
         if (Input.GetKey(KeyCode.E))
         {
             havehook = false;
@@ -39,14 +40,12 @@ public class HookCheck : MonoBehaviour
         {
             havehook = true;
         }
+       // Return();
     }
 
     private void FixedUpdate()
     {
-        if (havehook) 
-        { 
-            CheckHook(); 
-        }
+        CheckHook();
     }
     void CheckHook()
     {
@@ -58,19 +57,23 @@ public class HookCheck : MonoBehaviour
         Ray HookRay = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
 
-        canHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<Hook>();
-        if (canHook && !inrange)
+        seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<Hook>();
+    }
+    void Return()
+    {
+        if (seenHook )
         {
-            //Debug.Log("canHook");
+            //Debug.Log("seenHook");
             Hook hook = hit.collider.GetComponent<Hook>();
-            if(hook!= null )
+            if (hook != null && !inrange)
             {
                 //Debug.Log("Hook is true");
                 hook.hooked = true;
             }
-            else if (inrange)
+            else if(inrange)
             {
                 hook.hooked = false;
+
             }
 
         }
