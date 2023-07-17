@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5818547523435136041}
   - component: {fileID: 9072019709031002172}
   - component: {fileID: 3828507833351239894}
-  - component: {fileID: -3868427051644330333}
-  - component: {fileID: 1622042599976876102}
+  - component: {fileID: -2238935261875135419}
+  - component: {fileID: -6805791986026941100}
   m_Layer: 0
   m_Name: Super jump
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-3868427051644330333
+--- !u!114 &-2238935261875135419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad22628d5c1bac94b843fbd54d4fdb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1622042599976876102
+--- !u!65 &-6805791986026941100
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
