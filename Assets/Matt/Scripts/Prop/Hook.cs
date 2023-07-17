@@ -5,9 +5,6 @@ using UnityEngine;
 public class Hook : MonoBehaviour
 {
     public static Hook instance;
-    //     
-    //    shen.forward = ook.position - shen.position;
-    //    shen.localScale = new Vector3(shen.localScale.x, shen.localScale.y, Vector3.Distance(shen.position, ook.position));
     public GameObject cordd;
     public GameObject icon;
     public Transform Player;
@@ -35,7 +32,7 @@ public class Hook : MonoBehaviour
             hooked = false;
         }
     }
-    // Update is called once per frame
+  
    
     void Update()
     {
@@ -43,38 +40,24 @@ public class Hook : MonoBehaviour
         HookDistance = (Player.position - transform.position).magnitude;
         if (HookDistance < playerdistance&&HookDistance>1)
         {
-            //if (Input.GetKeyDown(KeyCode.E))
-            //    {
-            //        HookCheck.instance.havehook = false;
-            //    }
-            //        if (Input.GetKeyUp(KeyCode.E))
-            //    {
-            //        HookCheck.instance.havehook = true;
-            //    }
-            
+
             if (hooked)
             { icon.SetActive(true);
                 if (Input.GetKey(KeyCode.E))
                 {
-                  //  HookCheck.instance.havehook = false;
-                        hook.cordd.SetActive(true);
-                        hook.hookw = hookpoint.position;
-                        play.AddForce((hookpoint.position - Player.position).normalized * hookspeed, ForceMode.Force);
-                        play.AddForce(-play.transform.up * gr, ForceMode.Force);
+                    hook.cordd.SetActive(true);
+                    hook.hookw = hookpoint.position;
+                    play.AddForce((hookpoint.position - Player.position).normalized * hookspeed, ForceMode.Force);
+                    play.AddForce(-play.transform.up * gr, ForceMode.Force);
                     
                 }
                
             }
-            //else if (HookDistance > playerdistance)
-            //{
-            //    hooked=false;
-            //    cordd.SetActive(false);
-            //    icon.SetActive(false);
-            //}
+        
             if (!hooked)
             {
-                    hook.cordd.SetActive(false);
-                    hook. icon.SetActive(false);
+                 hook.cordd.SetActive(false);
+                 hook. icon.SetActive(false);
             }
 
             cord.forward = hookpoint.position - cord.position;

@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class HookCheck : MonoBehaviour
 {
-   public static HookCheck instance;
+    public static HookCheck instance;
 
 
-    
+
     public bool havehook;
     public LayerMask mask;
-   // public Transform Orientation;
+    // public Transform Orientation;
     private RaycastHit hit;
     public float raylength = 20f;
+    bool canHook;
+    bool inrange;
 
     public void Awake()
     {
@@ -22,66 +24,71 @@ public class HookCheck : MonoBehaviour
     }
     void Start()
     {
-        
+        inrange = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (havehook) {HookMethods(); }
-        if (Input.GetKeyDown(KeyCode.E))
+        
+        if (Input.GetKey(KeyCode.E))
         {
             havehook = false;
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
-           havehook = true;
+            havehook = true;
         }
-
-
     }
-    public void HookMethods()
+
+    private void FixedUpdate()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hitInfo;
-        // if (Input.GetMouseButton(0))
-        //   {
-        //if (Physics.Raycast(ray, out hitInfo, raylength, mask))
-        //{
-        //    Debug.Log("000");
-        //    if (hit.collider.GetComponent<Hook>() != null)
-        //    {
-        //        Debug.Log("111");
-        //        Hook hook = hit.collider.GetComponent<Hook>();
-        //        if (hook != null)
-        //        {
-        //            Debug.Log("222");
-        //            Hook.instance.hooked = true;
-        //        }
-        //    }
-        //}
-         Physics.Raycast(ray,  out hitInfo, raylength, mask, QueryTriggerInteraction.Collide);
-
-        //Hook hook = hitInfo.collider.GetComponent<Hook>();
-        if (hitInfo.collider.GetComponent<Hook>() != null)
-        {
-                Hook hook = hitInfo.collider.GetComponent<Hook>();
-                if (hook != null)
-                {
-                    hook.hooked = true;
-                }
-               
-           }
-        else
-        {
-            //Hook hook = GetComponentInChildren<Hook>();
-            //if (hook != null)
-            //{
-            //    hook.hooked = false;
-            //}
+        if (havehook) 
+        { 
+            CheckHook(); 
         }
-            
-        
+    }
+    void CheckHook()
+    {
+        Camera cameraComponent = GameObject.Find("PlayerCam").GetComponent<Camera>();
+        float screenWidth = Screen.width;
+        float screenHeight = Screen.height;
+        float centerX = screenWidth / 2f;
+        float centerY = screenHeight / 2f;
+        Ray HookRay = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
+
+        canHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<Hook>();
+        if (canHook && !inrange)
+        {
+            //Debug.Log("canHook");
+            Hook hook = hit.collider.GetComponent<Hook>();
+            if(hook!= null )
+            {
+                //Debug.Log("Hook is true");
+                hook.hooked = true;
+            }
+            else if (inrange)
+            {
+                hook.hooked = false;
+            }
+
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Hook>() != null)
+        {
+            Debug.Log("1111");
+            inrange = true;
+        
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<Hook>() != null)
+        {
+            inrange = false;
+        }
     }
 }
