@@ -54,7 +54,7 @@ public class WallRunningAdv : MonoBehaviour
     {
         CheckForWall();
         StateMachine();
-        
+        //Debug.Log(isWallRun);
     }
     private void FixedUpdate()
     {

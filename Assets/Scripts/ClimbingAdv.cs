@@ -53,7 +53,13 @@ public class ClimbingAdv : MonoBehaviour
     {
         WallCheck();
         StateMachine();
-        if (climbing && !exitingWall) ClimbingMovement();
+        if (climbing && !exitingWall) 
+            ClimbingMovement();
+        if(!shortWall)
+            //Debug.Log(shortWall);
+        if (!isWallRun)
+            Debug.Log("11111111");
+        //Debug.Log(isWallRun);
     }
 
     private void StateMachine()
@@ -61,12 +67,17 @@ public class ClimbingAdv : MonoBehaviour
         // State 1 - Climbing
         if (wallFrontRealUse && Input.GetKey(KeyCode.W) && !exitingWall && !wallDown )
         {
-            if (shortWall && !isWallRun) StartClimbing();
-        }
 
+            if (shortWall && !isWallRun)
+            {
+                Debug.Log("11111111");
+                StartClimbing(); 
+            }
+        }
         else
         {
-            if (climbing) StopClimbing();
+            if (climbing)
+                StopClimbing();
         }
     }
 

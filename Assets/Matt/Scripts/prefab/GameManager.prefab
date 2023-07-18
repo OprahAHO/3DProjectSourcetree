@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5385354950451837021}
   - component: {fileID: 6384706691886635788}
+  - component: {fileID: 3809545273424644032}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6384706691886635788
 MonoBehaviour:
@@ -44,3 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2090bb6440cca1f4b9e04ee3accbe470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skill: {fileID: 0}
+  pauseCanvas: {fileID: 0}
+  live: 0
+--- !u!114 &3809545273424644032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694628690620694790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059df3894c58ee147986c8b744b4aed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2800000, guid: 76f28a1bb0412c74080345a7b3cf9a2d, type: 3}
+  diu: {fileID: 2800000, guid: 76f28a1bb0412c74080345a7b3cf9a2d, type: 3}
