@@ -9,11 +9,12 @@ public class Resurrection : MonoBehaviour
     public Transform[] checkpoint;
 
     public Transform resurrectPoint;
-    public Transform Player;
+
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
     public GameObject die;
     public int currentCheckpointIndex;
+    private float chepointcheckNum;
 
     //public GameObject[] checkprop;
     //public GameObject checkzero;
@@ -33,7 +34,9 @@ public class Resurrection : MonoBehaviour
         {
             PauseCanvas.SetActive(false);
             die.SetActive(false);
-            Player.position = resurrectPoint.position;
+
+            PlayerRb.position = resurrectPoint.position;
+
             old();
             newnew();
             Time.timeScale = 1f;
@@ -50,7 +53,7 @@ public class Resurrection : MonoBehaviour
     }
     private void Start()
     {
-        resurrectPoint.position = transform.position;
+        resurrectPoint.position = PlayerRb.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,8 +61,10 @@ public class Resurrection : MonoBehaviour
         if (other.GetComponent<CheckPointComponent>() != null)
         {
             CheckPointComponent checkPointComponent = other.GetComponent<CheckPointComponent>();
+            chepointcheckNum = checkPointComponent.checknumber;
+            Debug.Log(chepointcheckNum);
 
-            if (checkPointComponent.checknumber > currentCheckpointIndex)
+            if (chepointcheckNum > currentCheckpointIndex)
             {
                 currentCheckpointIndex = checkPointComponent.checknumber;
                 UpdateResurrectPoint();
@@ -71,14 +76,13 @@ public class Resurrection : MonoBehaviour
     
     private void UpdateResurrectPoint()
     {
-        if (currentCheckpointIndex < checkpoint.Length)
-        {
-            PlayerRb.position = checkpoint[currentCheckpointIndex].position;
-        }
-        else
-        {
-            Debug.LogError("Invalid checkpoint index: " + currentCheckpointIndex);
-        }
+        resurrectPoint.position = checkpoint[currentCheckpointIndex].position;
+        Debug.Log(chepointcheckNum);
+
+        /*    else
+            {
+                Debug.LogError("Invalid checkpoint index: " + currentCheckpointIndex);
+            }*/
     }
     public void Fresh()
     {
