@@ -1230,7 +1230,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   Player: {fileID: 6724242838733498307}
-  Phypoint: {fileID: 0}
+  point: {fileID: 6724242839061761728}
+  Phypoint: {fileID: 6724242839061761731}
 --- !u!114 &2140195887731917620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,6 +1249,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   raylength: 20
+  seenHook: 0
 --- !u!1 &6724242838574930972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6724242838733498306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.18, y: -0.79, z: 8.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1663,6 +1665,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   raylength: 30
+  seenHook: 0
 --- !u!114 &6724242838733498353
 MonoBehaviour:
   m_ObjectHideFlags: 0

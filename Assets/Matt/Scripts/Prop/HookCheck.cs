@@ -82,7 +82,7 @@ public class HookCheck : MonoBehaviour
     {
         if (other.GetComponent<Hook>() != null)
         {
-            Debug.Log("1111");
+            //Debug.Log("1111");
             inrange = true;
         
         }

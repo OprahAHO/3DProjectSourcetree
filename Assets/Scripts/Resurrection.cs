@@ -10,6 +10,7 @@ public class Resurrection : MonoBehaviour
 
     public Transform resurrectPoint;
     public Transform Player;
+    public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
     public GameObject die;
     public int currentCheckpointIndex;
@@ -41,7 +42,6 @@ public class Resurrection : MonoBehaviour
             skill2();
             skill3();
             skill4();
-            
             skill6();
             
                // GameManager.instance.live = true;
@@ -73,7 +73,7 @@ public class Resurrection : MonoBehaviour
     {
         if (currentCheckpointIndex < checkpoint.Length)
         {
-            resurrectPoint.position = checkpoint[currentCheckpointIndex].position;
+            PlayerRb.position = checkpoint[currentCheckpointIndex].position;
         }
         else
         {
@@ -159,7 +159,7 @@ public class Resurrection : MonoBehaviour
     public void skill6()
     {
 
-        pickupsix.instance.gameObject.SetActive(true) ;
+        //pickupsix.instance.gameObject.SetActive(true) ;
     }
 
     

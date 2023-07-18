@@ -21,7 +21,7 @@ public class FlashMove : MonoBehaviour
     public Material enemyMaterial;
     public LayerMask mask;
     public Transform Player;
-  //  public Transform point;
+    public Transform point;
  //   public GameObject tttpoint;
     public GameObject Phypoint;
     void Start()
@@ -122,7 +122,7 @@ public class FlashMove : MonoBehaviour
 
             else
             {
-                Debug.DrawRay(transform.position, transform.forward * 10, Color.blue);
+            Player.transform.position = point.transform.position;
             }
         }
 }

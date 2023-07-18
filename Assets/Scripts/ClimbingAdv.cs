@@ -62,7 +62,6 @@ public class ClimbingAdv : MonoBehaviour
         if (wallFrontRealUse && Input.GetKey(KeyCode.W) && !exitingWall && !wallDown )
         {
             if (shortWall && !isWallRun) StartClimbing();
-    
         }
 
         else
@@ -82,6 +81,7 @@ public class ClimbingAdv : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<WallComponent>() != null)
+            
             wallFrontRealUse = true;
     }
     private void OnCollisionExit(Collision collision)

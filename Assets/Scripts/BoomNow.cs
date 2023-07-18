@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class BoomNow : MonoBehaviour
 {
-    public float SmallBoomRange;
-    public float MediumBoomRange;
+   
     public float BigBoomRange;
     private float distance;
-    public float small;
-    public float mid;
-    public float large;
+
+    public float largeForce;
     private Vector3 addForceVector;
     public float time;
     public float upPoint;
@@ -51,50 +49,21 @@ public class BoomNow : MonoBehaviour
 
     void ChooseABoomWay()
     {
-        if (distance > SmallBoomRange)
-        {
-            Debug.Log("NothingHapend");
-        }
-        else if (SmallBoomRange > distance && distance > MediumBoomRange)
-        {
-            StartSmallBoom();
-        }
-        else if (MediumBoomRange > distance && distance > BigBoomRange)
-        {
-            StartMediumBoom();
-        }
-        else if (distance < BigBoomRange)
+  
+        if (distance < BigBoomRange)
         {
             StartBigBoom();
         }
 
         StopBoom();
     }
-
-    void StartSmallBoom()
-    {
-        Debug.Log("StartSmallBoom");
-        Vector3 Boompoint = BigBoom.Instance.orientation.position + BigBoom.Instance.orientation.up*upPoint;
-        
-        addForceVector = (Boompoint - transform.position).normalized;
-        BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * small);
-       
-    }
-    void StartMediumBoom()
-    {
-        Debug.Log("StartMediumBoom");
-        Vector3 Boompoint = BigBoom.Instance.orientation.position + BigBoom.Instance.orientation.up * upPoint;
-       
-        addForceVector = (Boompoint - transform.position).normalized;
-        BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * mid);
-    }
     void StartBigBoom()
     {
-        Debug.Log("StartBigBoom");
+        //Debug.Log("StartBigBoom");
         Vector3 Boompoint = BigBoom.Instance.orientation.position + BigBoom.Instance.orientation.up * upPoint;
     
         addForceVector = (Boompoint - transform.position).normalized;
-        BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * large);
+        BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * largeForce);
         //Debug.Log(addForceVector);
     }
 
