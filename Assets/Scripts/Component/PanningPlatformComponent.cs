@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PanningPlatformComponent : MonoBehaviour
-{
+{public static PanningPlatformComponent instance;
     public Transform platform;
     public Transform StartPoint;
     public Transform BackPoint;
     public float movementDuration = 1f;
     private bool alreadyMoved;
-    private bool moved;
-
+    private bool canMove;
+    public void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
-        moved = true;
+        canMove = true;
         alreadyMoved = false;
     }
-    private void Update()
-    {
-        //Debug.Log(alreadyMoved);
-    }
+   
     public void PanningStart()
     { 
-        if (moved)
+        if (canMove)
         {
-            moved = false;
+            canMove = false;
             StartCoroutine(MoveToTarget());
         }
         if(alreadyMoved)
@@ -40,6 +40,12 @@ public class PanningPlatformComponent : MonoBehaviour
     }*/
 
 
+    public void ResetPanning()
+    {
+        transform.position = StartPoint.position;
+        canMove = true;
+        alreadyMoved = false;
+    }
     private IEnumerator MoveToTarget()
     {
         Vector3 startPosition = StartPoint.position;
@@ -77,7 +83,7 @@ public class PanningPlatformComponent : MonoBehaviour
 
         // 确保最终位置准确
         //platform.position = targetPosition;
-        moved = true;
+        canMove = true;
         //PanningStop();
     }
 

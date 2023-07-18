@@ -27,17 +27,16 @@ public class Hacke : MonoBehaviour
 
     void PlatformCheck()
     {
-            Camera cameraComponent = GameObject.Find("PlayerCam").GetComponent<Camera>();
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
-            float centerX = screenWidth / 2f;
-            float centerY = screenHeight / 2f;
-            Ray ray = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
+        Camera cameraComponent = GameObject.Find("PlayerCam").GetComponent<Camera>();
+        float screenWidth = Screen.width;
+        float screenHeight = Screen.height;
+        float centerX = screenWidth / 2f;
+        float centerY = screenHeight / 2f;
+        Ray ray = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
-            havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<RotationPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
-
+        havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<RotationPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
     }
-        public void Hacking0()
+    public void Hacking0()
     {
         if (randomskill.instance.left)
         {
@@ -51,7 +50,8 @@ public class Hacke : MonoBehaviour
     
     public void Hacking1()
     {
-        if (randomskill.instance.right) {
+        if (randomskill.instance.right)
+        {
             if (Input.GetMouseButtonDown(1))
             {
                 HackingMethods1();

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5818547523435136041}
   - component: {fileID: 9072019709031002172}
   - component: {fileID: 3828507833351239894}
-  - component: {fileID: 2528729911079208538}
-  - component: {fileID: -2368428538147065970}
+  - component: {fileID: 4464708959388966992}
+  - component: {fileID: 6039903213143916439}
   m_Layer: 0
-  m_Name: Jetpack
+  m_Name: SkillCard_Explode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f4790b92da8cfc49bc7432d77d29128, type: 2}
+  - {fileID: 2100000, guid: 36b89d4ef1b581c4982fd66dc93a871f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2528729911079208538
+--- !u!114 &4464708959388966992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7566876228277833483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce3ce311df81794fab742eb90d2fb17, type: 3}
+  m_Script: {fileID: 11500000, guid: b29224281fb69fc46869806e678ee520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-2368428538147065970
+--- !u!65 &6039903213143916439
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

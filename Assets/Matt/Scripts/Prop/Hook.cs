@@ -41,27 +41,38 @@ public class Hook : MonoBehaviour
     void Update()
     {
         Hook hook = GetComponent<Hook>();
+        float hookHeight = hook.transform.position.y;
+        float playerHeight = Player.position.y;
         HookDistance = (Player.position - transform.position).magnitude;
         
-        if (HookDistance < playerdistance&&HookDistance>1)
+        if (HookDistance < playerdistance&& HookDistance > 1)
         {
 
             if (hooked)
-            { icon.SetActive(true);
+            { 
+                icon.SetActive(true);
                 if (Input.GetKey(KeyCode.E))
                 {
-                    hook.cordd.SetActive(true);
+                    //hook.cordd.SetActive(true);
                     hook.hookw = hookpoint.position;
                     play.AddForce((hookpoint.position - Player.position).normalized * hookspeed, ForceMode.Force);
-                    play.AddForce(-play.transform.up * gr, ForceMode.Force);
                     
+                    if (hookHeight > playerHeight)
+                    {
+                        play.AddForce(-play.transform.up * gr, ForceMode.Force);
+                    }
+                    else if (hookHeight < playerHeight)
+                    {
+                        play.AddForce(play.transform.up * gr, ForceMode.Force);
+                    }
+
                 }
                
             }
         
             if (!hooked)
             {
-                 hook.cordd.SetActive(false);
+            //     hook.cordd.SetActive(false);
                  hook.icon.SetActive(false);
             }
 

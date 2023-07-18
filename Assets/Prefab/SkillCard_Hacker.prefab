@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5818547523435136041}
   - component: {fileID: 9072019709031002172}
   - component: {fileID: 3828507833351239894}
-  - component: {fileID: 5945574822478302562}
-  - component: {fileID: 5816947945138508042}
+  - component: {fileID: 4094036618772857543}
+  - component: {fileID: -6739881397610907521}
   m_Layer: 0
-  m_Name: Hasten
+  m_Name: SkillCard_Hacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57c5cf141d3eb8e4eb3c7c284897d2a8, type: 2}
+  - {fileID: 2100000, guid: afb2ec50f94c3bd40ab5fc82ce15b11c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5945574822478302562
+--- !u!114 &4094036618772857543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7566876228277833483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d249ce9b7821c74eaa0e23ce0bdfc8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 426eca746656bbc46b46d7434db992b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &5816947945138508042
+--- !u!65 &-6739881397610907521
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

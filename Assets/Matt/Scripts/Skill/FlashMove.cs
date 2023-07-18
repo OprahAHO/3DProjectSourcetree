@@ -20,7 +20,7 @@ public class FlashMove : MonoBehaviour
     public bool Flash;
     public Material enemyMaterial;
     public LayerMask mask;
-    public Transform Player;
+    public Rigidbody Player;
     public Transform point;
  //   public GameObject tttpoint;
     public GameObject Phypoint;

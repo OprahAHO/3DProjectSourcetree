@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5818547523435136041}
   - component: {fileID: 9072019709031002172}
   - component: {fileID: 3828507833351239894}
-  - component: {fileID: -7349729554393215283}
-  - component: {fileID: 4164955945439808420}
+  - component: {fileID: 2208010905960918158}
+  - component: {fileID: -6312368938141341692}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: SkillCard_Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89ce82db08e33e84f93239ee4ad64e94, type: 2}
+  - {fileID: 2100000, guid: 9573e79e424cc434b9deb9a852207f7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-7349729554393215283
+--- !u!114 &2208010905960918158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7566876228277833483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb70c6883d886c4da1c85613255bde3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6defc53768ba71d4493d99bee210d1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &4164955945439808420
+--- !u!65 &-6312368938141341692
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

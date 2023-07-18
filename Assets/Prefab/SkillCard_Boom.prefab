@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5818547523435136041}
   - component: {fileID: 9072019709031002172}
   - component: {fileID: 3828507833351239894}
-  - component: {fileID: 4464708959388966992}
-  - component: {fileID: 6039903213143916439}
+  - component: {fileID: 8176701838708646837}
+  - component: {fileID: 8161525893964433959}
   m_Layer: 0
-  m_Name: Explode
+  m_Name: SkillCard_Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4464708959388966992
+--- !u!114 &8176701838708646837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29224281fb69fc46869806e678ee520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &6039903213143916439
+--- !u!65 &8161525893964433959
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
