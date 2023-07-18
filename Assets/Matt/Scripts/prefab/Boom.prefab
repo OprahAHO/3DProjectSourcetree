@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BigBoomRange: 110
   largeForce: 3000
-  time: 1
-  upPoint: 0
+  time: 0.7
+  upPoint: 0.5

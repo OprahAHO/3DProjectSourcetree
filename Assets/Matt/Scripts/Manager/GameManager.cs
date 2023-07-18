@@ -29,11 +29,12 @@ public class GameManager : MonoBehaviour
         live = true;
     }
     private void Update()
-    {if (live)
+    {
+        if (live)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !pause)
             {
-                //Debug.Log("F");
+                
                 skill.SetActive(false);
                 pauseCanvas.SetActive(true);
                 pause = true;
@@ -44,7 +45,6 @@ public class GameManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Escape) && pause)
             {
-               //Debug.Log("T");
                 skill.SetActive(true);
                 pauseCanvas.SetActive(false);
                 pause = false;
@@ -54,11 +54,13 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) /*&& !live*/)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            live = true; skill.SetActive(true); pause = false;
+            live = true; 
+            skill.SetActive(true); 
+            pause = false;
         }
     }
 
@@ -72,7 +74,8 @@ public class GameManager : MonoBehaviour
 
     }
     public void GameOver()
-    {live=false;
+    {
+        live = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

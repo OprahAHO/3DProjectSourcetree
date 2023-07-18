@@ -15,7 +15,6 @@ public class cursor : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButton(0))
-
         {
             Cursor.SetCursor(diu, Vector2.zero, CursorMode.Auto);
 

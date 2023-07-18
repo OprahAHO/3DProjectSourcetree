@@ -47,14 +47,12 @@ public class WallRunningAdv : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovementAdv>();
-        
     }
 
     private void Update()
     {
         CheckForWall();
         StateMachine();
-        //Debug.Log(isWallRun);
     }
     private void FixedUpdate()
     {

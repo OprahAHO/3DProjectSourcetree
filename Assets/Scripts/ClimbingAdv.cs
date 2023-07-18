@@ -9,7 +9,7 @@ public class ClimbingAdv : MonoBehaviour
     public Transform orientation;
     public Rigidbody rb;
     public PlayerMovementAdv pm;
-    public WallRunningAdv isWallRun;
+    private WallRunningAdv wallRunningAdv;
 
     [Header("Climbing")]
     public float climbSpeed;
@@ -49,17 +49,17 @@ public class ClimbingAdv : MonoBehaviour
     public bool exitingWall;
     //public float exitWallTime;
     private float exitWallTimer;
+    private void Start()
+    {
+        wallRunningAdv = GetComponent<WallRunningAdv>();
+    }
     private void Update()
     {
         WallCheck();
         StateMachine();
         if (climbing && !exitingWall) 
             ClimbingMovement();
-        if(!shortWall)
-            //Debug.Log(shortWall);
-        if (!isWallRun)
-            Debug.Log("11111111");
-        //Debug.Log(isWallRun);
+
     }
 
     private void StateMachine()
@@ -68,9 +68,9 @@ public class ClimbingAdv : MonoBehaviour
         if (wallFrontRealUse && Input.GetKey(KeyCode.W) && !exitingWall && !wallDown )
         {
 
-            if (shortWall && !isWallRun)
+            if (shortWall && !wallRunningAdv.isWallRun)
             {
-                Debug.Log("11111111");
+              
                 StartClimbing(); 
             }
         }

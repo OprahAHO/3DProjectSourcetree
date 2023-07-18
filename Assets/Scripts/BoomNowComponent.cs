@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomNow : MonoBehaviour
+public class BoomNowComponent : MonoBehaviour
 {
    
     public float BigBoomRange;
@@ -21,6 +21,7 @@ public class BoomNow : MonoBehaviour
     private void Update()
     {
         CheckDistance();
+
     }
     void StartBoom()
     {
@@ -35,7 +36,7 @@ public class BoomNow : MonoBehaviour
     }
     void CheckDistance()
     {
-        distance = Vector3.Distance(transform.position, BigBoom.Instance.orientation.position);
+        distance = Vector3.Distance(transform.position, BigBoom.Instance.transform.position);
     }
     void Delay()
     {
@@ -59,12 +60,15 @@ public class BoomNow : MonoBehaviour
     }
     void StartBigBoom()
     {
-        //Debug.Log("StartBigBoom");
-        Vector3 Boompoint = BigBoom.Instance.orientation.position + BigBoom.Instance.orientation.up * upPoint;
-    
-        addForceVector = (Boompoint - transform.position).normalized;
+        Transform playerPoint = BigBoom.Instance.orientation;
+
+        addForceVector = (playerPoint.position - (transform.position- transform.up* upPoint)).normalized;
+        /*Debug.Log("BoomCenterPoint is"+ (transform.position - transform.up * upPoint));
+        Debug.Log("BoomBallPosition is" + (transform.position));*/
+
         BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * largeForce);
-        //Debug.Log(addForceVector);
+
+        //Debug.DrawRay(transform.position, playerPoint.position - transform.position, Color.red);
     }
 
     void StopBoom()

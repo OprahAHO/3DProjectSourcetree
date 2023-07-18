@@ -9,7 +9,7 @@ public class Resurrection : MonoBehaviour
     public Transform[] checkpoint;
     public GameObject[] pickupprop;
     public GameObject[] resetPlatform;
-    public Transform resurrectPoint;
+    public Transform ResurrectPoint;
 
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
@@ -21,15 +21,17 @@ public class Resurrection : MonoBehaviour
     public int skillright;
     public bool lll;
     public bool rrr;
-
+    GameManager GM;
+    CheckPointComponent checkPointComponent;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (Input.GetKeyDown(KeyCode.R) /*&& !GM.live*/)
         {
             PauseCanvas.SetActive(false);
             die.SetActive(false);
 
-            PlayerRb.position = resurrectPoint.position;
+            PlayerRb.position = ResurrectPoint.position;
 
             old();
             newnew();
@@ -42,31 +44,31 @@ public class Resurrection : MonoBehaviour
     }
     private void Start()
     {
-        resurrectPoint.position = PlayerRb.position;
+        ResurrectPoint.position = PlayerRb.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<CheckPointComponent>() != null)
         {
-            CheckPointComponent checkPointComponent = other.GetComponent<CheckPointComponent>();
+            checkPointComponent = other.GetComponent<CheckPointComponent>();
             chepointcheckNum = checkPointComponent.checknumber;
-            Debug.Log(chepointcheckNum);
+            //Debug.Log(chepointcheckNum);
 
             if (chepointcheckNum > currentCheckpointIndex)
             {
                 currentCheckpointIndex = checkPointComponent.checknumber;
                 UpdateResurrectPoint();
                 Fresh();
-                // = randomskill.instance.leftskill;
             }
         }
     }
     
     private void UpdateResurrectPoint()
     {
-        resurrectPoint.position = checkpoint[currentCheckpointIndex].position;
-        Debug.Log(chepointcheckNum);
+        Transform rightPoint = checkPointComponent.GetComponent<Transform>();
+        ResurrectPoint.position = rightPoint.position;
+        //Debug.Log(chepointcheckNum);
     }
     public void Fresh()
     {
