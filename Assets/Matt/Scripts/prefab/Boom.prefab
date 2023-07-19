@@ -149,4 +149,5 @@ MonoBehaviour:
   BigBoomRange: 110
   largeForce: 3000
   time: 0.7
+  moveDuration: 3
   upPoint: 0.5

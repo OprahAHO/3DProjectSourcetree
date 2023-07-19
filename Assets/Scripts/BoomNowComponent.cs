@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,9 @@ public class BoomNowComponent : MonoBehaviour
     private float distance;
 
     public float largeForce;
-    private Vector3 addForceVector;
+    
     public float time;
+    public float moveDuration;
     public float upPoint;
     
     private void OnCollisionEnter(Collision collision)
@@ -58,17 +60,32 @@ public class BoomNowComponent : MonoBehaviour
 
         StopBoom();
     }
+
+    /*void StartBigBoom()
+    {
+        Transform playerTransform = BigBoom.Instance.player.GetComponent<Transform>();
+
+        
+        Transform playerPoint = BigBoom.Instance.orientation;
+        Vector3 translateVector = (playerPoint.position - (transform.position - transform.up * upPoint)).normalized * largeForce * Time.deltaTime;
+
+        //BigBoom.Instance.player.GetComponent<Transform>().Translate(translateVector);
+
+        Vector3 targetPosition = playerTransform.position + translateVector;
+
+        playerTransform.DOMove(targetPosition, moveDuration);
+    }*/
+
     void StartBigBoom()
     {
         Transform playerPoint = BigBoom.Instance.orientation;
 
-        addForceVector = (playerPoint.position - (transform.position- transform.up* upPoint)).normalized;
-        /*Debug.Log("BoomCenterPoint is"+ (transform.position - transform.up * upPoint));
-        Debug.Log("BoomBallPosition is" + (transform.position));*/
+        Vector3 addForceVector = (playerPoint.position - (transform.position - transform.up * upPoint)).normalized;
+
 
         BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * largeForce);
 
-        //Debug.DrawRay(transform.position, playerPoint.position - transform.position, Color.red);
+
     }
 
     void StopBoom()
