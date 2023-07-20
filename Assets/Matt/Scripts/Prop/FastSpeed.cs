@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class FastSpeed : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
             PlayerMovementAdv.instance.fastspeed();
-            PlayerMovementAdv.instance.normalfast();
+            // PlayerMovementAdv.instance.normalfast();
+            Debug.Log("1");
         }
 
+    }
+ private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<PlayerMovementAdv>() != null)
+        {
+            PlayerMovementAdv.instance.normalfast();
+            Debug.Log("2");
+        }
     }
 }

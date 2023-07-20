@@ -32,17 +32,18 @@ public class Bullet : MonoBehaviour
             InvokeTime = deltaT;
         }
 
-        //bulletdistance=(Maze.position-transform.position).magnitude;
-        //if(bulletdistance > 20)
-        //{
-        //    Destroy(gameObject);
-        //}
+        
     }
     public void shoot()
     {
         GameObject bullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
-        bullet.GetComponent<BulletDestroy>().Maze = MazeTurret.instance.gameObject.transform;
+      //  bullet.GetComponent<BulletDestroy>().Maze = MazeTurret.instance.gameObject.transform;
         Rigidbody bb = bullet.GetComponent<Rigidbody>();
         bb.AddForce(transform.forward * speed);
+        //BulletDestroy bulletDestroy = bullet.GetComponent<BulletDestroy>();
+        //if (bulletDestroy != null)
+        //{
+        //    bulletDestroy.Initialize(bulletDestroy.Maze); // ????????????? Maze
+        //}
     }
 }
