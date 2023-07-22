@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject skill;
     public GameObject pauseCanvas;
+
     bool pause;
     public bool live;
     //public bool live=false;
@@ -86,11 +87,12 @@ public class GameManager : MonoBehaviour
     }
     public void GameSuccess()
     {
-       // camera.SetActive(false);
+        // camera.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        Time.timeScale = 0;
-                 
-        UIManager.instance.ShowSuccessPanel();
+        SceneManager.LoadScene("Winwin");
+        //UIManager.instance.ShowSuccessPanel();
 
     }
     public void RestartGame()
@@ -110,6 +112,10 @@ public class GameManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+    public void NextLevel()
+    {
+
     }
 }
 

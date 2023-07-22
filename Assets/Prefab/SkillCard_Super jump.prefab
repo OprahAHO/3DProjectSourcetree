@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2238935261875135419}
   - component: {fileID: -6805791986026941100}
   m_Layer: 0
-  m_Name: Super jump
+  m_Name: SkillCard_Super jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,7 +9,8 @@ public class HookCheck : MonoBehaviour
     public static HookCheck instance;
 
     public bool havehook;
-    public LayerMask mask;
+   
+
     // public Transform Orientation;
     private RaycastHit hit;
     public float raylength = 20f;
@@ -40,7 +41,6 @@ public class HookCheck : MonoBehaviour
         {
             havehook = true;
         }
-       // Return();
     }
 
     private void FixedUpdate()
@@ -58,6 +58,7 @@ public class HookCheck : MonoBehaviour
 
 
         seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<Hook>();
+
     }
     void Return()
     {

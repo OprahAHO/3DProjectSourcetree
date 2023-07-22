@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
 public class PlayerCam : MonoBehaviour
 {   
     public Transform orientation;
     public Transform camHolder;
-    private float value;//
+    private float value;
 
 
     float xRotation;
@@ -23,9 +22,14 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         value = MouseSpeedController.mouseSpeedValue;
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * 200;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * 200 * 0.8f;
+        if (value < 0.0001)
+        {
+            value = 200;
+        }
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * value;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * value;
         //Debug.Log(value);
         yRotation += mouseX;
 

@@ -31,8 +31,8 @@ public class Hook : MonoBehaviour
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
             Hook hook = GetComponent<Hook>();
-           hook. hooked = false;
-             hook .gameObject.SetActive(false);
+            hook.hooked = false;
+            hook.gameObject.SetActive(false);
             Invoke("appear", 5f);
         }
     }
@@ -72,15 +72,12 @@ public class Hook : MonoBehaviour
         
             if (!hooked)
             {
-            //     hook.cordd.SetActive(false);
                  hook.icon.SetActive(false);
             }
 
             cord.forward = hookpoint.position - cord.position;
             cord.localScale = new Vector3(cord.localScale.x, cord.localScale.y, Vector3.Distance(cord.position, hookpoint.position));
         }
-        
-
     }
     public void appear()
     {

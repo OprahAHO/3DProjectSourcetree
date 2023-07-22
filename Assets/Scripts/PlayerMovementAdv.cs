@@ -86,7 +86,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public float walkSpeed;
     public float slideSpeed;
     public float slideGroundSpeed;
-    public Transform PlayerCharacterAdv;
+    //public Transform PlayerCharacterAdv;
     
     public float groundDrag;
     private float desiredMoveSpeed;
@@ -135,7 +135,6 @@ public class PlayerMovementAdv : MonoBehaviour
 
     public bool sliding;
     public bool wallrunning;
-    public Text speedText;
 
     private void Start()
     {
@@ -149,7 +148,7 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         //Debug.Log(jumpsRemaining);
         MyInput();
-        UpdateSpeedText();
+        
         SpeedControl();
         StateHandler();
 
@@ -360,10 +359,6 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
-    private void UpdateSpeedText()
-    {
-        float horizontalSpeed = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z).magnitude;
-        speedText.text = "Speed: " + horizontalSpeed.ToString("F2");
-    }
+   
 
 }

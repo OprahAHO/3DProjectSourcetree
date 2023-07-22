@@ -17,25 +17,7 @@ public class BigBoom : MonoBehaviour
     {
         Instance = this;
     }
-    private void Start()
-    {
-      //  canInstantiate = true;
-    }
-    private void Update()
-    {// if (randomskill.instance.left)
-    //    {
-    //        if (Input.GetMouseButtonDown(0))
-    //        {
-    //            HackingMethods0();
-    //            randomskill.instance.left = false;
-    //        }
-    //    }
-    //    //If you have already debugged, please restore the following commented out judgment conditions
-    //    if (Input.GetKeyDown(KeyCode.G) && canInstantiate)
-    //    {
-    //        ShootABoom();
-    //    }
-    }
+
     public void boom0()
     {
         if (randomskill.instance.left)

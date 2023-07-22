@@ -1,23 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class MouseSpeedController : MonoBehaviour
 {
     public static float mouseSpeedValue;
-    Slider slider;
+    public Slider mouseButtonSpeedslider;
+    public GameObject popupGb;
     void Start()
     {
-       slider = GetComponent<Slider>();
+       
     }
-
-    // Update is called once per frame
     void Update()
     {
-        mouseSpeedValue = slider.value * 400;
-        //PlayerPrefs.SetFloat("Parameter", mouseSpeedValue);
+        if (popupGb != null)
+        {
+            mouseSpeedValue = mouseButtonSpeedslider.value * 400;
+        }
+        else
+        {
+            mouseSpeedValue = 200;
+            //Debug.Log("hereHaveNotGb");
+        }
+        //Debug.Log(mouseSpeedValue);
     }
 }
