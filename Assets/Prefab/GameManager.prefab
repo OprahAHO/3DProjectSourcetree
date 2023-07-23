@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 1383328872387795392}
   pauseCanvas: {fileID: 5448297728823703102}
+  gameOverPanel: {fileID: 5613289964493213600}
   live: 0
 --- !u!114 &8734819736115803583
 MonoBehaviour:
@@ -1130,7 +1131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3313192375101028329, guid: 6eb0df0a429b9894eb7ba0a98d3a2dfb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1420,6 +1421,10 @@ PrefabInstance:
     - target: {fileID: 5788972340275110172, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788972340313349203, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5788972340374861427, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
       propertyPath: m_LocalScale.x
@@ -1822,7 +1827,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5788972340572811053, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
+    - {fileID: 5788972341965668027, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
+    - {fileID: 5788972340313349203, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
+    - {fileID: 5788972341678297296, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5788972342058757284, guid: 63ed3e0981a46ce4797213a20afc88a7, type: 3}
       insertIndex: -1

@@ -10,7 +10,7 @@ public class FastSpeed : MonoBehaviour
         {
             PlayerMovementAdv.instance.fastspeed();
             // PlayerMovementAdv.instance.normalfast();
-            Debug.Log("1");
+            
         }
 
     }
@@ -19,7 +19,7 @@ public class FastSpeed : MonoBehaviour
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
             PlayerMovementAdv.instance.normalfast();
-            Debug.Log("2");
+            
         }
     }
 }

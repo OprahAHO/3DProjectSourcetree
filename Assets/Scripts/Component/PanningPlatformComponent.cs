@@ -35,16 +35,14 @@ public class PanningPlatformComponent : MonoBehaviour
         }
 
     }
-    /*private void PanningStop()
-    {
-    }*/
-
+  
 
     public void ResetPanning()
     {
         transform.position = StartPoint.position;
         canMove = true;
         alreadyMoved = false;
+       
     }
     private IEnumerator MoveToTarget()
     {

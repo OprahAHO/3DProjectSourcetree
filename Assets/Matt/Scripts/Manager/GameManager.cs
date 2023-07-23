@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject skill;
     public GameObject pauseCanvas;
+    public GameObject gameOverPanel;
 
     bool pause;
     public bool live;
@@ -65,15 +66,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
-    {
-         Cursor.lockState = CursorLockMode.Locked;
-         Cursor.visible = false;
-        Time.timeScale = 1f;
-        UIManager.instance.StartPanel();
-
-
-    }
+   
     public void GameOver()
     {
         live = false;
@@ -82,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0f;
       
-        UIManager.instance.ShowGameOverPanel();
+        ShowGameOverPanel();
         
     }
     public void GameSuccess()
@@ -95,11 +88,7 @@ public class GameManager : MonoBehaviour
         
 
     }
-    public void RestartGame()
-    {
-
-        UIManager.instance.RestartLevel();
-    }
+    
     public void Exit()
     {
         Application.Quit();
@@ -112,6 +101,10 @@ public class GameManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+    public void ShowGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
     }
     public void NextLevel()
     {
