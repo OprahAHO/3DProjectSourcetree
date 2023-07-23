@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6365725434135522982}
   - component: {fileID: 6365725434135522981}
   - component: {fileID: 6365725434135522980}
-  - component: {fileID: 6365725434135522987}
+  - component: {fileID: 8073537247502137154}
   m_Layer: 0
   m_Name: hook
   m_TagString: Untagged
@@ -107,7 +107,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6365725434135522987
+--- !u!114 &8073537247502137154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,21 +116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6365725434135522986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b1038bc2283474ab9dcb254f5582e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0140f608efd9a4e4fa31f1b1579220f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cordd: {fileID: 0}
-  icon: {fileID: 6365725434962645539}
-  Player: {fileID: 0}
-  HookDistance: 0
-  hookw: {x: 0, y: 0, z: 0}
-  hookpoint: {fileID: 6365725434135522983}
-  cord: {fileID: 0}
-  playerdistance: 0
-  play: {fileID: 0}
-  hookspeed: 80
-  hooked: 0
-  gr: 10
+  playerTransf: {fileID: 0}
+  playerRb: {fileID: 0}
+  turnGreen: {fileID: 2100000, guid: cbed9e0d3cd56644a8ce8d249b87bc5b, type: 2}
+  turnWhite: {fileID: 2100000, guid: c980479a7703d304786eebb0bb4df353, type: 2}
 --- !u!1 &6365725434962645539
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +136,7 @@ GameObject:
   - component: {fileID: 6365725434962645597}
   - component: {fileID: 6365725434962645596}
   m_Layer: 0
-  m_Name: 123
+  m_Name: TurnRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

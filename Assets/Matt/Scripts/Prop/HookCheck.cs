@@ -13,36 +13,22 @@ public class HookCheck : MonoBehaviour
 
     // public Transform Orientation;
     private RaycastHit hit;
-    public float raylength = 20f;
+    public float raylength;
     public bool seenHook;
-    bool inrange;
+    new Renderer renderer;
+    public Material turnRed;
+    public Material turnWhite;
 
     public void Awake()
     {
         instance = this;
     }
-    void Start()
-    {
-        inrange = false;
-    }
-
+ 
     // Update is called once per frame
     void Update()
     {
-        if (havehook)
-        {
-            Return();
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            havehook = false;
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            havehook = true;
-        }
+        Return();
     }
-
     private void FixedUpdate()
     {
         CheckHook();
@@ -56,43 +42,45 @@ public class HookCheck : MonoBehaviour
         float centerY = screenHeight / 2f;
         Ray HookRay = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
-
-        seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<Hook>();
-
+        seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<HookAdv>();
     }
     void Return()
     {
-        if (seenHook )
-        {
-            //Debug.Log("seenHook");
-            Hook hook = hit.collider.GetComponent<Hook>();
-            if (hook != null && !inrange)
-            {
-                //Debug.Log("Hook is true");
-                hook.hooked = true;
-            }
-            else if(inrange)
-            {
-                hook.hooked = false;
+        /* HookAdv hook = hit.collider.GetComponent<HookAdv>();
+         if (seenHook&& hook != null)
+         {
 
-            }
+             renderer = hook.GetComponent<Renderer>();
 
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Hook>() != null)
+             renderer.material = turnRed;
+             if(Input.GetKeyDown(KeyCode.E))
+             {
+                 hook.StartHook();
+             }
+         }
+         else
+         {
+             renderer.material = turnWhite;
+         }*/
+        if (seenHook)
         {
-            //Debug.Log("1111");
-            inrange = true;
-        
+            HookAdv hook = hit.collider.GetComponent<HookAdv>();
+            if (hook != null)
+            {
+                renderer = hook.GetComponent<Renderer>();
+                renderer.material = turnRed;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hook.StartHook();
+                }
+            }
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Hook>() != null)
+        else
         {
-            inrange = false;
+            if (renderer != null)
+            {
+                renderer.material = turnWhite;
+            }
         }
     }
 }

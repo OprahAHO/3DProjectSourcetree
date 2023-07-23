@@ -81,18 +81,18 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
 
         Time.timeScale = 0f;
-       // Resurrection.Instance.GoToNextCheckPoint();
+      
         UIManager.instance.ShowGameOverPanel();
         
     }
     public void GameSuccess()
     {
-        // camera.SetActive(false);
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         SceneManager.LoadScene("Winwin");
-        //UIManager.instance.ShowSuccessPanel();
+        
 
     }
     public void RestartGame()

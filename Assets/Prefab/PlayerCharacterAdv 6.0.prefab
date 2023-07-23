@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161817537474989279}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: flashpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 7246555942069322343}
   - component: {fileID: 7246555942069322342}
   - component: {fileID: 2626231705854339449}
+  - component: {fileID: 7445157813014457077}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -467,9 +468,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   havehook: 1
-  hookTransf: {fileID: 0}
   raylength: 30
   seenHook: 0
+  turnRed: {fileID: 0}
+  turnWhite: {fileID: 0}
+--- !u!114 &7445157813014457077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246555942069322336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fca23406435fae41aa730ccd34b7a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Useskill: 0
+  Flash: 0
+  enemyMaterial: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  Player: {fileID: 7246555942429330802}
+  point: {fileID: 4161817537474989279}
+  Phypoint: {fileID: 4161817537474989272}
 --- !u!1 &7246555942335723089
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +550,6 @@ GameObject:
   - component: {fileID: 2626231704190172202}
   - component: {fileID: 2626231705970628545}
   - component: {fileID: 7246555942429330876}
-  - component: {fileID: 4161817538096819672}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -887,27 +909,6 @@ MonoBehaviour:
   rbSpeed: 0
   Shield: {fileID: 2626231704867704870}
   ShieldTime: 2
---- !u!114 &4161817538096819672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7246555942429330831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fca23406435fae41aa730ccd34b7a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Useskill: 0
-  Flash: 0
-  enemyMaterial: {fileID: 0}
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  Player: {fileID: 7246555942429330802}
-  point: {fileID: 0}
-  Phypoint: {fileID: 0}
 --- !u!1 &7246555942611343704
 GameObject:
   m_ObjectHideFlags: 0
