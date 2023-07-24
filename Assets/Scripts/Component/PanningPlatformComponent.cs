@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PanningPlatformComponent : MonoBehaviour
-{public static PanningPlatformComponent instance;
+{
+    public static PanningPlatformComponent instance;
     public Transform platform;
     public Transform StartPoint;
     public Transform BackPoint;

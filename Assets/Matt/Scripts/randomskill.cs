@@ -230,34 +230,45 @@ public class randomskill : MonoBehaviour
 
     public void leftskill0()
     {
+        //SkillTime.instance.usefive=true;
         SkillManager.instance.RushSkill0();
         leftzeroicon.SetActive(false);
+        SkillTime.instance.usefive = true;
     }
     public void rightskill0()
     {
+       // SkillTime.instance.usefive = true;
         SkillManager.instance.RushSkill1();
         rightzeroicon.SetActive(false);
+        SkillTime.instance.usefive = true;
     }
     public void leftskill1()
     {
+       // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.shoe0();
-       
         leftoneicon.SetActive(false);
+        SkillTime.instance.use = true;
     }
     public void rightskill1()
     {
+       // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.shoe1();
         rightoneicon.SetActive(false);
+        SkillTime.instance.use = true;
     }
     public void leftskill2()
     {
+       // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.fast0();
         lefttwoicon.SetActive(false);
+        SkillTime.instance.use = true;
     }
     public void rightskill2()
     {
+        //SkillTime.instance.use = true;
         PlayerMovementAdv.instance.fast1();
         righttwoicon.SetActive(false);
+        SkillTime.instance.use = true;
     }
     public void leftskill3()
     {

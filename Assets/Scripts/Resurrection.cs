@@ -10,6 +10,7 @@ public class Resurrection : MonoBehaviour
     public GameObject[] pickupprop;
     public GameObject[] resetPlatform;
     public Transform ResurrectPoint;
+    public GameObject Checkpoint;
 
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
@@ -63,12 +64,17 @@ public class Resurrection : MonoBehaviour
             }
         }
     }
-    
+    void PlayCheckpointAni()
+    {
+        Checkpoint.SetActive(true);
+    }
     private void UpdateResurrectPoint()
     {
+        PlayCheckpointAni();
         Transform rightPoint = checkPointComponent.GetComponent<Transform>();
         ResurrectPoint.position = rightPoint.position;
         //Debug.Log(chepointcheckNum);
+        
     }
     public void Fresh()
     {
@@ -122,4 +128,6 @@ public class Resurrection : MonoBehaviour
             }
         }
     }
+
+
 }
