@@ -50,15 +50,9 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 Time.timeScale = 0;
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && pause)
+            else if(Input.GetKeyDown(KeyCode.Escape) && pause)
             {
-                skill.SetActive(true);
-                pauseCanvas.SetActive(false);
-                pause = false;
-
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                Time.timeScale = 1;
+                Resume();
             }
         }
         if(Input.GetKeyDown(KeyCode.R) /*&& !live*/)
@@ -70,7 +64,16 @@ public class GameManager : MonoBehaviour
             pause = false;
         }
     }
+     public void Resume()
+     {
+        skill.SetActive(true);
+        pauseCanvas.SetActive(false);
+        pause = false;
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+     }
    
     public void GameOver()
     {
@@ -106,7 +109,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    public void Resume()
+    public void Main()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
