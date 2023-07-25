@@ -21,13 +21,16 @@ public class pickupthree : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            StartCoroutine(DeletCard());
+            if (!randomskill.instance.left || !randomskill.instance.right)
+            {
+                StartCoroutine(DeletCard());
 
-            Renderer renderer = GetComponent<Renderer>();
-            renderer.material = MaterialVFX;
+                Renderer renderer = GetComponent<Renderer>();
+                renderer.material = MaterialVFX;
 
-            randomskill.instance.lg();
-            randomskill.instance.skillthree();
+                randomskill.instance.lg();
+                randomskill.instance.skillthree();
+            }
         }
     }
     public IEnumerator DeletCard()

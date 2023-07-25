@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -86,6 +87,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public float walkSpeed;
     public float slideSpeed;
     public float slideGroundSpeed;
+    private bool walking;
     //public Transform player;
     
     public float groundDrag;
@@ -115,6 +117,7 @@ public class PlayerMovementAdv : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public bool grounded;
+    bool OnWall;
 
     public Transform orientation;
 
@@ -127,6 +130,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public MovementState state;
     public enum MovementState
     {
+        idle,
         walking,
         sliding,
         wallrunning,
@@ -152,27 +156,95 @@ public class PlayerMovementAdv : MonoBehaviour
         SpeedControl();
         StateHandler();
 
+        SFXUse();
+
         if (grounded)
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+        if (rb.velocity.magnitude > 0f)
+        {
+            walking = true;
+        }
+        else
+            walking = false;
+        Debug.Log(state);
+    }
+    bool walkingSfx = true;
+    bool slidingSfx = true;
+    bool airSfx = true;
+    bool idleSfx = true;
+    bool wallrunSfx = true;
+    private void SFXUse()
+    {
+        if (state == MovementState.walking && walkingSfx)
+        {
+            walkingSfx = false;
+            slidingSfx = true;
+            airSfx = true;
+            idleSfx = true;
+            wallrunSfx = true;
+            AudioManager.instance.PlayCharacterMusic("Sfx_Ft");
+        }
+
+        else if (state == MovementState.sliding && slidingSfx)
+        {
+            walkingSfx = true;
+            slidingSfx = false;
+            airSfx = true;
+            idleSfx = true;
+            wallrunSfx = true;
+            AudioManager.instance.PlayCharacterMusic("Character_SlideFloor");
+        }
+
+        else if(state == MovementState.idle && idleSfx)
+        {
+            walkingSfx = true;
+            slidingSfx = true;
+            airSfx = true;
+            idleSfx = false;
+            wallrunSfx = true;
+            AudioManager.instance.PlayCharacterMusic("Sfx_Jump");
+        }
+        else if (state == MovementState.air && airSfx)
+        {
+            walkingSfx = true;
+            slidingSfx = true;
+            airSfx = false;
+            idleSfx = true;
+            wallrunSfx = true;
+            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+        }
+        else if (state == MovementState.air && walkingSfx)
+        {
+            walkingSfx = true;
+            slidingSfx = true;
+            airSfx = true;
+            idleSfx = true;
+            wallrunSfx = false;
+            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+        }
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<groundedComponent>() != null)
+        if (collision.gameObject.GetComponent<groundedComponent>() != null || collision.gameObject.GetComponent<WallComponent>() != null)
         {
-            //Debug.Log("11111");
+            Debug.Log("11111");
             jumpsRemaining = extraJumpNum;
+        } 
+        if(collision.gameObject.GetComponent<groundedComponent>() != null)
+        {
             grounded = true;
-           
         }
-
- 
-       
+        if (collision.gameObject.GetComponent<WallComponent>() != null)
+        {
+            OnWall = true;
+        }
     }
-
-   
 
     private void OnCollisionExit(Collision collision)
     {
@@ -180,8 +252,12 @@ public class PlayerMovementAdv : MonoBehaviour
         {
             grounded = false;
         }
-     
-        
+        if (collision.gameObject.GetComponent<WallComponent>() != null)
+        {
+            OnWall = false;
+        }
+
+
     }
     private void FixedUpdate()
     {
@@ -190,13 +266,16 @@ public class PlayerMovementAdv : MonoBehaviour
     bool keepMomentum;
     private void StateHandler()
     {
-        
-        if(wallrunning)
+        if(walking && !sliding && grounded)
+        {
+            state = MovementState.walking;
+        }
+        else if(wallrunning)
         {
             state = MovementState.wallrunning;
             desiredMoveSpeed = wallrunSpeed*mf;
         }
-        if(sliding)
+        else if(sliding)
         {
             state = MovementState.sliding;
 
@@ -209,12 +288,12 @@ public class PlayerMovementAdv : MonoBehaviour
             else
                 desiredMoveSpeed = slideGroundSpeed;
         }
-        else if(grounded)
+        else if(grounded && !walking &&!sliding)
         {
-            state = MovementState.walking;
+            state = MovementState.idle;
             desiredMoveSpeed = walkSpeed * mf;
         }
-        else
+        else if(!grounded && !sliding) 
         {
             state = MovementState.air;
         }
@@ -328,7 +407,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce*jf, ForceMode.Impulse);
 
-        if (!grounded)
+        if (!grounded || !OnWall)
         {
             jumpsRemaining--;
         }
@@ -342,7 +421,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private bool CanJump()
     {
-        return readyToJump && (grounded || jumpsRemaining > 0);
+        return readyToJump && (grounded || jumpsRemaining > 0 || OnWall);
     }
 
     public bool OnSlope()

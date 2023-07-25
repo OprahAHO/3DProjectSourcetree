@@ -34,6 +34,7 @@ public class BoomNowComponent : MonoBehaviour
         boomRb.constraints = RigidbodyConstraints.FreezePosition;
         boomCo.isTrigger = true;
 
+        AudioManager.instance.PlaySFX("Sfx_Explosion");
         Delay();
     }
     void CheckDistance()
@@ -90,6 +91,7 @@ public class BoomNowComponent : MonoBehaviour
 
     void StopBoom()
     {
+
         Destroy(gameObject);
         //VFX
     }

@@ -11,6 +11,7 @@ public class PanningPlatformComponent : MonoBehaviour
     public float movementDuration = 1f;
     private bool alreadyMoved;
     private bool canMove;
+    private AudioSource audioSource;
     public void Awake()
     {
         instance = this;
@@ -19,6 +20,7 @@ public class PanningPlatformComponent : MonoBehaviour
     {
         canMove = true;
         alreadyMoved = false;
+        audioSource = GetComponent<AudioSource>();
     }
    
     public void PanningStart()
@@ -27,12 +29,14 @@ public class PanningPlatformComponent : MonoBehaviour
         {
             canMove = false;
             StartCoroutine(MoveToTarget());
+            AudioManager.instance.PlaySfx_Level_MovePlatform(audioSource);
+
         }
         if(alreadyMoved)
         {
             alreadyMoved = false;
             StartCoroutine(MoveBackTarget());
-
+            AudioManager.instance.PlaySfx_Level_MovePlatform(audioSource);
         }
 
     }

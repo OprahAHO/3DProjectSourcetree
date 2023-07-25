@@ -44,7 +44,7 @@ public class WallRunning : MonoBehaviour
     [Header("Reference")]
     public Transform orientation;
     public PlayerCam cam;
-    private PlayerMovementAdv pm;
+    public PlayerMovementAdv pm;
     private Rigidbody rb;
 
     private void Start()
