@@ -9,6 +9,4 @@ public class TextTutorialMove : MonoBehaviour
     {
         transform.LookAt(playerCam,Vector3.up);
     }
-
-    
 }
