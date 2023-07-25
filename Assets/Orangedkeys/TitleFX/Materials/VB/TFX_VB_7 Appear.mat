@@ -53,7 +53,7 @@ Material:
     - _Animation_Factor: 1.109
     - _AutoManualAnimation: 0
     - _ColorMask: 15
-    - _DetailsMaskDistortionMult: 1
+    - _DetailsMaskDistortionMult: 0
     - _DetailsMaskDit: 0
     - _Float0: 0.4
     - _Format: 0

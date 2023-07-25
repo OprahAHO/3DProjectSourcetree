@@ -63,7 +63,7 @@ public class SkillManager : MonoBehaviour
     {
         Rushskill = true;
         //  InvokeRepeating("Rush", 0.1f, 0.5f);
-        Invoke("Rushskillfalse", 5f);
+        Invoke("Rushskillfalse", 3f);
 
         //Invoke("Rush", 5f);
         randomskill.instance.left = false;
@@ -72,7 +72,7 @@ public class SkillManager : MonoBehaviour
     {
         Rushskill = true;
         //  InvokeRepeating("Rush", 0.1f, 0.1f);
-        Invoke("Rushskillfalse", 5f);
+        Invoke("Rushskillfalse", 3f);
 
         //Invoke("Rush", 5f);
         randomskill.instance.right = false;

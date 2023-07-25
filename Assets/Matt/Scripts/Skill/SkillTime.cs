@@ -38,7 +38,7 @@ public class SkillTime : MonoBehaviour
     }
     void tiaofive()
     {
-        InvokeRepeating("Reduce", 0, 0.01f);
+        InvokeRepeating("Reduce", 0, 0.006f);
     }
    public void useskill()
     {
