@@ -65,6 +65,7 @@ public class randomskill : MonoBehaviour
             }
          if (Input.GetMouseButton(0))
          {
+                AudioManager.instance.PlaySFX("Chips_Apply");
             leftskillManager();
          }
         }
@@ -83,6 +84,7 @@ public class randomskill : MonoBehaviour
             }
          if (Input.GetMouseButton(1))
          {
+                AudioManager.instance.PlaySFX("Chips_Apply");
             rightskillManager();
          }
         }
@@ -159,6 +161,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 0;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillone()
     {
@@ -170,6 +173,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 1;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skilltwo()
     {
@@ -181,6 +185,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 2;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillthree()
     {
@@ -192,6 +197,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 3;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfour()
     {
@@ -203,6 +209,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 4;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfive()
     {
@@ -214,6 +221,7 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 5;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillsix()
     {
@@ -225,11 +233,13 @@ public class randomskill : MonoBehaviour
         {
             rightskill = 6;
         }
+        AudioManager.instance.PlaySFX("Chips_PickUp");
     }
 
 
     public void leftskill0()
     {
+        AudioManager.instance.PlaySFX("Sfx_Chip_Thruster");
         //SkillTime.instance.usefive=true;
         SkillManager.instance.RushSkill0();
         leftzeroicon.SetActive(false);
@@ -237,34 +247,39 @@ public class randomskill : MonoBehaviour
     }
     public void rightskill0()
     {
-       // SkillTime.instance.usefive = true;
+        AudioManager.instance.PlaySFX("Sfx_Chip_Thruster");
+        // SkillTime.instance.usefive = true;
         SkillManager.instance.RushSkill1();
         rightzeroicon.SetActive(false);
         SkillTime.instance.usefive = true;
     }
     public void leftskill1()
     {
-       // SkillTime.instance.use = true;
+        AudioManager.instance.PlaySFX("Sfx_Chip_Jump");
+        // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.shoe0();
         leftoneicon.SetActive(false);
         SkillTime.instance.use = true;
     }
     public void rightskill1()
     {
-       // SkillTime.instance.use = true;
+        AudioManager.instance.PlaySFX("Sfx_Chip_Jump");
+        // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.shoe1();
         rightoneicon.SetActive(false);
         SkillTime.instance.use = true;
     }
     public void leftskill2()
     {
-       // SkillTime.instance.use = true;
+        AudioManager.instance.PlaySFX("Sfx_Chip_Ft");
+        // SkillTime.instance.use = true;
         PlayerMovementAdv.instance.fast0();
         lefttwoicon.SetActive(false);
         SkillTime.instance.use = true;
     }
     public void rightskill2()
     {
+        AudioManager.instance.PlaySFX("Sfx_Chip_Ft");
         //SkillTime.instance.use = true;
         PlayerMovementAdv.instance.fast1();
         righttwoicon.SetActive(false);
@@ -272,12 +287,14 @@ public class randomskill : MonoBehaviour
     }
     public void leftskill3()
     {
+        AudioManager.instance.PlaySFX("Teleport");
         FlashMove.instance.flashmove0();
         leftthreeicon.SetActive(false);
     }
     public void rightskill3()
     {
-       FlashMove.instance.flashmove1();
+        AudioManager.instance.PlaySFX("Teleport");
+        FlashMove.instance.flashmove1();
         rightthreeicon.SetActive(false);
     }
     public void leftskill4()

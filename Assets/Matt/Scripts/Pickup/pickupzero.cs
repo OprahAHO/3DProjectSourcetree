@@ -21,14 +21,17 @@ public class pickupzero : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            StartCoroutine(DeletCard());
+            if (!randomskill.instance.left || !randomskill.instance.right)
+            {
+                StartCoroutine(DeletCard());
 
-            Renderer renderer = GetComponent<Renderer>();
+                Renderer renderer = GetComponent<Renderer>();
 
-            renderer.material = MaterialVFX;
+                renderer.material = MaterialVFX;
 
-            randomskill.instance.lg();
-            randomskill.instance.skillzero();
+                randomskill.instance.lg();
+                randomskill.instance.skillzero();
+            }
         }
     }
     public IEnumerator DeletCard()

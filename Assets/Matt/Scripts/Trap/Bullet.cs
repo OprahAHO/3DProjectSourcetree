@@ -8,11 +8,12 @@ public class Bullet : MonoBehaviour
     public float deltaT = 0.5f;
     private float InvokeTime;
     public float speed;
-    
+    private AudioSource audioSource;
 
     void Start()
     {
         InvokeTime = deltaT;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class Bullet : MonoBehaviour
       //  bullet.GetComponent<BulletDestroy>().Maze = MazeTurret.instance.gameObject.transform;
         Rigidbody bb = bullet.GetComponent<Rigidbody>();
         bb.AddForce(transform.forward * speed);
+        AudioManager.instance.PlaySfx_Level_Shoot(audioSource);
         //BulletDestroy bulletDestroy = bullet.GetComponent<BulletDestroy>();
         //if (bulletDestroy != null)
         //{

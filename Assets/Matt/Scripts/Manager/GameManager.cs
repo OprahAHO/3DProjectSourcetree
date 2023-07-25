@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         pause = false;
         live = true;
+       AudioManager.instance.PlayMusic("Zero_Music_GamePlay");
     }
     private void Update()
     {
@@ -73,14 +74,14 @@ public class GameManager : MonoBehaviour
    
     public void GameOver()
     {
+        AudioManager.instance.PlaySFX("Character_Dead");
         live = false;
-        
         digitalGlitch.enabled = true;
         analogGlitch.enabled = true;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
+       
         Time.timeScale = 0f;
       
         ShowGameOverPanel();

@@ -104,12 +104,15 @@ public class WallRunningAdv : MonoBehaviour
     private void StartWallRun()
     {
         pm.wallrunning = true;
-
+       
         wallRunTimer = maxWallRunTime;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         if (cam == null) return;
+
+        AudioManager.instance.PlayCharacterMusic("Character_SlideWall");
+
         cam.DoFov(90f);
         if (wallLeft) cam.DoTilt(-15f);
         if (wallRight) cam.DoTilt(15f);
@@ -139,6 +142,7 @@ public class WallRunningAdv : MonoBehaviour
 
     private void StopWallRun()
     {
+        //Debug.Log("222222222");
         pm.wallrunning = false;
 
         cam.DoFov(80f);

@@ -6,12 +6,13 @@ public class RotationPlatformComponent : MonoBehaviour
 {
     private bool canRotate;
     public float rotationDuration = 1f;
-
+    private AudioSource audioSource;
     public float rotationAngle = 90f;
 
     private void Start()
     {
         canRotate = true;
+        audioSource = GetComponent<AudioSource>();
     }
     public void RotatePlatform()
     {
@@ -45,6 +46,7 @@ public class RotationPlatformComponent : MonoBehaviour
         {
             canRotate = false;
             RotatePlatform();
+            AudioManager.instance.PlaySfx_Level_MovePlatform(audioSource);
         }
     }
     public void RotateStop()

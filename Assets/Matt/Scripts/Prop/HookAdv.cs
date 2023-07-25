@@ -13,7 +13,7 @@ public class HookAdv : MonoBehaviour
     public Rigidbody playerRb;
     public float rateoverTime = 5000f;
     Transform hooktransf;
-
+    private AudioSource audioSource;
     public void Awake()
     {
         instance = this;
@@ -21,16 +21,15 @@ public class HookAdv : MonoBehaviour
     private void Start()
     {
         hooktransf = GetComponent<Transform>();
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void StartHook()
     {
-        
         VfxManager.instance.SpeedVFXStart(rateoverTime);
         Vector3 targetPosition = hooktransf.position;
         Vector3 direction = (targetPosition - playerTransf.position).normalized;
-
+        AudioManager.instance.PlaySfx_Level_Hook(audioSource);
         StartCoroutine(MoveCoroutine(targetPosition, direction));
     }
 
