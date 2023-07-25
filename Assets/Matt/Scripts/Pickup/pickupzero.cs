@@ -5,18 +5,35 @@ using UnityEngine;
 public class pickupzero : MonoBehaviour
 {
     public static pickupzero instance;
+    public Material MaterialVFX;
+    public Material materialSelf;
     public void Awake()
     {
         instance = this;
+    }
+    void OnEnable()
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material = materialSelf;
+
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            //AddNewSkill();
-            gameObject.SetActive(false);
+            StartCoroutine(DeletCard());
+
+            Renderer renderer = GetComponent<Renderer>();
+
+            renderer.material = MaterialVFX;
+
             randomskill.instance.lg();
             randomskill.instance.skillzero();
         }
+    }
+    public IEnumerator DeletCard()
+    {
+        yield return new WaitForSeconds(1.1f);
+        gameObject.SetActive(false);
     }
 }

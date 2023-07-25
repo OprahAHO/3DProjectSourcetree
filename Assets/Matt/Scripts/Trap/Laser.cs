@@ -10,6 +10,5 @@ public class Laser : MonoBehaviour
         {
             GameManager.instance.GameOver();
         }
-
     }
 }

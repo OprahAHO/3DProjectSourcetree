@@ -1,3 +1,4 @@
+using SimpleEffects.Glitch;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject skill;
     public GameObject pauseCanvas;
     public GameObject gameOverPanel;
+
+    public DigitalGlitch digitalGlitch;
+    public AnalogGlitch analogGlitch;
 
     bool pause;
     public bool live;
@@ -70,6 +74,10 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         live = false;
+        
+        digitalGlitch.enabled = true;
+        analogGlitch.enabled = true;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

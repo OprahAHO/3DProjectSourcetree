@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using SimpleEffects.Glitch;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Die")]
     public GameObject gameOverPanel;
+   
     public GameObject successPanel;
     public GameObject start;
     public GameObject Restart;
     public GameObject Quit;
+  
     public static UIManager instance { get; private set; }
     private void Awake()
     {
@@ -28,7 +32,9 @@ public class UIManager : MonoBehaviour
     }
     public void ShowGameOverPanel()
     {
+
         gameOverPanel.SetActive(true);
+
     }
     public void ShowSuccessPanel()
     {

@@ -46,22 +46,6 @@ public class HookCheck : MonoBehaviour
     }
     void Return()
     {
-        /* HookAdv hook = hit.collider.GetComponent<HookAdv>();
-         if (seenHook&& hook != null)
-         {
-
-             renderer = hook.GetComponent<Renderer>();
-
-             renderer.material = turnRed;
-             if(Input.GetKeyDown(KeyCode.E))
-             {
-                 hook.StartHook();
-             }
-         }
-         else
-         {
-             renderer.material = turnWhite;
-         }*/
         if (seenHook)
         {
             HookAdv hook = hit.collider.GetComponent<HookAdv>();

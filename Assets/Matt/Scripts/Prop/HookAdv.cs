@@ -11,7 +11,7 @@ public class HookAdv : MonoBehaviour
 
     public Transform playerTransf;
     public Rigidbody playerRb;
-
+    public float rateoverTime = 5000f;
     Transform hooktransf;
 
     public void Awake()
@@ -26,6 +26,8 @@ public class HookAdv : MonoBehaviour
 
     public void StartHook()
     {
+        
+        VfxManager.instance.SpeedVFXStart(rateoverTime);
         Vector3 targetPosition = hooktransf.position;
         Vector3 direction = (targetPosition - playerTransf.position).normalized;
 
@@ -40,6 +42,7 @@ public class HookAdv : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         playerRb.MovePosition(targetPosition);
+        VfxManager.instance.SpeedVFXStop();
     }
     private void OnTriggerEnter(Collider other)
     {

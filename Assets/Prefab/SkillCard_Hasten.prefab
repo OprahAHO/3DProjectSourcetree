@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d249ce9b7821c74eaa0e23ce0bdfc8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaterialVFX: {fileID: 2100000, guid: 00cceda11a175684db25e662bb07c489, type: 2}
+  materialSelf: {fileID: 2100000, guid: 57c5cf141d3eb8e4eb3c7c284897d2a8, type: 2}
 --- !u!65 &5816947945138508042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -116,5 +118,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 0.009999998, z: 0.0014399067}
-  m_Center: {x: 0, y: 0.0000000013969841, z: -0.0057199504}
+  m_Size: {x: 0.035, y: 0.009999998, z: 0.04353237}
+  m_Center: {x: 0, y: 0.0000000012772424, z: -0.0060488703}

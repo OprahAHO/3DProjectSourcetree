@@ -1,3 +1,4 @@
+using SimpleEffects.Glitch;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,6 +12,9 @@ public class Resurrection : MonoBehaviour
     public GameObject[] resetPlatform;
     public Transform ResurrectPoint;
     public GameObject Checkpoint;
+
+    public DigitalGlitch digitalGlitch;
+    public AnalogGlitch analogGlitch;
 
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
@@ -31,6 +35,9 @@ public class Resurrection : MonoBehaviour
         {
             PauseCanvas.SetActive(false);
             die.SetActive(false);
+
+            digitalGlitch.enabled = false;
+            analogGlitch.enabled = false;
 
             PlayerRb.position = ResurrectPoint.position;
 
@@ -115,6 +122,7 @@ public class Resurrection : MonoBehaviour
         foreach (GameObject pickup in pickupprop)
         {
             pickup.SetActive(true);
+          
         }
     }
     public void ResetPlatform()
@@ -128,6 +136,8 @@ public class Resurrection : MonoBehaviour
             }
         }
     }
+
+
 
 
 }
