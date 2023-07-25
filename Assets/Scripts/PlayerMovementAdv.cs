@@ -86,7 +86,7 @@ public class PlayerMovementAdv : MonoBehaviour
     public float walkSpeed;
     public float slideSpeed;
     public float slideGroundSpeed;
-    //public Transform PlayerCharacterAdv;
+    //public Transform player;
     
     public float groundDrag;
     private float desiredMoveSpeed;
