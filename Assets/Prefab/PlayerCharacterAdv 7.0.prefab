@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jf: 1
   mf: 1
-  walkSpeed: 7
+  walkSpeed: 8
   slideSpeed: 20
   slideGroundSpeed: 14
   groundDrag: 4
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCam: {fileID: 677794129054519767}
-  controlRange: 20
+  controlRange: 50
 --- !u!114 &5299274159299172204
 MonoBehaviour:
   m_ObjectHideFlags: 0
