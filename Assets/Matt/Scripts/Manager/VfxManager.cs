@@ -43,6 +43,11 @@ public class VfxManager : MonoBehaviour
         var vfx = Pool.Instance.GetObj("VFX_Build"); 
         vfx.transform.position = position;
     }
+    public void PlayVFXBaozha(Vector3 position)
+    {
+        var vfx = Pool.Instance.GetObj("baozha");
+        vfx.transform.position = position;
+    }
     void SpeedVFX()
     {
         Vector3 horizontalVelocity = rb.velocity;
