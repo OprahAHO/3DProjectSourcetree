@@ -205,7 +205,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = true;
             idleSfx = false;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic("Sfx_Jump");
+            AudioManager.instance.PlayCharacterMusic("Character_Idle");
         }
         else if (state == MovementState.air && airSfx)
         {
@@ -214,7 +214,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = false;
             idleSfx = true;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+            AudioManager.instance.PlayCharacterMusic("Character_Idle");
         }
         else if (state == MovementState.air && walkingSfx)
         {
@@ -223,7 +223,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = true;
             idleSfx = true;
             wallrunSfx = false;
-            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+            AudioManager.instance.PlayCharacterMusic("Character_SlideWall");
         }
 
 
@@ -405,6 +405,8 @@ public class PlayerMovementAdv : MonoBehaviour
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        AudioManager.instance.PlayCharacterMusic("Sfx_Jump");
 
         rb.AddForce(transform.up * jumpForce*jf, ForceMode.Impulse);
 
