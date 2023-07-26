@@ -198,14 +198,14 @@ public class PlayerMovementAdv : MonoBehaviour
             AudioManager.instance.PlayCharacterMusic("Character_SlideFloor");
         }
 
-        else if(state == MovementState.idle && idleSfx)
+        else if (state == MovementState.idle && idleSfx)
         {
             walkingSfx = true;
             slidingSfx = true;
             airSfx = true;
             idleSfx = false;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic("Character_Idle");
+            AudioManager.instance.characterSource.Stop();
         }
         else if (state == MovementState.air && airSfx)
         {
@@ -214,7 +214,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = false;
             idleSfx = true;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic("Character_Idle");
+            AudioManager.instance.characterSource.Stop();
         }
         else if (state == MovementState.air && walkingSfx)
         {
