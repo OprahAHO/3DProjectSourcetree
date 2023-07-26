@@ -13,9 +13,13 @@ public class leftzeroicon : MonoBehaviour
     {
         materialSelf = null;
     }
+    private void Update()
+    {
+        materialSelf = image.material;
+    }
     private void OnEnable()
     {
-        
+        materialSelf = null;
     }
  
 }

@@ -34,8 +34,9 @@ public class BoomNowComponent : MonoBehaviour
         boomRb.constraints = RigidbodyConstraints.FreezePosition;
         boomCo.isTrigger = true;
 
-        AudioManager.instance.PlaySFX("Sfx_Explosion");
+        
         Delay();
+        
     }
     void CheckDistance()
     {
@@ -44,6 +45,8 @@ public class BoomNowComponent : MonoBehaviour
     void Delay()
     {
         StartCoroutine(DelayCoroutine());
+        
+        
     }
     IEnumerator DelayCoroutine()
     {
@@ -86,7 +89,7 @@ public class BoomNowComponent : MonoBehaviour
 
         BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * largeForce);
 
-
+        VfxManager.instance.PlayVFXBaozha(transform.position);
     }
 
     void StopBoom()

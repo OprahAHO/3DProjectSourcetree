@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 
     public void ActiveScendInterface(int index)
     {
-        Debug.Log(index);
+        //Debug.Log(index);
         for (int i = 0; i < popup.Length; i++)
         {
             if (i == index)

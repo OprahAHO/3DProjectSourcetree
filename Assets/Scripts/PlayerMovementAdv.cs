@@ -169,7 +169,7 @@ public class PlayerMovementAdv : MonoBehaviour
         }
         else
             walking = false;
-        Debug.Log(state);
+        //Debug.Log(state);
     }
     bool walkingSfx = true;
     bool slidingSfx = true;
@@ -205,7 +205,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = true;
             idleSfx = false;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic("Sfx_Jump");
+            AudioManager.instance.PlayCharacterMusic("Character_Idle");
         }
         else if (state == MovementState.air && airSfx)
         {
@@ -214,7 +214,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = false;
             idleSfx = true;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+            AudioManager.instance.PlayCharacterMusic("Character_Idle");
         }
         else if (state == MovementState.air && walkingSfx)
         {
@@ -223,7 +223,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = true;
             idleSfx = true;
             wallrunSfx = false;
-            AudioManager.instance.PlayCharacterMusic(("Sfx_Jump"));
+            AudioManager.instance.PlayCharacterMusic("Character_SlideWall");
         }
 
 
@@ -233,7 +233,7 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<groundedComponent>() != null || collision.gameObject.GetComponent<WallComponent>() != null)
         {
-            Debug.Log("11111");
+            //Debug.Log("11111");
             jumpsRemaining = extraJumpNum;
         } 
         if(collision.gameObject.GetComponent<groundedComponent>() != null)
@@ -269,6 +269,7 @@ public class PlayerMovementAdv : MonoBehaviour
         if(walking && !sliding && grounded)
         {
             state = MovementState.walking;
+            desiredMoveSpeed = walkSpeed*mf;
         }
         else if(wallrunning)
         {
@@ -404,6 +405,8 @@ public class PlayerMovementAdv : MonoBehaviour
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        AudioManager.instance.PlayCharacterMusic("Sfx_Jump");
 
         rb.AddForce(transform.up * jumpForce*jf, ForceMode.Impulse);
 

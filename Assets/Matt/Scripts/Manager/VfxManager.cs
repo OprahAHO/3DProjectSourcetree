@@ -36,10 +36,16 @@ public class VfxManager : MonoBehaviour
     private void Update()
     {
         SpeedVFX();
+        
     }
     public void PlayVFXBuild(Vector3 position)
     {
         var vfx = Pool.Instance.GetObj("VFX_Build"); 
+        vfx.transform.position = position;
+    }
+    public void PlayVFXBaozha(Vector3 position)
+    {
+        var vfx = Pool.Instance.GetObj("baozha");
         vfx.transform.position = position;
     }
     void SpeedVFX()
@@ -47,7 +53,7 @@ public class VfxManager : MonoBehaviour
         Vector3 horizontalVelocity = rb.velocity;
         horizontalVelocity.y = 0f;
         float horizontalSpeed = horizontalVelocity.magnitude;
-
+        //Debug.Log(horizontalSpeed);
         if (horizontalSpeed > moveSpeed)
         {
             SpeedVFXStart(newRateOverTime);
