@@ -36,6 +36,7 @@ public class VfxManager : MonoBehaviour
     private void Update()
     {
         SpeedVFX();
+        
     }
     public void PlayVFXBuild(Vector3 position)
     {
@@ -47,7 +48,7 @@ public class VfxManager : MonoBehaviour
         Vector3 horizontalVelocity = rb.velocity;
         horizontalVelocity.y = 0f;
         float horizontalSpeed = horizontalVelocity.magnitude;
-
+        //Debug.Log(horizontalSpeed);
         if (horizontalSpeed > moveSpeed)
         {
             SpeedVFXStart(newRateOverTime);

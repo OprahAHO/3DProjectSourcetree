@@ -169,7 +169,7 @@ public class PlayerMovementAdv : MonoBehaviour
         }
         else
             walking = false;
-        Debug.Log(state);
+        //Debug.Log(state);
     }
     bool walkingSfx = true;
     bool slidingSfx = true;
@@ -233,7 +233,7 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<groundedComponent>() != null || collision.gameObject.GetComponent<WallComponent>() != null)
         {
-            Debug.Log("11111");
+            //Debug.Log("11111");
             jumpsRemaining = extraJumpNum;
         } 
         if(collision.gameObject.GetComponent<groundedComponent>() != null)
@@ -269,6 +269,7 @@ public class PlayerMovementAdv : MonoBehaviour
         if(walking && !sliding && grounded)
         {
             state = MovementState.walking;
+            desiredMoveSpeed = walkSpeed*mf;
         }
         else if(wallrunning)
         {

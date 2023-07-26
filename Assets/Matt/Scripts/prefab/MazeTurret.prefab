@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10ebe3c89617c74cbc43d03a684fbaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remaze: {fileID: 0}
+  remaze: {fileID: 6512704674952622522}
   bulletdistance: 0
 --- !u!1 &6512704673677852058
 GameObject:
