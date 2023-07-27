@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3708959210280678998}
   - component: {fileID: 4059159357048599410}
-  - component: {fileID: 8626337324884174738}
+  - component: {fileID: 3473995253301642373}
   m_Layer: 0
   m_Name: FallDiePoint
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4059159357048599410
 BoxCollider:
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 63.264038, y: 1, z: 48.92511}
   m_Center: {x: 6.7653427, y: 0, z: 18.24823}
---- !u!114 &8626337324884174738
+--- !u!114 &3473995253301642373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,6 +63,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3708959210280678997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71019dd1c5b55dc40a51cc74827ad86b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8277d6c2cbf20dd46ad42489e2f95314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
