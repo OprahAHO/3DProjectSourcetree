@@ -150,7 +150,7 @@ public class PlayerMovementAdv : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(jumpsRemaining);
+        
         MyInput();
         
         SpeedControl();
@@ -169,7 +169,7 @@ public class PlayerMovementAdv : MonoBehaviour
         }
         else
             walking = false;
-        //Debug.Log(state);
+        Debug.Log(state);
     }
     bool walkingSfx = true;
     bool slidingSfx = true;
@@ -233,7 +233,7 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<groundedComponent>() != null || collision.gameObject.GetComponent<WallComponent>() != null)
         {
-            //Debug.Log("11111");
+           
             jumpsRemaining = extraJumpNum;
         } 
         if(collision.gameObject.GetComponent<groundedComponent>() != null)

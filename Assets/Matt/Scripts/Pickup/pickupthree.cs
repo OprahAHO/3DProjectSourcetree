@@ -7,6 +7,8 @@ public class pickupthree : MonoBehaviour
     public static pickupthree instance;
     public Material MaterialVFX;
     public Material materialSelf;
+
+    private bool firstCaugh;
     public void Awake()
     {
         instance = this;
@@ -16,12 +18,13 @@ public class pickupthree : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         renderer.material = materialSelf;
 
+        firstCaugh = true;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            if (!randomskill.instance.left || !randomskill.instance.right)
+            if (!randomskill.instance.left || !randomskill.instance.right&& firstCaugh)
             {
                 StartCoroutine(DeletCard());
 
@@ -30,6 +33,7 @@ public class pickupthree : MonoBehaviour
 
                 randomskill.instance.lg();
                 randomskill.instance.skillthree();
+                firstCaugh =false;
             }
         }
     }

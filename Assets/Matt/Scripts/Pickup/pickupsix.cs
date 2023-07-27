@@ -7,6 +7,8 @@ public class pickupsix : MonoBehaviour
     public static pickupsix instance;
     public Material MaterialVFX;
     public Material materialSelf;
+
+    private bool firstCaugh;
     public void Awake()
     {
         instance = this;
@@ -16,6 +18,7 @@ public class pickupsix : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         renderer.material = materialSelf;
 
+        firstCaugh = true;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +34,8 @@ public class pickupsix : MonoBehaviour
                 randomskill.instance.lg();
                 randomskill.instance.skillsix();
             }
+
+            firstCaugh = false;
         }
     }
     public IEnumerator DeletCard()

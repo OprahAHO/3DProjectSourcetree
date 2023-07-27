@@ -627,7 +627,7 @@ MonoBehaviour:
   raylength: 30
   seenHook: 0
   turnRed: {fileID: 2100000, guid: e4b6d0b0452be43458ff90d1f300a626, type: 2}
-  turnWhite: {fileID: 2100000, guid: 45885d96a1ee79148a0e043e75566235, type: 2}
+  turnWhite: {fileID: 2100000, guid: a4bd02848a47b4f41847827b3a6ace30, type: 2}
 --- !u!114 &768551493052907966
 MonoBehaviour:
   m_ObjectHideFlags: 0
