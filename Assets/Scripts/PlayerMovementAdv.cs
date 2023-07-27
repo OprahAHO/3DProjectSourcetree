@@ -169,7 +169,7 @@ public class PlayerMovementAdv : MonoBehaviour
         }
         else
             walking = false;
-        Debug.Log(state);
+        //Debug.Log(state);
     }
     bool walkingSfx = true;
     bool slidingSfx = true;

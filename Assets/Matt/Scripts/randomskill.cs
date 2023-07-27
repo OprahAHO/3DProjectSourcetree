@@ -8,6 +8,9 @@ public class randomskill : MonoBehaviour
 {
     public bool left=false;
     public bool right=false;
+
+    public GameObject JumpBoostarCanvas;
+
     public GameObject leftzeroicon;
     public GameObject rightzeroicon;
     public GameObject leftoneicon;
@@ -32,23 +35,6 @@ public class randomskill : MonoBehaviour
     public int lefticon;
     public int righticon;
    // public int []e=new int[3];
-   
-    void Start()
-    {
-        
-    }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.GetComponent<SkillManager>() != null)
-    //    {
-    //        randomSkill();
-
-    //    }
-
-    //}
-    // Update is called once per frame
-    
-
     void LateUpdate()
     {if(left)
         {
@@ -82,11 +68,11 @@ public class randomskill : MonoBehaviour
                 case 5: rightfiveicon.SetActive(true);break;
                 case 6: rightsixicon.SetActive(true); break;
             }
-         if (Input.GetMouseButton(1))
-         {
+            if (Input.GetMouseButton(1))
+            {
                 AudioManager.instance.PlaySFX("Chips_Apply");
-            rightskillManager();
-         }
+                rightskillManager();
+            }
         }
         
 
@@ -174,6 +160,8 @@ public class randomskill : MonoBehaviour
             rightskill = 1;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
+
+
     }
     public void skilltwo()
     {
@@ -260,6 +248,10 @@ public class randomskill : MonoBehaviour
         PlayerMovementAdv.instance.shoe0();
         leftoneicon.SetActive(false);
         SkillTime.instance.use = true;
+
+        JumpBoostarCanvas.SetActive(true);
+        StartCoroutine(DeletSkill1Cavans());
+
     }
     public void rightskill1()
     {
@@ -268,6 +260,16 @@ public class randomskill : MonoBehaviour
         PlayerMovementAdv.instance.shoe1();
         rightoneicon.SetActive(false);
         SkillTime.instance.use = true;
+
+        JumpBoostarCanvas.SetActive(true);
+        StartCoroutine(DeletSkill1Cavans());
+
+    }
+
+    public IEnumerator DeletSkill1Cavans()
+    {
+        yield return new WaitForSeconds(2f);
+        JumpBoostarCanvas.SetActive(false);
     }
     public void leftskill2()
     {
