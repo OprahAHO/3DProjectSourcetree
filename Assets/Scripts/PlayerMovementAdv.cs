@@ -376,7 +376,7 @@ public class PlayerMovementAdv : MonoBehaviour
         else if(!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
-        rb.useGravity = !OnSlope();
+        //rb.useGravity = !OnSlope();
     }
 
     private void SpeedControl()

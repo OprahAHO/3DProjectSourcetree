@@ -288,8 +288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 677794128132108820}
   Player: {fileID: 677794128214337221}
+  gr: 0
   Rushskill: 0
-  RushSpeed: 3000
+  RushSpeed: 80
 --- !u!114 &1286080232035144787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: 0
   right: 0
+  JumpBoostarCanvas: {fileID: 0}
   leftzeroicon: {fileID: 0}
   rightzeroicon: {fileID: 0}
   leftoneicon: {fileID: 0}
@@ -626,8 +628,8 @@ MonoBehaviour:
   havehook: 1
   raylength: 30
   seenHook: 0
-  turnRed: {fileID: 2100000, guid: e4b6d0b0452be43458ff90d1f300a626, type: 2}
-  turnWhite: {fileID: 2100000, guid: a4bd02848a47b4f41847827b3a6ace30, type: 2}
+  turnRed: {fileID: 2100000, guid: 93663837c3c063241999371a69a0b4ce, type: 2}
+  turnWhite: {fileID: 2100000, guid: b3cf08ca12a6a9c42bb633fd765d3961, type: 2}
 --- !u!114 &768551493052907966
 MonoBehaviour:
   m_ObjectHideFlags: 0

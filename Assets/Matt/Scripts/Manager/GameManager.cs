@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
    
     public void GameOver()
     {
+        Debug.Log("GameOver");
         AudioManager.instance.PlaySFX("Character_Dead");
         live = false;
         digitalGlitch.enabled = true;

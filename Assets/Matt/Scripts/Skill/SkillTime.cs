@@ -36,9 +36,9 @@ public class SkillTime : MonoBehaviour
      
        
     }
-    void tiaofive()
+    void tiaoonefive()
     {
-        InvokeRepeating("Reduce", 0, 0.006f);
+        InvokeRepeating("Reduce", 0, 0.003f);
     }
    public void useskill()
     {
@@ -55,7 +55,7 @@ public class SkillTime : MonoBehaviour
         if (usefive)
         {
             skilltime.SetActive(true);
-            tiaofive();
+            tiaoonefive();
             usefive = false;
         }
         if (time < 0)

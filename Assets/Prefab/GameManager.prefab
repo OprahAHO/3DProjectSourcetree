@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar1: {fileID: 5746666136369772819}
-  speed: 0.5
+  speed: 1.5
 --- !u!1 &6449146471802445627
 GameObject:
   m_ObjectHideFlags: 0

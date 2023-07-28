@@ -9,6 +9,7 @@ public class SkillManager : MonoBehaviour
     public Transform target;
     public static SkillManager instance;
     public Transform Player;
+    public float gr;
     // public Vector3 point;
     // public Vector3 direction;
     private void Awake()
@@ -47,15 +48,15 @@ public class SkillManager : MonoBehaviour
         //}     Test
         if (Rushskill)
         {
-          //  transform.Translate(target.transform.forward * RushSpeed * Time.deltaTime);
+            //  transform.Translate(target.transform.forward * RushSpeed * Time.deltaTime);
             //     Player.position = Vector3.Lerp(Player.position, target.position, 0.3f);
-         //     GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
-       
-               GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed*Time.deltaTime, ForceMode.Acceleration);
-            //   Player.position = Vector3.Lerp(Player.position, Rushpoint.position, 1f);
+            //     GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
 
-            //  GetComponent<Rigidbody>().AddForce(  new Vector3(0,0,RushSpeed),ForceMode.Force);
+            GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed * Time.deltaTime, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(-transform.up * gr * Time.deltaTime, ForceMode.Acceleration);
+            
         }
+       
 
 
     }
@@ -63,7 +64,7 @@ public class SkillManager : MonoBehaviour
     {
         Rushskill = true;
         //  InvokeRepeating("Rush", 0.1f, 0.5f);
-        Invoke("Rushskillfalse", 3f);
+        Invoke("Rushskillfalse", 1.5f);
 
         //Invoke("Rush", 5f);
         randomskill.instance.left = false;
@@ -72,7 +73,7 @@ public class SkillManager : MonoBehaviour
     {
         Rushskill = true;
         //  InvokeRepeating("Rush", 0.1f, 0.1f);
-        Invoke("Rushskillfalse", 3f);
+        Invoke("Rushskillfalse", 1.5f);
 
         //Invoke("Rush", 5f);
         randomskill.instance.right = false;
