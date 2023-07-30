@@ -6,22 +6,22 @@ public class LevelManager : MonoBehaviour
     public GameObject[] popup;
     public int ScenceCount;
 
-    //public void ActiveScendInterface(int index)
-    //{
-    //    //Debug.Log(index);
-    //    for (int i = 0; i < popup.Length; i++)
-    //    {
-    //        if (i == index)
-    //        {
-    //            popup[i].SetActive(true);
-    //        }
-    //        else
-    //        {
-    //            popup[i].SetActive(false);
-    //        }
-    //    }
-    //    ScenceCount = index+2;
-    //}
+    public void ActiveScendInterface(int index)
+    {
+        //Debug.Log(index);
+        for (int i = 0; i < popup.Length; i++)
+        {
+            if (i == index)
+            {
+                popup[i].SetActive(true);
+            }
+            else
+            {
+                popup[i].SetActive(false);
+            }
+        }
+        ScenceCount = index +3;
+    }
     public void Level3()
     {
         SceneManager.LoadScene(3);

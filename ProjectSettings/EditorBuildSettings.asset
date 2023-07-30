@@ -24,15 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Winwin.unity
     guid: a50cf91e282dfe74ca917ba2ac8034fb
   - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
-    guid: 72664224de0aacf4eae50abf59747b01
-  - enabled: 0
-    path: Assets/Scenes/Level 1.unity
-    guid: 2911ed99de344464f91581a622b7eb6c
-  - enabled: 0
-    path: Assets/Scenes/Level 1Legcy.unity
-    guid: be1f9bf83be58734eab2ff2b6ffdc35a
-  - enabled: 0
     path: Assets/Scenes/testScence.unity
     guid: d11d974a536581848886d727cd07290b
   m_configObjects: {}

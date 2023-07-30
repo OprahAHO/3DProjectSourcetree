@@ -36,29 +36,11 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Rushskill)
-        //{
-        //    if (Input.GetKey(KeyCode.E))
-        //    {
-
-        //        InvokeRepeating("Rush", 1f, 0.1f);
-        //        Invoke("Rushskillfalse", 5f);
-        //    }
-
-        //}     Test
         if (Rushskill)
         {
-            //  transform.Translate(target.transform.forward * RushSpeed * Time.deltaTime);
-            //     Player.position = Vector3.Lerp(Player.position, target.position, 0.3f);
-            //     GetComponent<Rigidbody>().transform.position += target.transform.forward * RushSpeed * Time.deltaTime;
-
             GetComponent<Rigidbody>().AddForce(/*(Rushpoint.position - transform.position).normalized*/target.transform.forward * RushSpeed * Time.deltaTime, ForceMode.Impulse);
             GetComponent<Rigidbody>().AddForce(-transform.up * gr * Time.deltaTime, ForceMode.Acceleration);
-            
         }
-       
-
-
     }
     public void RushSkill0()
     {
@@ -78,16 +60,7 @@ public class SkillManager : MonoBehaviour
         //Invoke("Rush", 5f);
         randomskill.instance.right = false;
     }
-    public void Rush()
-    {
-        if (Rushskill)
-        {
-
-        }
-
-
-
-    }
+  
 
     public void Rushskillfalse()
     {

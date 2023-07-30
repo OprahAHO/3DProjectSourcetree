@@ -220,12 +220,12 @@ RectTransform:
   - {fileID: 1883401632}
   - {fileID: 1028857609}
   - {fileID: 955946347}
+  - {fileID: 460081928}
   - {fileID: 692926812}
   - {fileID: 1174834622}
   - {fileID: 1075469807}
   - {fileID: 544967469}
   - {fileID: 495139674}
-  - {fileID: 460081928}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -478,14 +478,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 544967466}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2094393533}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: ActiveScendInterface
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -1053,10 +1053,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1075469806}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2094393533}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: ActiveScendInterface
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2081,7 +2081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d12475755330e41a7e65d07abf8393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popup: []
+  popup:
+  - {fileID: 1075469806}
+  - {fileID: 544967466}
   ScenceCount: 0
 --- !u!1 &1698268313
 GameObject:
@@ -2954,7 +2956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2094393533
 MonoBehaviour:
   m_ObjectHideFlags: 0
