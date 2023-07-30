@@ -22,7 +22,7 @@ public class pickupsix : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerMovementAdv>() != null)
+        if (other.GetComponent<PlayerMovementAdv>() != null && firstCaugh)
         {
             if (!randomskill.instance.left || !randomskill.instance.right)
             {

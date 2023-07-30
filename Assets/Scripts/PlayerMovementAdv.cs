@@ -158,6 +158,9 @@ public class PlayerMovementAdv : MonoBehaviour
 
         SFXUse();
 
+        CheckGroundRay();
+        //Debug.Log(grounded);
+
         if (grounded)
             rb.drag = groundDrag;
         else
@@ -228,6 +231,15 @@ public class PlayerMovementAdv : MonoBehaviour
 
 
     }
+    private bool RayShootIt;
+    private void CheckGroundRay()
+    {
+        RaycastHit ray;
+        RayShootIt = Physics.Raycast(orientation.position, - orientation.up*1.1f, out ray,1f) && ray.collider.GetComponent<groundedComponent>() != null;
+        //Debug.Log(RayShootIt);
+        //Debug.DrawRay(orientation.position, -orientation.up*1.1f, Color.red);
+    }
+        
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -236,7 +248,7 @@ public class PlayerMovementAdv : MonoBehaviour
            
             jumpsRemaining = extraJumpNum;
         } 
-        if(collision.gameObject.GetComponent<groundedComponent>() != null)
+        if(collision.gameObject.GetComponent<groundedComponent>() != null && RayShootIt)
         {
             grounded = true;
         }
@@ -248,7 +260,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.GetComponent<groundedComponent>() != null)
+        if (collision.gameObject.GetComponent<groundedComponent>() != null && !RayShootIt)
         {
             grounded = false;
         }
@@ -376,7 +388,7 @@ public class PlayerMovementAdv : MonoBehaviour
         else if(!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
-        //rb.useGravity = !OnSlope();
+        rb.useGravity = !OnSlope();
     }
 
     private void SpeedControl()

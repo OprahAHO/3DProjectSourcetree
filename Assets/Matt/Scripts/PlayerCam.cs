@@ -10,48 +10,7 @@ public class PlayerCam : MonoBehaviour
 
     float xRotation;
     float yRotation;
-/*
-    public Transform camTransform;
-    public float shakeDuration = 0.2f;
-    public float shakeAmount = 0.1f;
-    public float decreaseFactor = 1.0f;
 
-    private Vector3 originalPos;*/
-    /// <summary>
-    /// 
-    /// </summary>
-    /*void Awake()
-    {
-        if (camTransform == null)
-        {
-            camTransform = Camera.main.transform;
-        }
-    }
-    public void Shake()
-    {
-        originalPos = camTransform.localPosition;
-        StartCoroutine(ShakeCoroutine());
-    }
-
-    private IEnumerator ShakeCoroutine()
-    {
-        float timer = shakeDuration;
-
-        while (timer > 0f)
-        {
-            camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
-
-            timer -= Time.deltaTime * decreaseFactor;
-
-            yield return null;
-        }
-
-        camTransform.localPosition = originalPos;
-    }*/
-
-    /// <summary>
-    /// 
-    /// </summary>
     void Start()
     {
        Cursor.lockState = CursorLockMode.Locked;

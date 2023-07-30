@@ -68032,7 +68032,7 @@ GameObject:
   - component: {fileID: 1220764571422438373}
   - component: {fileID: 8308148212310523464}
   m_Layer: 0
-  m_Name: FX_PowerUp_ArrowDirection_AA
+  m_Name: WinPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

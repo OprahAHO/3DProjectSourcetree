@@ -53,6 +53,7 @@ public class WallRunningAdv : MonoBehaviour
     {
         CheckForWall();
         StateMachine();
+        //Debug.Log(AboveGround());
     }
     private void FixedUpdate()
     {
@@ -65,7 +66,6 @@ public class WallRunningAdv : MonoBehaviour
     {
         wallRight = (Physics.Raycast(transform.position, orientation.right, out RaycastHit rightWallHit, wallCheckDistance) && rightWallHit.collider.GetComponent<WallComponent>() != null);
         wallLeft = (Physics.Raycast(transform.position, -orientation.right, out RaycastHit leftWallHit, wallCheckDistance) && leftWallHit.collider.GetComponent<WallComponent>() != null);
-
     }
 
     private bool AboveGround()
@@ -104,7 +104,7 @@ public class WallRunningAdv : MonoBehaviour
     private void StartWallRun()
     {
         pm.wallrunning = true;
-       
+        //Debug.Log("StartWallRun have BUG!"); 
         wallRunTimer = maxWallRunTime;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
