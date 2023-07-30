@@ -65,20 +65,6 @@ public class BoomNowComponent : MonoBehaviour
         StopBoom();
     }
 
-    /*void StartBigBoom()
-    {
-        Transform playerTransform = BigBoom.Instance.player.GetComponent<Transform>();
-
-        
-        Transform playerPoint = BigBoom.Instance.orientation;
-        Vector3 translateVector = (playerPoint.position - (transform.position - transform.up * upPoint)).normalized * largeForce * Time.deltaTime;
-
-        //BigBoom.Instance.player.GetComponent<Transform>().Translate(translateVector);
-
-        Vector3 targetPosition = playerTransform.position + translateVector;
-
-        playerTransform.DOMove(targetPosition, moveDuration);
-    }*/
 
     void StartBigBoom()
     {
@@ -90,6 +76,7 @@ public class BoomNowComponent : MonoBehaviour
         BigBoom.Instance.player.GetComponent<Rigidbody>().AddForce(addForceVector * largeForce);
 
         VfxManager.instance.PlayVFXBaozha(transform.position);
+        AudioManager.instance.PlaySFX("Sfx_Explosion");
     }
 
     void StopBoom()
