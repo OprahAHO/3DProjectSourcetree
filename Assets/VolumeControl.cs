@@ -17,7 +17,7 @@ public class VolumeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AS.volume=partVolume.value;
+        AS.volume = partVolume.value;
         AudioListener.volume = Allvolume.value;
     }
 }
