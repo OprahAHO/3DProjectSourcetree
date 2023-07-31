@@ -55,42 +55,4 @@ public class PlayerCam : MonoBehaviour
         transform.DOLocalRotate(new Vector3(0, 0, zTilt), 0.25f);
     }
 
-   /* /// <summary>
-    /// 
-    /// 
-    /// </summary>
-    /// 
-    void Shake()
-    {
-        if(VfxManager.instance.horizontalSpeed > 3)
-        {
-            float count = VfxManager.instance.horizontalSpeed;
-            ShakeCamera(1f, count * 10);
-     
-        }
-        Debug.Log(VfxManager.instance.horizontalSpeed);
-    }
-  
-    public void ShakeCamera(float amplitude, float frequency)
-    {
-        // ??Cinemachine Noise???
-        CinemachineBasicMultiChannelPerlin noise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        // ???????
-        noise.m_AmplitudeGain = amplitude;
-        noise.m_FrequencyGain = frequency;
-
-        // ?????????????
-
-        StartCoroutine(ResetCameraShake(noise));
-    }
-
-    private IEnumerator ResetCameraShake(CinemachineBasicMultiChannelPerlin noise)
-    {
-        yield return new WaitForSeconds(5);
-        // ???????0???????
-        noise.m_AmplitudeGain = 0f;
-        noise.m_FrequencyGain = 0f;
-     
-    }*/
 }
