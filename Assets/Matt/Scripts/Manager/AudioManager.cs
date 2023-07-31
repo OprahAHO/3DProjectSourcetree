@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource, sfxSource, characterSource;
     public AudioClip Sfx_Level_Hook, Sfx_Level_Laser, Sfx_Level_MovePlatform, Sfx_Level_Shoot, Sfx_Level_Shredder;
 
+    public VolumeSliderSenter volumeSliderSenter;
+    
+
     private void Awake()
     {
         if (instance == null)

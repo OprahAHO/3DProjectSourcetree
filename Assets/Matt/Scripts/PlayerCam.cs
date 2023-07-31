@@ -27,7 +27,7 @@ public class PlayerCam : MonoBehaviour
     {
         
         //Shake();
-        value = MouseSpeedController.mouseSpeedValue;
+        value = VolumeSliderSenter.mouseSpeedValue;
         if (value < 0.0001)
         {
             value = 200;

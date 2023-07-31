@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 2182503811344276922}
   - component: {fileID: 2182503811344276923}
   m_Layer: 0
-  m_Name: AudioManager ADV
+  m_Name: AudioManagerAdv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   Sfx_Level_MovePlatform: {fileID: 8300000, guid: f17717f5323c20044ae7295f88406ee0, type: 3}
   Sfx_Level_Shoot: {fileID: 8300000, guid: ee48bb2602300154e95b92b71fbb94c5, type: 3}
   Sfx_Level_Shredder: {fileID: 8300000, guid: 2260d001db12aec438b5532fdd260174, type: 3}
+  volumeSliderSenter: {fileID: 0}
 --- !u!1 &2182503811828014178
 GameObject:
   m_ObjectHideFlags: 0
