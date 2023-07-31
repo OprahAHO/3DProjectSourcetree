@@ -188,7 +188,7 @@ public class PlayerMovementAdv : MonoBehaviour
             airSfx = true;
             idleSfx = true;
             wallrunSfx = true;
-            AudioManager.instance.PlayCharacterMusic("Sfx_Ft");
+            AudioManager.instance.characterSource.Stop();
         }
 
         else if (state == MovementState.sliding && slidingSfx)
@@ -243,7 +243,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<groundedComponent>() != null || collision.gameObject.GetComponent<WallComponent>() != null)
+        if ((collision.gameObject.GetComponent<groundedComponent>() != null ) || collision.gameObject.GetComponent<WallComponent>() != null)
         {
            
             jumpsRemaining = extraJumpNum;

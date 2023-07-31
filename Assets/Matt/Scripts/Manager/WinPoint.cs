@@ -8,8 +8,8 @@ public class WinPoint : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
+            DarkLight.instance.PassLevel();
             GameManager.instance.GameSuccess();
-
         }
     }
 }

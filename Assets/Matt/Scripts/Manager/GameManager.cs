@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public DigitalGlitch digitalGlitch;
     public AnalogGlitch analogGlitch;
 
-    bool pause;
+    public bool pause;
     public bool live;
     //public bool live=false;
     private void Awake()
@@ -96,10 +96,15 @@ public class GameManager : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        pause = true;
+      //  Time.timeScale = 0;
+        //SceneManager.LoadScene("Winwin");
+        Invoke("winwin", 1.5f);
 
+    }
+    void winwin()
+    {
         SceneManager.LoadScene("Winwin");
-        
-
     }
     
     public void Exit()

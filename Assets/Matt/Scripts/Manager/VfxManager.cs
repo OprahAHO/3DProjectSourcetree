@@ -13,6 +13,8 @@ public class VfxManager : MonoBehaviour
     
     private ParticleSystem.EmissionModule emissionModule;
 
+    public float horizontalSpeed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -52,7 +54,7 @@ public class VfxManager : MonoBehaviour
     {
         Vector3 horizontalVelocity = rb.velocity;
         horizontalVelocity.y = 0f;
-        float horizontalSpeed = horizontalVelocity.magnitude;
+         horizontalSpeed = horizontalVelocity.magnitude;
         //Debug.Log(horizontalSpeed);
         if (horizontalSpeed > moveSpeed)
         {
