@@ -35,7 +35,7 @@ public class TimeUsed : MonoBehaviour
         if (scence == 2)
         {
             scenceText.text = toturial;
-            title.text = "H0-" + titletoturial;
+            title.text = titletoturial;
         }
         else if (scence == 3)
         {

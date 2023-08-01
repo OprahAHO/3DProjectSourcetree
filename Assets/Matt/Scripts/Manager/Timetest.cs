@@ -16,15 +16,21 @@ public class Timetest : MonoBehaviour
     public static string textString;
     public static float textSt;
     public static int currentSceneIndex;
+    public bool isTime;
     private void Awake()
     {
-        
+        instance= this;
     }
+    private void Start()
+    {
+        isTime = false;
+    }
+ 
     void Update()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (GameManager.instance.live&!GameManager.instance.pause)
+        if (GameManager.instance.live&&!GameManager.instance.pause&&isTime)
         {
 
             timer += Time.deltaTime;

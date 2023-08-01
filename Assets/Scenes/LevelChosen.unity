@@ -223,8 +223,8 @@ RectTransform:
   - {fileID: 460081928}
   - {fileID: 692926812}
   - {fileID: 1174834622}
-  - {fileID: 1075469807}
   - {fileID: 495139674}
+  - {fileID: 1075469807}
   - {fileID: 1384424026}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -979,9 +979,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1652351029}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: Level0
+      - m_Target: {fileID: 1652351027}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2400,7 +2400,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1652351028}
   - component: {fileID: 1652351027}
-  - component: {fileID: 1652351029}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2442,22 +2441,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1652351029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652351026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d12475755330e41a7e65d07abf8393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popup:
-  - {fileID: 1075469806}
-  - {fileID: 0}
-  ScenceCount: 0
 --- !u!1 &1699845424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popup:
   - {fileID: 1075469806}
-  - {fileID: 0}
+  - {fileID: 1384424025}
   ScenceCount: 0
 --- !u!4 &2094393534
 Transform:

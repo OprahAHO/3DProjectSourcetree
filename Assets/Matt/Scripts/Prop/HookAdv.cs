@@ -11,8 +11,10 @@ public class HookAdv : MonoBehaviour
 
     public Transform playerTransf;
     public Rigidbody playerRb;
-    public float rateoverTime = 5000f;
     Transform hooktransf;
+    public float rateoverTime = 5000f;
+    
+
     private AudioSource audioSource;
     public void Awake()
     {
@@ -27,20 +29,24 @@ public class HookAdv : MonoBehaviour
     public void StartHook()
     {
         VfxManager.instance.SpeedVFXStart(rateoverTime);
+
         Vector3 targetPosition = hooktransf.position;
         Vector3 direction = (targetPosition - playerTransf.position).normalized;
+
         AudioManager.instance.PlaySfx_Level_Hook(audioSource);
+
         StartCoroutine(MoveCoroutine(targetPosition, direction));
     }
 
     private IEnumerator MoveCoroutine(Vector3 targetPosition, Vector3 direction)
     {
-        while (Vector3.Distance(playerTransf.position, targetPosition) > 0.1f)
+        while (Vector3.Distance(playerTransf.position, targetPosition) > 5f)
         {
             playerRb.MovePosition(playerTransf.position + direction * 100 * Time.fixedDeltaTime);
             yield return new WaitForFixedUpdate();
         }
         playerRb.MovePosition(targetPosition);
+
         VfxManager.instance.SpeedVFXStop();
     }
     private void OnTriggerEnter(Collider other)

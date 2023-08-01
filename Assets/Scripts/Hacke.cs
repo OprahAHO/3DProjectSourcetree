@@ -43,7 +43,7 @@ public class Hacke : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 HackingMethods0();
-                randomskill.instance.left = false;
+                
             }
         }
     }
@@ -55,7 +55,7 @@ public class Hacke : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 HackingMethods1();
-                randomskill.instance.right = false;
+                
             }
         }
     }
@@ -68,6 +68,7 @@ public class Hacke : MonoBehaviour
             if(Plat != null)
             {
                 Plat.RotateStart();
+
             }
 
         }
@@ -77,6 +78,7 @@ public class Hacke : MonoBehaviour
             if (Plat != null)
             {
                 Plat.PanningStart();
+                randomskill.instance.left = false;
             }
         }
 
@@ -98,6 +100,7 @@ public class Hacke : MonoBehaviour
             if (Plat != null)
             {
                 Plat.PanningStart();
+                randomskill.instance.right = false;
             }
         }
 

@@ -251,7 +251,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677794128214337220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -828,6 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 677794128160221830}
   camHolder: {fileID: 677794128674253100}
+  virtualCamera: {fileID: 0}
 --- !u!114 &7924349727010761551
 MonoBehaviour:
   m_ObjectHideFlags: 0
