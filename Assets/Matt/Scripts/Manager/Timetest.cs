@@ -48,7 +48,7 @@ public class Timetest : MonoBehaviour
     void we()
     {
         textString = minutetimer.ToString("00") + ":" + timer.ToString("00");
-        texttime.text = "Time:" + textString;
+        texttime.text = /*"Time:" +*/ textString;
     }
 
 }

@@ -108,22 +108,19 @@ public class randomskill : MonoBehaviour
     }
     public void lg()
     {
-        if (!left && !right)
-        {
-            left = true;
-        }
-         else if (left && !right)
-        {
-            right = true;
-        }
-        // else if (left && right)
+        //if (!left && !right)
         //{
-
+        //    left = true;
         //}
-        else if (!left && right)
-        {
-            left = true;
-        }
+        // else if (left && !right)
+        //{
+        //    right = true;
+        //}
+        
+        //else if (!left && right)
+        //{
+        //    left = true;
+        //}
     }
     public void randomSkill()
     {
@@ -139,25 +136,42 @@ public class randomskill : MonoBehaviour
     }
     public void skillzero()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 0;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 0;
         }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 0;
+        }
+        
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillone()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 1;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 1;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 1;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
 
@@ -165,61 +179,101 @@ public class randomskill : MonoBehaviour
     }
     public void skilltwo()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 2;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 2;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 2;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillthree()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 3;
         }
-        if (right)
+        else if (left && !right)
         {
-            rightskill = 3;
+            right = true;
+            rightskill =3;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 3;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfour()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 4;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 4;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 4;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfive()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 5;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 5;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 5;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillsix()
     {
-        if (left && !right)
+        if (!left && !right)
         {
+            left = true;
             leftskill = 6;
         }
-        if (right)
+        else if (left && !right)
         {
+            right = true;
             rightskill = 6;
+        }
+
+        else if (!left && right)
+        {
+            left = true;
+            leftskill = 6;
         }
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
