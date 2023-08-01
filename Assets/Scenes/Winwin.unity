@@ -1661,9 +1661,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 35525925}
   scenceText: {fileID: 1024266762}
+  title: {fileID: 2052383014}
   toturial: caonima
   Level1: 1
   Level2: 2
+  titletoturial: toturial
 --- !u!1 &1548632699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,7 +2004,7 @@ GameObject:
   - component: {fileID: 2052383015}
   - component: {fileID: 2052383014}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Smalltitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
