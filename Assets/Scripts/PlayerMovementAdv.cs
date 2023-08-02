@@ -236,8 +236,6 @@ public class PlayerMovementAdv : MonoBehaviour
     {
         RaycastHit ray;
         RayShootIt = Physics.Raycast(orientation.position, - orientation.up*1.1f, out ray,1f) && ray.collider.GetComponent<groundedComponent>() != null;
-        //Debug.Log(RayShootIt);
-        //Debug.DrawRay(orientation.position, -orientation.up*1.1f, Color.red);
     }
         
 
@@ -276,6 +274,8 @@ public class PlayerMovementAdv : MonoBehaviour
         MovePlayer();
     }
     bool keepMomentum;
+
+    bool air;
     private void StateHandler()
     {
         if(walking && !sliding && grounded)
@@ -309,6 +309,7 @@ public class PlayerMovementAdv : MonoBehaviour
         else if(!grounded && !sliding) 
         {
             state = MovementState.air;
+            air = true;
         }
         bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
 
@@ -382,7 +383,6 @@ public class PlayerMovementAdv : MonoBehaviour
         else if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-           
         }
 
         else if(!grounded)
@@ -393,12 +393,13 @@ public class PlayerMovementAdv : MonoBehaviour
 
     private void SpeedControl()
     {
-        if(OnSlope() && !exitingSlope)
+        if (OnSlope() && !exitingSlope)
         {
             if (rb.velocity.magnitude > moveSpeed)
+            {
                 rb.velocity = rb.velocity.normalized * moveSpeed;
+            }
         }
-
         else
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

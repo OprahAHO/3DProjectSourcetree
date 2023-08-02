@@ -1663,8 +1663,8 @@ MonoBehaviour:
   timeText: {fileID: 35525925}
   scenceText: {fileID: 1024266762}
   title: {fileID: 2052383014}
-  toturial: caonima
-  Level1: 1
+  toturial: Training
+  Level1: Dodge
   Level2: 2
   titletoturial: toturial
 --- !u!1 &1548632699
