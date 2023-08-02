@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public bool pause;
     public bool live;
 
+    public PlayerMovementAdv player;
+    public PlayerCam playerCam;
+
     //public bool live=false;
     private void Awake()
     {
@@ -65,6 +68,9 @@ public class GameManager : MonoBehaviour
             live = true;
             skill.SetActive(true);
             pause = false;
+
+            player.enabled = true;
+            playerCam.enabled = true;
         }
     }
     public void Resume()
@@ -89,7 +95,10 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Time.timeScale = 0f;
+        player.enabled = false;
+        playerCam.enabled = false;
+
+        //Time.timeScale = 0f;
 
         ShowGameOverPanel();
 

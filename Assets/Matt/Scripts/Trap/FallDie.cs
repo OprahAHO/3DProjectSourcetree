@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FallDie : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+   
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.GetComponent<PlayerMovementAdv>() != null)
+        if (other.gameObject.GetComponent<PlayerMovementAdv>() != null)
         {
             GameManager.instance.GameOver();
         }

@@ -158,7 +158,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
         SFXUse();
 
-        CheckGroundRay();
+        //CheckGroundRay();
         //Debug.Log(grounded);
 
         if (grounded)
@@ -231,12 +231,12 @@ public class PlayerMovementAdv : MonoBehaviour
 
 
     }
-    private bool RayShootIt;
-    private void CheckGroundRay()
+    //private bool RayShootIt;
+   /* private void CheckGroundRay()
     {
         RaycastHit ray;
         RayShootIt = Physics.Raycast(orientation.position, - orientation.up*1.1f, out ray,1f) && ray.collider.GetComponent<groundedComponent>() != null;
-    }
+    }*/
         
 
     private void OnCollisionEnter(Collision collision)
@@ -246,7 +246,7 @@ public class PlayerMovementAdv : MonoBehaviour
            
             jumpsRemaining = extraJumpNum;
         } 
-        if(collision.gameObject.GetComponent<groundedComponent>() != null && RayShootIt)
+        if(collision.gameObject.GetComponent<groundedComponent>() != null)
         {
             grounded = true;
         }
@@ -258,7 +258,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.GetComponent<groundedComponent>() != null && !RayShootIt)
+        if (collision.gameObject.GetComponent<groundedComponent>() != null)
         {
             grounded = false;
         }
@@ -356,16 +356,6 @@ public class PlayerMovementAdv : MonoBehaviour
             yield return null;
         }
     }
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetKeyDown(jumpKey) && CanJump())
-        {
-            Jump();
-        }
-    }
 
     private void MovePlayer()
     {
@@ -400,7 +390,7 @@ public class PlayerMovementAdv : MonoBehaviour
                 rb.velocity = rb.velocity.normalized * moveSpeed;
             }
         }
-        else
+       else
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -409,6 +399,17 @@ public class PlayerMovementAdv : MonoBehaviour
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
+        }
+    }
+
+    private void MyInput()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(jumpKey) && CanJump())
+        {
+            Jump();
         }
     }
 
