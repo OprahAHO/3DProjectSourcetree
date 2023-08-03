@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject BulletPrefab;
+    
     public float deltaT = 0.5f;
     private float InvokeTime;
     public float speed;
@@ -14,6 +15,7 @@ public class Bullet : MonoBehaviour
     {
         InvokeTime = deltaT;
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class Bullet : MonoBehaviour
             InvokeTime += Time.deltaTime;
             if(InvokeTime > deltaT)
             {
-                shoot();
+                 shoot();
                 InvokeTime = 0;
             }
            

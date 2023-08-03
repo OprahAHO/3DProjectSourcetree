@@ -12,6 +12,7 @@ public class MazeTurret : MonoBehaviour
     public float minRot = -89f, MaxRot = 10f;
     public float distance;
     public float attackdistance;
+    public GameObject buggun;
 
 
     public void Awake()
@@ -25,7 +26,7 @@ public class MazeTurret : MonoBehaviour
 
         
         if (distance < attackdistance)
-        {
+        {buggun.SetActive(false);
             Vector3 tarDir = target.position - rotator.position;
             Vector3 rotatorDir = Vector3.ProjectOnPlane(tarDir, transform.up);
 
@@ -44,8 +45,12 @@ public class MazeTurret : MonoBehaviour
 
            
         }
+ if (distance > attackdistance)
+        {
+            buggun.SetActive(true);
+        }
 
     }
-
+   
 
 }

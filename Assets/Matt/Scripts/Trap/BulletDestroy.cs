@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BulletDestroy : MonoBehaviour
 {
-   // public Transform Maze;
-    public Transform remaze;
+    public Transform Maze;
+   // public Transform remaze;
     public float bulletdistance;
     void Start()
     {
+        BulletDestroy bulletDestroy= GetComponent<BulletDestroy>();
     }
     //public void Initialize(Transform targetTransform)
     //{
@@ -20,18 +21,26 @@ public class BulletDestroy : MonoBehaviour
         {
             GameManager.instance.GameOver();
         }
-        
+        if (other.GetComponent<BoxCollider>() != null)
+        {
+            Destroy(gameObject);
+        }
 
+    }
+    void bb()
+    {
+        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()
     {
            // BulletDestroy bd = GetComponent<BulletDestroy>();
        // Maze= remaze;
-        bulletdistance = (remaze.position - transform.position).magnitude;
+        bulletdistance = (Maze.position - transform.position).magnitude;
         if (bulletdistance > 20)
         {
-            Destroy(gameObject);
+
+            Invoke("bb", 2f);
         }
     }
 }
