@@ -13,7 +13,7 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    public CinemachineVirtualCamera virtualCamera;
+   
 
     void Start()
     {

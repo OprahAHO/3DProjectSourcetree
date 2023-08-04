@@ -10,6 +10,7 @@ public class Resurrection : MonoBehaviour
     public Transform[] checkpoint;
     public GameObject[] pickupprop;
     public GameObject[] resetPlatform;
+    public GameObject[] BrokenPlatform;
     public Transform ResurrectPoint;
     public GameObject Checkpoint;
 
@@ -44,9 +45,10 @@ public class Resurrection : MonoBehaviour
             old();
             newnew();
             Time.timeScale = 1f;
-            
             ActivatePickupOnes();
+            ResetBroken();
             ResetPlatform();
+            
 
         }
     }
@@ -136,7 +138,19 @@ public class Resurrection : MonoBehaviour
             }
         }
     }
+    public void ResetBroken()
+    {
+        foreach (GameObject brokenplatform in BrokenPlatform)
+        {
+            Brokenplatform broken = brokenplatform.GetComponent<Brokenplatform>();
+            if (broken != null)
+            {
+                broken.re();
+            }
+        }
 
+
+    }
 
 
 

@@ -504,6 +504,7 @@ MonoBehaviour:
   - {fileID: 0}
   resetPlatform:
   - {fileID: 0}
+  BrokenPlatform: []
   ResurrectPoint: {fileID: 7414755485375234726}
   Checkpoint: {fileID: 0}
   digitalGlitch: {fileID: 7924349727010761550}
@@ -729,7 +730,6 @@ GameObject:
   - component: {fileID: 7924349727010761551}
   - component: {fileID: 7924349727010761550}
   - component: {fileID: 7924349727010761540}
-  - component: {fileID: 6500032996240454187}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: Untagged
@@ -828,7 +828,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 677794128160221830}
   camHolder: {fileID: 677794128674253100}
-  virtualCamera: {fileID: 0}
 --- !u!114 &7924349727010761551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,44 +872,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &6500032996240454187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677794129054519766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    ModeOverride: 0
-    LensShift: {x: 0, y: 0}
-    GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 8284207047042557365}
 --- !u!1 &677794129108280253
 GameObject:
   m_ObjectHideFlags: 0

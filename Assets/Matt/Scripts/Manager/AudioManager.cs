@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds, sfxSounds, charactersounds;
 
     public AudioSource musicSource, sfxSource, characterSource;
-    public AudioClip Sfx_Level_Hook, Sfx_Level_Laser, Sfx_Level_MovePlatform, Sfx_Level_Shoot, Sfx_Level_Shredder;
+    public AudioClip Sfx_Level_Hook, Sfx_Level_Laser, Sfx_Level_MovePlatform, Sfx_Level_Shoot, Sfx_Level_Shredder, BrokenPlatform;
 
     public VolumeSliderSenter volumeSliderSenter;
     
@@ -130,5 +130,9 @@ public class AudioManager : MonoBehaviour
     public void PlaySfx_Level_Shredder(AudioSource audioSource)
     {
         audioSource.PlayOneShot(Sfx_Level_Shredder);// AudioManager.instance.PlaySfx_Level_Shredder(audioSource);          
+    }
+    public void PlaySfx_BrokenPlatform(AudioSource audioSource)
+    {
+        audioSource.PlayOneShot(BrokenPlatform);// AudioManager.instance.PlaySfx_BrokenPlatform(audioSource);          
     }
 }

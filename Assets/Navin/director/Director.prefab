@@ -4924,7 +4924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &103162247531078247
 Transform:
   m_ObjectHideFlags: 0
@@ -10289,7 +10289,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 5
     angle: 0
     length: 0.36
     boxThickness: {x: 0, y: 0, z: 0}
@@ -10365,7 +10365,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 1ea277ea607860d4aa67979bf55a0565, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -11036,10 +11036,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.4481132, g: 1, b: 0.5952017, a: 0}
-        key1: {r: 0.514151, g: 1, b: 0.5373872, a: 0.9490196}
-        key2: {r: 0.6908745, g: 1, b: 0.30588233, a: 1}
-        key3: {r: 0, g: 1, b: 0.15327382, a: 0}
+        key0: {r: 0.9103774, g: 1, b: 0.98754245, a: 0}
+        key1: {r: 0.6273585, g: 0.9293957, b: 1, a: 0.9490196}
+        key2: {r: 0, g: 1, b: 0.9367323, a: 1}
+        key3: {r: 0, g: 1, b: 0.9367323, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -11061,7 +11061,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 3
         m_NumAlphaKeys: 3
       minGradient:
@@ -19439,7 +19439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2083994487158634888
 Transform:
   m_ObjectHideFlags: 0
@@ -24346,7 +24346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2674993664671850406
 Transform:
   m_ObjectHideFlags: 0
@@ -29146,7 +29146,7 @@ Transform:
   m_GameObject: {fileID: 4078836599067010726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.3612, y: 2.3612, z: 2.3612}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8112478854220444340}
@@ -30095,7 +30095,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -30114,10 +30114,10 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0.80233383
         - serializedVersion: 3
-          time: 0.15
-          value: 0.8
-          inSlope: 0
-          outSlope: 0
+          time: 0.14739838
+          value: 0.93513566
+          inSlope: -0.007502377
+          outSlope: -0.007502377
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -30125,17 +30125,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.3
           value: 1
-          inSlope: 0.16666663
-          outSlope: 0.16666663
+          inSlope: 0.0544793
+          outSlope: 0.0544793
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.5
-          value: 0.8
-          inSlope: 0
-          outSlope: 0
+          time: 0.50520325
+          value: 0.93513566
+          inSlope: 0.008443341
+          outSlope: 0.008443341
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -30143,17 +30143,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.7
           value: 1
-          inSlope: -0.16666645
-          outSlope: -0.16666645
+          inSlope: 0.042512387
+          outSlope: 0.042512387
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.85
-          value: 0.8
-          inSlope: 0.00000029802322
-          outSlope: 0.00000029802322
+          time: 0.852594
+          value: 0.9621628
+          inSlope: 0.0043635517
+          outSlope: 0.0043635517
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -34021,7 +34021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5117552928245536468
 Transform:
   m_ObjectHideFlags: 0
@@ -39017,7 +39017,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.79388684, g: 1, b: 0.4292453, a: 0.6117647}
+      maxColor: {r: 0.082858644, g: 0.7223562, b: 0.9245283, a: 0.6117647}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -43714,7 +43714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5337893469087229567
 Transform:
   m_ObjectHideFlags: 0
@@ -54036,7 +54036,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 5
     angle: 0
     length: 0.36
     boxThickness: {x: 0, y: 0, z: 0}
@@ -54112,7 +54112,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 1ea277ea607860d4aa67979bf55a0565, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -63185,7 +63185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7391913008200348825
 Transform:
   m_ObjectHideFlags: 0
