@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HookCheck : MonoBehaviour
 {
     public static HookCheck instance;
-
+    public GameObject AimBoard;
     public bool havehook;
    
 
@@ -19,6 +19,7 @@ public class HookCheck : MonoBehaviour
     public Material turnRed;
     public Material turnWhite;
 
+
     public void Awake()
     {
         instance = this;
@@ -28,6 +29,7 @@ public class HookCheck : MonoBehaviour
     void Update()
     {
         Return();
+        aimcheck();
     }
     private void FixedUpdate()
     {
@@ -42,19 +44,21 @@ public class HookCheck : MonoBehaviour
         float centerY = screenHeight / 2f;
         Ray HookRay = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
-        seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<HookAdv>();
+        seenHook = Physics.Raycast(HookRay, out hit, raylength) && hit.collider.GetComponent<HookAdv>()!=null;
     }
+    
+   
     void Return()
     {
         if (seenHook)
         {
             HookAdv hook = hit.collider.GetComponent<HookAdv>();
+            
             if (hook != null)
             {
 
                 renderer = hook.GetComponent<Renderer>();
                 renderer.material = turnRed;
-
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -67,7 +71,20 @@ public class HookCheck : MonoBehaviour
             if (renderer != null)
             {
                 renderer.material = turnWhite;
+                
             }
+        }
+    }
+    void aimcheck()
+    {
+
+        if (seenHook || Hacke.instance.havePlatform)
+        {
+            AimBoard.SetActive(true);
+        }
+        else
+        {
+            AimBoard.SetActive(false);
         }
     }
 }

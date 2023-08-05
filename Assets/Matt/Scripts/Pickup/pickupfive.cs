@@ -42,5 +42,6 @@ public class pickupfive : MonoBehaviour
     {
         yield return new WaitForSeconds(1.1f);
         gameObject.SetActive(false);
+
     }
 }

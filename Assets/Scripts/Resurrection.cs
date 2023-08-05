@@ -1,4 +1,5 @@
 using SimpleEffects.Glitch;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -22,6 +23,8 @@ public class Resurrection : MonoBehaviour
     public GameObject die;
     public int currentCheckpointIndex;
     private float chepointcheckNum;
+
+
 
     public int skillleft;
     public int skillright;
@@ -112,19 +115,23 @@ public class Resurrection : MonoBehaviour
     }
     public void newnew()
     {
-        randomskill.instance.left = lll;
-         randomskill.instance.right=rrr ;
-         randomskill.instance.leftskill=skillleft;
+       randomskill.instance.left = lll;
+       randomskill.instance.right=rrr ;
+       randomskill.instance.leftskill=skillleft;
        randomskill.instance.rightskill=skillright;
        
     }
 
     public void ActivatePickupOnes()
     {
-        foreach (GameObject pickup in pickupprop)
+        /*foreach (GameObject pickup in pickupprop)
         {
             pickup.SetActive(true);
-          
+        }*/
+        for (int i = 0; i < pickupprop.Length; i++)
+        {
+            pickupprop[i].SetActive(true);
+
         }
     }
     public void ResetPlatform()
@@ -148,10 +155,35 @@ public class Resurrection : MonoBehaviour
                 broken.re();
             }
         }
-
-
     }
 
+    void useleft()
+    {
+        if (!randomskill.instance.left && randomskill.instance.leftskill == 0)
+        {
+            RespawnCard();
+        }
+    }
+    void useright()
+    {
+        if (!randomskill.instance.right && randomskill.instance.rightskill == 0)
+        {
+            RespawnCard();
+        }
+    }
 
-
+    public void RespawnCard()
+    {
+        for (int i = 0; i < pickupprop.Length; i++)
+        {
+            if(pickupprop[i] = null)
+            {
+                pickupprop[i].SetActive(true);
+            }
+            else
+            {
+                pickupprop[i].SetActive(false);
+            }
+        }
+    }
 }

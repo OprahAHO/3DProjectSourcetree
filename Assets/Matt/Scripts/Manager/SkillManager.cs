@@ -27,13 +27,6 @@ public class SkillManager : MonoBehaviour
     public bool Rushskill;
     public float RushSpeed = 1;
 
-    public void Start()
-    {
-       
-    }
-
-
-
     private void Update()
     {
         if (Rushskill)

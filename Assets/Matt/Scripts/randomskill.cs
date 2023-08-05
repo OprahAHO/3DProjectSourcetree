@@ -8,6 +8,8 @@ public class randomskill : MonoBehaviour
 {
     public bool left=false;
     public bool right=false;
+    public bool skill0;
+    public bool skill5;
 
     public GameObject JumpBoostarCanvas;
 
@@ -25,6 +27,12 @@ public class randomskill : MonoBehaviour
     public GameObject rightfiveicon;
     public GameObject leftsixicon;
     public GameObject rightsixicon;
+
+    private void Start()
+    {
+        skill0 = true;
+        skill5=true;
+    }
     private void Awake()
     {
         instance= this;
@@ -35,6 +43,7 @@ public class randomskill : MonoBehaviour
     public int lefticon;
     public int righticon;
    // public int []e=new int[3];
+   
     void LateUpdate()
     {if(left)
         {
@@ -140,11 +149,13 @@ public class randomskill : MonoBehaviour
         {
             left = true;
             leftskill = 0;
+           
         }
         else if (left && !right)
         {
             right = true;
             rightskill = 0;
+           
         }
 
         else if (!left && right)
@@ -173,6 +184,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 1;
         }
+       
         AudioManager.instance.PlaySFX("Chips_PickUp");
 
 
@@ -195,6 +207,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 2;
         }
+       
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillthree()
@@ -215,6 +228,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 3;
         }
+        
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfour()
@@ -235,6 +249,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 4;
         }
+      
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillfive()
@@ -255,6 +270,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 5;
         }
+       
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
     public void skillsix()
@@ -275,6 +291,7 @@ public class randomskill : MonoBehaviour
             left = true;
             leftskill = 6;
         }
+       
         AudioManager.instance.PlaySFX("Chips_PickUp");
     }
 
@@ -286,6 +303,7 @@ public class randomskill : MonoBehaviour
         SkillManager.instance.RushSkill0();
         leftzeroicon.SetActive(false);
         SkillTime.instance.usefive = true;
+        skill0 = false;
     }
     public void rightskill0()
     {
@@ -294,6 +312,7 @@ public class randomskill : MonoBehaviour
         SkillManager.instance.RushSkill1();
         rightzeroicon.SetActive(false);
         SkillTime.instance.usefive = true;
+        skill0 = false;
     }
     public void leftskill1()
     {
@@ -367,12 +386,13 @@ public class randomskill : MonoBehaviour
     {
         BigBoom.Instance.boom0();
         leftfiveicon.SetActive(false);
-        
+        skill5 = false;
     }
     public void rightskill5()
     {
         BigBoom.Instance.boom1();
         rightfiveicon.SetActive(false);
+        skill5 = false;
     }
     public void leftskill6()
     {

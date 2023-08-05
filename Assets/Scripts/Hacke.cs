@@ -8,9 +8,9 @@ public class Hacke : MonoBehaviour
     public static Hacke instance;
 
     public Transform PlayerCam;
-
+    
     //private bool canRotate;
-    private bool havePlatform;
+    public bool havePlatform;
     private RaycastHit hit;
     public float controlRange = 2000f;
 
@@ -23,6 +23,7 @@ public class Hacke : MonoBehaviour
        // Hacking0();
      //   Hacking1();
         PlatformCheck();
+       
     }
 
     void PlatformCheck()
@@ -34,7 +35,7 @@ public class Hacke : MonoBehaviour
         float centerY = screenHeight / 2f;
         Ray ray = cameraComponent.ScreenPointToRay(new Vector3(centerX, centerY, 0f));
 
-        havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<RotationPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
+        havePlatform = (Physics.Raycast(ray, out hit, controlRange) && (hit.collider.GetComponent<PanningPlatformComponent>() != null || hit.collider.GetComponent<RotationPlatformComponent>() != null));
     }
     public void Hacking0()
     {
