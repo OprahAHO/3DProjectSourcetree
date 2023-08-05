@@ -231,13 +231,7 @@ public class PlayerMovementAdv : MonoBehaviour
 
 
     }
-    //private bool RayShootIt;
-   /* private void CheckGroundRay()
-    {
-        RaycastHit ray;
-        RayShootIt = Physics.Raycast(orientation.position, - orientation.up*1.1f, out ray,1f) && ray.collider.GetComponent<groundedComponent>() != null;
-    }*/
-        
+  
 
     private void OnCollisionEnter(Collision collision)
     {
