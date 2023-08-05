@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class SkillCardBase_Jetpack : MonoBehaviour
 {
-    public static SkillCardBase_Jetpack instance;
+    
     public GameObject pickUpZero;
     public bool stageOne;
     
-    private void Awake()
-    {
-        instance = this;
-    }
     private void Update()
     {
-        if(!randomskill.instance.left&& randomskill.instance.leftskill==0)
+        if(!randomskill.instance.left && randomskill.instance.leftskill == 0)
         {
             stageOne = true;
             
@@ -30,7 +26,6 @@ public class SkillCardBase_Jetpack : MonoBehaviour
             Invoke("delay", 2f);
             stageOne = false;
             randomskill.instance.skill0 = true;
-           // pickupzero.instance.firstCaugh = true;
         }
     }
 

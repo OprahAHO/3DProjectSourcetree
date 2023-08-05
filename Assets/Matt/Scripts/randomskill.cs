@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class randomskill : MonoBehaviour
 {
-    public bool left=false;
-    public bool right=false;
+    public bool left = false;
+    public bool right = false;
     public bool skill0;
     public bool skill5;
 
@@ -31,7 +31,7 @@ public class randomskill : MonoBehaviour
     private void Start()
     {
         skill0 = true;
-        skill5=true;
+        skill5 = true;
     }
     private void Awake()
     {
@@ -113,23 +113,11 @@ public class randomskill : MonoBehaviour
                 case 5:rightskill5(); break;
             case 6:rightskill6(); break;
         }
-  //      right = false;
+    //right = false;
     }
     public void lg()
     {
-        //if (!left && !right)
-        //{
-        //    left = true;
-        //}
-        // else if (left && !right)
-        //{
-        //    right = true;
-        //}
-        
-        //else if (!left && right)
-        //{
-        //    left = true;
-        //}
+
     }
     public void randomSkill()
     {

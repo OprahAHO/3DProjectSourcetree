@@ -37,7 +37,7 @@ public class pickupzero : MonoBehaviour
                 randomskill.instance.skillzero();
                 firstCaugh =false;
                 getCard = true;
-                SkillCardBase_Jetpack.instance.stageOne = true;
+            
                 StartCoroutine(DeletCard());
             }
         }
