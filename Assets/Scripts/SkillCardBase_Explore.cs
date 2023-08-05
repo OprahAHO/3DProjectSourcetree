@@ -12,8 +12,13 @@ public class SkillCardBase_Explore : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
+        
         if (!randomskill.instance.left && randomskill.instance.leftskill == 5)
         {
             stageOne = true;
@@ -37,7 +42,7 @@ public class SkillCardBase_Explore : MonoBehaviour
 
     void delay()
     {
-        pickUpFive.SetActive(true);
+         pickUpFive.SetActive(true);
     }
 
 }
