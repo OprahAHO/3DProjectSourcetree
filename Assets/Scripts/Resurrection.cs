@@ -2,6 +2,7 @@ using SimpleEffects.Glitch;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -20,10 +21,11 @@ public class Resurrection : MonoBehaviour
 
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
+    public GameObject playerCam;
     public GameObject die;
     public int currentCheckpointIndex;
     private float chepointcheckNum;
-
+    
 
 
     public int skillleft;
@@ -32,18 +34,26 @@ public class Resurrection : MonoBehaviour
     public bool rrr;
     GameManager GM;
     CheckPointComponent checkPointComponent;
+    private bool canR;
+
+    private void Start()
+    {
+        ResurrectPoint.position = PlayerRb.position;
+        canR = true;
+    }
+
     void Update()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        if (Input.GetKeyDown(KeyCode.R) /*&& !GM.live*/)
+        if (Input.GetKeyDown(KeyCode.R) && canR)
         {
             PauseCanvas.SetActive(false);
             die.SetActive(false);
 
-            digitalGlitch.enabled = false;
-            analogGlitch.enabled = false;
+            DarkLight.instance.PassLevel();
+            OpenGlitch();
 
-            PlayerRb.position = ResurrectPoint.position;
+            Invoke("changePos", 1.4f);
 
             old();
             newnew();
@@ -51,13 +61,32 @@ public class Resurrection : MonoBehaviour
             ActivatePickupOnes();
             ResetBroken();
             ResetPlatform();
-            
 
+            canR = false;
+            Invoke("ResetCanR", 5);
         }
     }
-    private void Start()
+    void changePos()
     {
-        ResurrectPoint.position = PlayerRb.position;
+        PlayerRb.position = ResurrectPoint.position;
+        CloseGlitch();
+        DarkLight.instance.Bright();
+    }
+    void CloseGlitch()
+    {
+        digitalGlitch.enabled = false;
+        analogGlitch.enabled = false;
+    }
+    void OpenGlitch()
+    {
+        //PlayerRb.freezeRotation = true;
+
+        digitalGlitch.enabled = true;
+        analogGlitch.enabled = true;
+    }
+    void ResetCanR()
+    {
+        canR = true;
     }
 
     private void OnTriggerEnter(Collider other)

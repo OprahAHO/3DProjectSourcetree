@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DarkLight : MonoBehaviour
 {
     public static DarkLight instance;
-    private float speed = 2f;
+    private float speed = 3f;
     private Image image;
     private void Awake()
     {
@@ -22,8 +22,11 @@ public class DarkLight : MonoBehaviour
     {
         StartCoroutine(BeDark());
     }
-
-    IEnumerator BeDark()
+   public void Bright()
+    {
+        StartCoroutine(BeBright());
+    }
+    public IEnumerator BeDark()
     {
         while (1 - image.color.a > 0.05f)
         {
@@ -33,7 +36,7 @@ public class DarkLight : MonoBehaviour
        
     }
 
-    IEnumerator BeBright()
+    public IEnumerator BeBright()
     {
         while (image.color.a > 0.05f)
         {

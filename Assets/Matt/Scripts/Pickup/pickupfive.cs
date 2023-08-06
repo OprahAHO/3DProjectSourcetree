@@ -17,8 +17,7 @@ public class pickupfive : MonoBehaviour
     {
         Renderer renderer = GetComponent<Renderer>();
         renderer.material = materialSelf;
-        firstCaugh= true;
-
+        firstCaugh = true;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -33,15 +32,13 @@ public class pickupfive : MonoBehaviour
 
                 randomskill.instance.lg();
                 randomskill.instance.skillfive();
-                firstCaugh =false;
+                firstCaugh = false;
             }
-            
         }
     }
     public IEnumerator DeletCard()
     {
         yield return new WaitForSeconds(1.1f);
         gameObject.SetActive(false);
-
     }
 }

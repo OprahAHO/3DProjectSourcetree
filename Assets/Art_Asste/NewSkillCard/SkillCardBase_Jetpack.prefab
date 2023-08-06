@@ -48560,7 +48560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8276367219940635400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f28862448d3e44946963171109ec8ad2, type: 3}
   m_Name: 
@@ -48617,7 +48617,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 107414379228052660, guid: 214f989b5c879ca4aac1eb81023674e5, type: 3}
       propertyPath: m_Name
-      value: Booster
+      value: SkillCard_Booster
       objectReference: {fileID: 0}
     - target: {fileID: 735859579742086670, guid: 214f989b5c879ca4aac1eb81023674e5, type: 3}
       propertyPath: m_RootOrder

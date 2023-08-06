@@ -14,38 +14,33 @@ public class pickupzero : MonoBehaviour
     {
         instance = this;
     }
-  
+
     void OnEnable()
     {
         Renderer renderer = GetComponent<Renderer>();
         renderer.material = materialSelf;
-        getCard = false;
         firstCaugh = true;
-       
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerMovementAdv>() != null)
         {
-            if (!randomskill.instance.left || !randomskill.instance.right&& firstCaugh)
+            if (!randomskill.instance.left || !randomskill.instance.right && firstCaugh)
             {
+                StartCoroutine(DeletCard());
 
                 Renderer renderer = GetComponent<Renderer>();
                 renderer.material = MaterialVFX;
 
                 randomskill.instance.lg();
                 randomskill.instance.skillzero();
-                firstCaugh =false;
-                getCard = true;
-            
-                StartCoroutine(DeletCard());
+                firstCaugh = false;
             }
         }
     }
     public IEnumerator DeletCard()
     {
         yield return new WaitForSeconds(1.1f);
-        
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
     }
 }

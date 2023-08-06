@@ -43698,7 +43698,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8276367219940635400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ce7d8ae661800d49979215d8bf121d2, type: 3}
   m_Name: 
@@ -43754,7 +43754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 91814009775846115, guid: 289dc877f3206e248ad1bf1533af1243, type: 3}
       propertyPath: m_Name
-      value: Bomb Jump
+      value: SkillCard_BoomJump
       objectReference: {fileID: 0}
     - target: {fileID: 724482463931803737, guid: 289dc877f3206e248ad1bf1533af1243, type: 3}
       propertyPath: m_RootOrder
