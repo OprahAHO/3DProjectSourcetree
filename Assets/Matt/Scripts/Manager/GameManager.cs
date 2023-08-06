@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
                 Resume();
             }
         }
-        if (Input.GetKeyDown(KeyCode.R) /*&& !live*/)
+        if (Input.GetKeyDown(KeyCode.R) && !live)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

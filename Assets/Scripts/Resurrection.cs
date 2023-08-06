@@ -45,8 +45,9 @@ public class Resurrection : MonoBehaviour
     void Update()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        if (Input.GetKeyDown(KeyCode.R) && canR)
+        if (Input.GetKeyDown(KeyCode.R) && canR && GM.live)
         {
+           
             PauseCanvas.SetActive(false);
             die.SetActive(false);
 
@@ -64,6 +65,22 @@ public class Resurrection : MonoBehaviour
 
             canR = false;
             Invoke("ResetCanR", 5);
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && canR && !GM.live)
+        {
+           
+            PauseCanvas.SetActive(false);
+            die.SetActive(false);
+
+            changePos();
+
+            old();
+            newnew();
+            Time.timeScale = 1f;
+            ActivatePickupOnes();
+            ResetBroken();
+            ResetPlatform();
+            ResetCanR();
         }
     }
     void changePos()
