@@ -47,7 +47,7 @@ public class Resurrection : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (Input.GetKeyDown(KeyCode.R) && canR && GM.live)
         {
-           
+            GetComponent<Rigidbody>().isKinematic = true;
             PauseCanvas.SetActive(false);
             die.SetActive(false);
 
@@ -68,7 +68,7 @@ public class Resurrection : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.R) && canR && !GM.live)
         {
-           
+            GetComponent<Rigidbody>().isKinematic = true;
             PauseCanvas.SetActive(false);
             die.SetActive(false);
 
@@ -88,6 +88,7 @@ public class Resurrection : MonoBehaviour
         PlayerRb.position = ResurrectPoint.position;
         CloseGlitch();
         DarkLight.instance.Bright();
+        GetComponent<Rigidbody>().isKinematic = false;
     }
     void CloseGlitch()
     {

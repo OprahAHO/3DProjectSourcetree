@@ -16,6 +16,11 @@ public class FirstDie : MonoBehaviour
         if (!GameManager.instance.live&&Input.GetKeyDown(KeyCode.R))
         {
             TellDie.SetActive(true);
+            Invoke("die", 6f);
         }
+    }
+    void die()
+    {
+        TellDie.SetActive(false);
     }
 }
