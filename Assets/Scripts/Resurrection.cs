@@ -21,7 +21,7 @@ public class Resurrection : MonoBehaviour
 
     public Rigidbody PlayerRb;
     public GameObject PauseCanvas;
-    public GameObject playerCam;
+   
     public GameObject die;
     public int currentCheckpointIndex;
     private float chepointcheckNum;
