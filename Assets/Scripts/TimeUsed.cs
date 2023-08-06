@@ -10,13 +10,13 @@ public class TimeUsed : MonoBehaviour
 {
     public Text timeText;
     public Text scenceText;
-    public Text title;
+    //public Text title;
     private string time;
     private int scence;
     public string toturial;
     public string Level1;
     public string Level2;
-    public string titletoturial;
+   // public string titletoturial;
 
 
     void Start()
@@ -35,22 +35,22 @@ public class TimeUsed : MonoBehaviour
         if (scence == 2)
         {
             scenceText.text = toturial;
-            title.text = titletoturial;
+            //title.text = titletoturial;
         }
         else if (scence == 3)
         {
             scenceText.text = Level1;
-            title.text = "H0-01";
+           // title.text = "H0-01";
         }
         else if (scence == 4)
         {
             scenceText.text = Level2;
-            title.text = "H0-02";
+           // title.text = "H0-02";
         }
         else if (scence == 6)
         {
             scenceText.text = "testScence";
-            title.text = "H0-03";
+           // title.text = "H0-03";
         }
     }
 }

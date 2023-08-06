@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 460081929}
   - component: {fileID: 460081932}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,8 +632,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2094393533}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: ActiveScendInterface
-        m_Mode: 3
+        m_MethodName: Level4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1023,7 +1023,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 692926818}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 955946348}
   - component: {fileID: 955946351}
   m_Layer: 5
-  m_Name: Level1
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,8 +1577,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2094393533}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: ActiveScendInterface
-        m_Mode: 3
+        m_MethodName: Level3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 1174834623}
   - component: {fileID: 1174834626}
   m_Layer: 5
-  m_Name: tutorial level
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4063,9 +4063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d12475755330e41a7e65d07abf8393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popup:
-  - {fileID: 1075469806}
-  - {fileID: 1384424025}
+  popup: []
   ScenceCount: 0
 --- !u!4 &2094393534
 Transform:
