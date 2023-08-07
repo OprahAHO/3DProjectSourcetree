@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace SimpleEffects.Glitch
-{
+
     public class DigitalGlitch : MonoBehaviour
     {
         [SerializeField, Range(0, 1)] float _intensity = 0;
@@ -74,4 +73,3 @@ namespace SimpleEffects.Glitch
             return new Color(Random.value, Random.value, Random.value, Random.value);
         }
     }
-}

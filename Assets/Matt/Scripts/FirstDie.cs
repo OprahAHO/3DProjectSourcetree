@@ -7,16 +7,24 @@ public class FirstDie : MonoBehaviour
     public GameObject TellDie;
     void Start()
     {
-        
+        firstdie = false;
+        isdie = false;
     }
-
+    bool firstdie;
+    bool isdie;
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.live&&Input.GetKeyDown(KeyCode.R))
+        if (!GameManager.instance.live &&!isdie)
+        {
+            isdie = true;
+            firstdie = true;
+        }
+        if(Input.GetKeyDown(KeyCode.R) && firstdie)
         {
             TellDie.SetActive(true);
             Invoke("die", 6f);
+            firstdie = false;
         }
     }
     void die()

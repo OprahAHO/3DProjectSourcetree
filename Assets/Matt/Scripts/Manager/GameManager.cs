@@ -1,4 +1,3 @@
-using SimpleEffects.Glitch;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,8 +41,8 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        
-        if (live)
+     
+        if(live)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !pause)
             {
@@ -61,17 +60,22 @@ public class GameManager : MonoBehaviour
                 Resume();
             }
         }
-        if (Input.GetKeyDown(KeyCode.R) && !live)
+
+        if(Input.GetKeyDown(KeyCode.R) && !live)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            live = true;
+            
             skill.SetActive(true);
             pause = false;
 
             player.enabled = true;
-            playerCam.enabled = true;
+            //playerCam.enabled = true;
+            PlayerCam.zero = 1;
+            live = true;
+           
         }
+        
     }
     public void Resume()
     {
@@ -86,9 +90,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //Debug.Log("GameOver");
         AudioManager.instance.PlaySFX("Character_Dead");
         live = false;
+
         digitalGlitch.enabled = true;
         analogGlitch.enabled = true;
 
@@ -96,7 +100,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
 
         player.enabled = false;
-        playerCam.enabled = false;
+        PlayerCam.zero = 0;
 
         //Time.timeScale = 0f;
 
@@ -135,6 +139,7 @@ public class GameManager : MonoBehaviour
     public void ShowGameOverPanel()
     {
         gameOverPanel.SetActive(true);
+       
     }
 }
 

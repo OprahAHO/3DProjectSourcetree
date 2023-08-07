@@ -13,13 +13,13 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
-   
+    public static float zero;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+        zero = 1;
     }
 
     // Update is called once per frame
@@ -32,8 +32,8 @@ public class PlayerCam : MonoBehaviour
         {
             value = 200;
         }
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * value;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * value;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * value*zero ;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * value*zero ;
         //Debug.Log(value);
         yRotation += mouseX;
 

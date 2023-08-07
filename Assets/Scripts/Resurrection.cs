@@ -1,4 +1,4 @@
-using SimpleEffects.Glitch;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,6 +44,7 @@ public class Resurrection : MonoBehaviour
 
     void Update()
     {
+       
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (Input.GetKeyDown(KeyCode.R) && canR && GM.live)
         {
@@ -62,9 +63,10 @@ public class Resurrection : MonoBehaviour
             ActivatePickupOnes();
             ResetBroken();
             ResetPlatform();
-
+            PlayerCam.zero = 1;
             canR = false;
             Invoke("ResetCanR", 5);
+           
         }
         else if (Input.GetKeyDown(KeyCode.R) && canR && !GM.live)
         {
@@ -81,6 +83,7 @@ public class Resurrection : MonoBehaviour
             ResetBroken();
             ResetPlatform();
             ResetCanR();
+            PlayerCam.zero = 1;
         }
     }
     void changePos()
