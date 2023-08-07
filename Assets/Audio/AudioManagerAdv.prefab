@@ -207,6 +207,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d4f44cfaf0dbbb84fac5760ab9ed1e8c, type: 3}
   - name: Sfx_Jump
     clip: {fileID: 8300000, guid: 82331d75b7a1ee149915ec1d22add993, type: 3}
+  - name: Win
+    clip: {fileID: 8300000, guid: f04b7a88ec6e6a2489cddfa260e717b7, type: 3}
+  - name: StartVideo
+    clip: {fileID: 8300000, guid: 8e7da9702456d1940b814503eec64b72, type: 3}
   charactersounds:
   - name: Sfx_Ft
     clip: {fileID: 8300000, guid: d4f44cfaf0dbbb84fac5760ab9ed1e8c, type: 3}
@@ -226,6 +230,7 @@ MonoBehaviour:
   Sfx_Level_MovePlatform: {fileID: 8300000, guid: f17717f5323c20044ae7295f88406ee0, type: 3}
   Sfx_Level_Shoot: {fileID: 8300000, guid: ee48bb2602300154e95b92b71fbb94c5, type: 3}
   Sfx_Level_Shredder: {fileID: 8300000, guid: 2260d001db12aec438b5532fdd260174, type: 3}
+  BrokenPlatform: {fileID: 0}
   volumeSliderSenter: {fileID: 0}
 --- !u!1 &2182503811828014178
 GameObject:
