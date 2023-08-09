@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17122543, g: 0.29336664, b: 0.46494687, a: 1}
+  m_IndirectSpecularColor: {r: 0.17122492, g: 0.29336455, b: 0.46494794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3756,10 +3756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -13311,7 +13311,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2c5353dde95d332479b1fb1517619170, type: 3}
 --- !u!4 &529471035 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 724238507713063391, guid: 2c5353dde95d332479b1fb1517619170, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1222661529397791212, guid: 2c5353dde95d332479b1fb1517619170, type: 3}
   m_PrefabInstance: {fileID: 529471034}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &529471036 stripped
